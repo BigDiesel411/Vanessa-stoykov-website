@@ -16,79 +16,107 @@
   "divorce/Article-Divorce-InheritanceMoney.dc.html": {
     "title": "Inheritance and Divorce: What Happens to Your Money After Separation?",
     "topic": "divorce",
-    "flagged": true,
-    "flagReason": "topic \"divorce\" is always reviewed",
-    "heroPath": "needs-review/divorce/Article-Divorce-InheritanceMoney-hero.jpg",
-    "thumbPath": "needs-review/divorce/Article-Divorce-InheritanceMoney-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/divorce/Article-Divorce-InheritanceMoney-hero.jpg",
+    "thumbPath": "assets/generated/divorce/Article-Divorce-InheritanceMoney-thumb.jpg",
+    "patchedFiles": [
+      "divorce/Article-Divorce-InheritanceMoney.dc.html",
+      "divorce/Topic-Divorce.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:53:53.032Z"
+    "generatedAt": "2026-09-02T05:53:53.032Z",
+    "approvedAt": "2026-09-02T08:43:33.548Z"
   },
   "divorce/Article-Divorce-KeepTheHome.dc.html": {
     "title": "Financial Planning After Divorce: Should You Keep the Family Home?",
     "topic": "divorce",
-    "flagged": true,
-    "flagReason": "topic \"divorce\" is always reviewed",
-    "heroPath": "needs-review/divorce/Article-Divorce-KeepTheHome-hero.jpg",
-    "thumbPath": "needs-review/divorce/Article-Divorce-KeepTheHome-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/divorce/Article-Divorce-KeepTheHome-hero.jpg",
+    "thumbPath": "assets/generated/divorce/Article-Divorce-KeepTheHome-thumb.jpg",
+    "patchedFiles": [
+      "divorce/Article-Divorce-KeepTheHome.dc.html",
+      "divorce/Topic-Divorce.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:54:38.355Z"
+    "generatedAt": "2026-09-02T05:54:38.355Z",
+    "approvedAt": "2026-09-02T08:43:33.569Z"
   },
   "divorce/Article-Divorce-Survive.dc.html": {
     "title": "How to Survive a Divorce",
     "topic": "divorce",
-    "flagged": true,
-    "flagReason": "topic \"divorce\" is always reviewed",
-    "heroPath": "needs-review/divorce/Article-Divorce-Survive-hero.jpg",
-    "thumbPath": "needs-review/divorce/Article-Divorce-Survive-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/divorce/Article-Divorce-Survive-hero.jpg",
+    "thumbPath": "assets/generated/divorce/Article-Divorce-Survive-thumb.jpg",
+    "patchedFiles": [
+      "divorce/Article-Divorce-Survive.dc.html",
+      "divorce/Topic-Divorce.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:55:18.717Z"
+    "generatedAt": "2026-09-02T05:55:18.717Z",
+    "approvedAt": "2026-09-02T08:43:33.573Z"
   },
   "divorce/Article-Divorce-ThreeMistakesOver50.dc.html": {
     "title": "Divorce Financial Planning: Three Mistakes Women Over 50 Must Avoid",
     "topic": "divorce",
-    "flagged": true,
-    "flagReason": "topic \"divorce\" is always reviewed",
-    "heroPath": "needs-review/divorce/Article-Divorce-ThreeMistakesOver50-hero.jpg",
-    "thumbPath": "needs-review/divorce/Article-Divorce-ThreeMistakesOver50-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/divorce/Article-Divorce-ThreeMistakesOver50-hero.jpg",
+    "thumbPath": "assets/generated/divorce/Article-Divorce-ThreeMistakesOver50-thumb.jpg",
+    "patchedFiles": [
+      "divorce/Article-Divorce-ThreeMistakesOver50.dc.html",
+      "divorce/Topic-Divorce.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:56:04.429Z"
+    "generatedAt": "2026-09-02T05:56:04.429Z",
+    "approvedAt": "2026-09-02T08:43:33.579Z"
   },
   "divorce/Article-Divorce-Weddings.dc.html": {
     "title": "Divorce, Weddings, and Money: How to Avoid Family Finance Mistakes",
     "topic": "divorce",
-    "flagged": true,
-    "flagReason": "topic \"divorce\" is always reviewed",
-    "heroPath": "needs-review/divorce/Article-Divorce-Weddings-hero.jpg",
-    "thumbPath": "needs-review/divorce/Article-Divorce-Weddings-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/divorce/Article-Divorce-Weddings-hero.jpg",
+    "thumbPath": "assets/generated/divorce/Article-Divorce-Weddings-thumb.jpg",
+    "patchedFiles": [
+      "divorce/Article-Divorce-Weddings.dc.html",
+      "divorce/Topic-Divorce.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:56:46.671Z"
+    "generatedAt": "2026-09-02T05:56:46.671Z",
+    "approvedAt": "2026-09-02T08:43:33.589Z"
   },
   "divorce/Article-Divorce-WomenAfter50.dc.html": {
     "title": "Divorce and Financial Planning: Critical Lessons For Women After 50",
     "topic": "divorce",
-    "flagged": true,
-    "flagReason": "topic \"divorce\" is always reviewed",
-    "heroPath": "needs-review/divorce/Article-Divorce-WomenAfter50-hero.jpg",
-    "thumbPath": "needs-review/divorce/Article-Divorce-WomenAfter50-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/divorce/Article-Divorce-WomenAfter50-hero.jpg",
+    "thumbPath": "assets/generated/divorce/Article-Divorce-WomenAfter50-thumb.jpg",
+    "patchedFiles": [
+      "divorce/Article-Divorce-WomenAfter50.dc.html",
+      "divorce/Topic-Divorce.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:57:28.801Z"
+    "generatedAt": "2026-09-02T05:57:28.801Z",
+    "approvedAt": "2026-09-02T08:43:33.602Z"
   },
   "retirement/Article-Retirement-AssetRichCashPoor.dc.html": {
     "title": "Retirement Planning in Australia: Options When You're Asset Rich, Cash Poor",
     "topic": "retirement",
-    "flagged": true,
-    "flagReason": "content mentions \"divorce\"",
-    "heroPath": "needs-review/retirement/Article-Retirement-AssetRichCashPoor-hero.jpg",
-    "thumbPath": "needs-review/retirement/Article-Retirement-AssetRichCashPoor-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/retirement/Article-Retirement-AssetRichCashPoor-hero.jpg",
+    "thumbPath": "assets/generated/retirement/Article-Retirement-AssetRichCashPoor-thumb.jpg",
+    "patchedFiles": [
+      "retirement/Article-Retirement-AssetRichCashPoor.dc.html",
+      "Topic-Retirement.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:58:09.270Z"
+    "generatedAt": "2026-09-02T05:58:09.270Z",
+    "approvedAt": "2026-09-02T08:43:33.607Z"
   },
   "retirement/Article-Retirement-PurposefulNextChapter.dc.html": {
     "title": "Retirement Planning Australia: How to Design a Purposeful Next Chapter",
@@ -107,112 +135,152 @@
   "inheritance/Article-Inheritance-AgeingParents.dc.html": {
     "title": "Inheritance Planning: Avoiding Family Conflict When Caring for Ageing Parents",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-AgeingParents-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-AgeingParents-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-AgeingParents-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-AgeingParents-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-AgeingParents.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T05:59:44.956Z"
+    "generatedAt": "2026-09-02T05:59:44.956Z",
+    "approvedAt": "2026-09-02T08:43:33.618Z"
   },
   "inheritance/Article-Inheritance-Dementia.dc.html": {
     "title": "Three Critical Mistakes to Avoid in Inheritance Planning for Dementia",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-Dementia-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-Dementia-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-Dementia-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-Dementia-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-Dementia.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:00:31.700Z"
+    "generatedAt": "2026-09-02T06:00:31.700Z",
+    "approvedAt": "2026-09-02T08:43:33.627Z"
   },
   "inheritance/Article-Inheritance-EndOfLife.dc.html": {
     "title": "Inheritance Planning Australia: Avoid Costly End-of-Life Money Mistakes",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-EndOfLife-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-EndOfLife-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-EndOfLife-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-EndOfLife-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-EndOfLife.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:01:18.326Z"
+    "generatedAt": "2026-09-02T06:01:18.326Z",
+    "approvedAt": "2026-09-02T08:43:33.632Z"
   },
   "inheritance/Article-Inheritance-NoWill.dc.html": {
     "title": "Estate Planning After 50: Avoiding Mistakes When There's No Will",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-NoWill-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-NoWill-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-NoWill-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-NoWill-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-NoWill.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:02:00.261Z"
+    "generatedAt": "2026-09-02T06:02:00.261Z",
+    "approvedAt": "2026-09-02T08:43:33.637Z"
   },
   "inheritance/Article-Inheritance-OneChild.dc.html": {
     "title": "Inheritance Planning Australia: When Parents Leave More to One Child",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-OneChild-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-OneChild-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-OneChild-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-OneChild-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-OneChild.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:02:41.294Z"
+    "generatedAt": "2026-09-02T06:02:41.294Z",
+    "approvedAt": "2026-09-02T08:43:33.640Z"
   },
   "inheritance/Article-Inheritance-SecondRelationships.dc.html": {
     "title": "Inheritance Planning in Second Relationships: Protecting Kids and Partners",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-SecondRelationships-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-SecondRelationships-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-SecondRelationships-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-SecondRelationships-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-SecondRelationships.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:03:25.763Z"
+    "generatedAt": "2026-09-02T06:03:25.763Z",
+    "approvedAt": "2026-09-02T08:43:33.644Z"
   },
   "inheritance/Article-Inheritance-TaxRecords.dc.html": {
     "title": "Inheritance Planning in Australia: What Tax Your Family Really Pays",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-TaxRecords-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-TaxRecords-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-TaxRecords-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-TaxRecords-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-TaxRecords.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:04:07.595Z"
+    "generatedAt": "2026-09-02T06:04:07.595Z",
+    "approvedAt": "2026-09-02T08:43:33.648Z"
   },
   "inheritance/Article-Inheritance-UnequalWills.dc.html": {
     "title": "Inheritance Planning Australia: Handling Unequal Wills and Family Emotions",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-UnequalWills-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-UnequalWills-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-UnequalWills-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-UnequalWills-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-UnequalWills.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:04:51.400Z"
+    "generatedAt": "2026-09-02T06:04:51.400Z",
+    "approvedAt": "2026-09-02T08:43:33.652Z"
   },
   "inheritance/Article-Inheritance-WakeUpCall.dc.html": {
     "title": "The Inheritance Wake-Up Call: Are You Ready for What's Coming?",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-WakeUpCall-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-WakeUpCall-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-WakeUpCall-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-WakeUpCall-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-WakeUpCall.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:05:34.782Z"
+    "generatedAt": "2026-09-02T06:05:34.782Z",
+    "approvedAt": "2026-09-02T08:43:33.657Z"
   },
   "inheritance/Article-Inheritance-WillDisputes.dc.html": {
     "title": "Inheritance Planning Australia: Navigating Family Disputes After a Will",
     "topic": "inheritance",
-    "flagged": true,
-    "flagReason": "topic \"inheritance\" is always reviewed",
-    "heroPath": "needs-review/inheritance/Article-Inheritance-WillDisputes-hero.jpg",
-    "thumbPath": "needs-review/inheritance/Article-Inheritance-WillDisputes-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/inheritance/Article-Inheritance-WillDisputes-hero.jpg",
+    "thumbPath": "assets/generated/inheritance/Article-Inheritance-WillDisputes-thumb.jpg",
+    "patchedFiles": [
+      "inheritance/Article-Inheritance-WillDisputes.dc.html",
+      "inheritance/Topic-Inheritance.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:06:18.289Z"
+    "generatedAt": "2026-09-02T06:06:18.289Z",
+    "approvedAt": "2026-09-02T08:43:33.660Z"
   },
   "moneymindset/Article-MoneyMindset-ThreeWays.dc.html": {
     "title": "Three Ways to Improve Your Money Mindset",
@@ -245,13 +313,17 @@
   "relationships/Article-Relationships-CombiningFinances.dc.html": {
     "title": "Should You Combine Finances After 50? Financial Planning for New Relationships",
     "topic": "relationships",
-    "flagged": true,
-    "flagReason": "content mentions \"divorce\"",
-    "heroPath": "needs-review/relationships/Article-Relationships-CombiningFinances-hero.jpg",
-    "thumbPath": "needs-review/relationships/Article-Relationships-CombiningFinances-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/Article-Relationships-CombiningFinances-hero.jpg",
+    "thumbPath": "assets/generated/relationships/Article-Relationships-CombiningFinances-thumb.jpg",
+    "patchedFiles": [
+      "relationships/Article-Relationships-CombiningFinances.dc.html",
+      "Topic-Relationships.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:08:23.152Z"
+    "generatedAt": "2026-09-02T06:08:23.152Z",
+    "approvedAt": "2026-09-02T08:43:33.662Z"
   },
   "adultchildren/Article-AdultChildren-DrawTheLine.dc.html": {
     "title": "Supporting Adult Children Financially: Where to Draw the Line as a Parent",
@@ -312,12 +384,16 @@
   "ageingparents/Article-AgeingParents-AgedCare.dc.html": {
     "title": "Aged Care Planning: Avoid These 3 Costly Mistakes in Your Family",
     "topic": "ageingparents",
-    "flagged": true,
-    "flagReason": "content mentions \"divorce\"",
-    "heroPath": "needs-review/ageingparents/Article-AgeingParents-AgedCare-hero.jpg",
-    "thumbPath": "needs-review/ageingparents/Article-AgeingParents-AgedCare-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/ageingparents/Article-AgeingParents-AgedCare-hero.jpg",
+    "thumbPath": "assets/generated/ageingparents/Article-AgeingParents-AgedCare-thumb.jpg",
+    "patchedFiles": [
+      "ageingparents/Article-AgeingParents-AgedCare.dc.html",
+      "Topic-AgeingParents.dc.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-02T06:12:07.042Z"
+    "generatedAt": "2026-09-02T06:12:07.042Z",
+    "approvedAt": "2026-09-02T08:43:33.669Z"
   }
 }

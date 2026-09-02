@@ -32,6 +32,7 @@ import { assessSensitivity } from './lib/review.mjs';
 import { buildHeroPrompt, buildThumbPrompt } from './lib/prompt.mjs';
 import { generateImage, extensionForMime } from './lib/gemini.mjs';
 import { setSlotSrc } from './lib/htmlPatch.mjs';
+import { relHref } from './lib/paths.mjs';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -82,11 +83,6 @@ async function loadManifest() {
 async function saveManifest(manifest) {
   await fs.mkdir(path.dirname(MANIFEST_PATH), { recursive: true });
   await fs.writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
-}
-
-function relHref(fromFile, toFile) {
-  const rel = path.relative(path.dirname(fromFile), toFile);
-  return rel.split(path.sep).join('/');
 }
 
 async function processArticle({ article, thumbMap, manifest, args, apiKey, model }) {

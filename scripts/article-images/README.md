@@ -85,6 +85,25 @@ Useful flags:
 | `--limit <n>`    | Stop after `n` articles                                   |
 | `--force`        | Regenerate even if images already exist                   |
 
+## Approving flagged images
+
+Once you've looked through `needs-review/` and are happy with some or all
+of it, promote them into the live site:
+
+```
+node scripts/article-images/approve-images.mjs               # approve everything pending
+node scripts/article-images/approve-images.mjs --only Survive
+node scripts/article-images/approve-images.mjs --topic divorce
+node scripts/article-images/approve-images.mjs --dry-run      # preview only
+```
+
+This moves the approved files from `needs-review/<topic>/` into
+`assets/generated/<topic>/` and wires them into the article's hero slot
+and the matching Topic-page thumbnail/featured slot — exactly what
+`generate-images.mjs` would have done automatically had the article not
+been flagged. It only touches entries the generator marked `flagged:
+true` in `generation-log.json`, so it's safe to re-run.
+
 ## How flagging works
 
 An article is routed to `needs-review/<topic>/` instead of being linked
