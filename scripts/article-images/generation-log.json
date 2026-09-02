@@ -1,0 +1,16 @@
+{
+  "retirement/Article-Retirement-SavingsToLife.dc.html": {
+    "title": "Retirement Planning Australia: Turning Savings into a Life Worth Living",
+    "topic": "retirement",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/retirement/Article-Retirement-SavingsToLife-hero.jpg",
+    "thumbPath": "assets/generated/retirement/Article-Retirement-SavingsToLife-thumb.jpg",
+    "patchedFiles": [
+      "retirement/Article-Retirement-SavingsToLife.dc.html",
+      "Topic-Retirement.dc.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-02T05:46:41.024Z"
+  }
+}
