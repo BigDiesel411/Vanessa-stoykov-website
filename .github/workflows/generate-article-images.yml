@@ -1,0 +1,143 @@
+name: Generate article images
+
+# Fires whenever a push to main adds new article files, and generates
+# hero + thumbnail images for exactly those articles via Gemini. Results
+# land on a new branch and get opened as a pull request for review —
+# nothing is merged automatically. Sensitive-topic articles (divorce,
+# inheritance, death, grief — see scripts/article-images/lib/review.mjs)
+# are generated but left out of needs-review/, unlinked from any page,
+# same as a manual run.
+#
+# See scripts/article-images/README.md for the full pipeline docs.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'divorce/Article-*.dc.html'
+      - 'retirement/Article-*.dc.html'
+      - 'inheritance/Article-*.dc.html'
+      - 'moneymindset/Article-*.dc.html'
+      - 'relationships/Article-*.dc.html'
+      - 'adultchildren/Article-*.dc.html'
+      - 'ageingparents/Article-*.dc.html'
+  # Manual safety net: re-run against every article. Already-generated
+  # articles are skipped automatically (see --force in the README) so
+  # this is safe to run any time without duplicating work.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: generate-article-images
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find newly added article files
+        id: find
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual run — scanning every article (already-generated ones are skipped automatically)."
+            echo "scoped=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git diff --name-status --diff-filter=A \
+            "${{ github.event.before }}" "${{ github.event.after }}" \
+            -- 'divorce/Article-*.dc.html' 'retirement/Article-*.dc.html' \
+               'inheritance/Article-*.dc.html' 'moneymindset/Article-*.dc.html' \
+               'relationships/Article-*.dc.html' 'adultchildren/Article-*.dc.html' \
+               'ageingparents/Article-*.dc.html' \
+            | awk '{print $2}' > added-articles.txt
+
+          echo "Newly added article files:"
+          cat added-articles.txt || true
+          echo "scoped=true" >> "$GITHUB_OUTPUT"
+
+          if [ ! -s added-articles.txt ]; then
+            echo "No newly added article files in this push — nothing to do."
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_files=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Node
+        if: steps.find.outputs.has_files != 'false'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate images
+        if: steps.find.outputs.has_files != 'false'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.find.outputs.scoped }}" = "true" ]; then
+            node scripts/article-images/generate-images.mjs --files-from added-articles.txt
+          else
+            node scripts/article-images/generate-images.mjs
+          fi
+
+      - name: Check for changes
+        if: steps.find.outputs.has_files != 'false'
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No files changed — generation produced nothing (check the log above for errors)."
+          fi
+
+      - name: Commit and open pull request
+        if: steps.find.outputs.has_files != 'false' && steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="auto/article-images-${{ github.run_number }}"
+          git checkout -b "$BRANCH"
+
+          # Precise staging: modifications to already-tracked files (the
+          # patched article + topic pages), plus the two directories and
+          # the log file this script ever writes. Never a blanket `add -A`.
+          git add -u
+          git add assets/generated needs-review scripts/article-images/generation-log.json
+
+          git commit -m "Generate article images for newly added content"
+          git push -u origin "$BRANCH"
+
+          if [ -f added-articles.txt ]; then
+            node scripts/article-images/ci-summary.mjs added-articles.txt > pr-body.md
+          else
+            echo "### Article image generation summary" > pr-body.md
+            echo "" >> pr-body.md
+            echo "Manual (workflow_dispatch) run across all articles." >> pr-body.md
+          fi
+          {
+            echo ""
+            echo "---"
+            echo "_Opened automatically by the [generate-article-images](../actions/workflows/generate-article-images.yml) workflow, triggered by ${{ github.sha }}._"
+          } >> pr-body.md
+
+          gh pr create \
+            --title "Article images: $(date -u +%Y-%m-%d) run #${{ github.run_number }}" \
+            --body-file pr-body.md \
+            --base main \
+            --head "$BRANCH" \
+            --reviewer BigDiesel411 \
+            --assignee BigDiesel411
