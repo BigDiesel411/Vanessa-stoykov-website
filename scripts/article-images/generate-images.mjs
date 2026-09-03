@@ -8,6 +8,7 @@
 //   node scripts/article-images/generate-images.mjs --dry-run
 //   node scripts/article-images/generate-images.mjs --only SavingsToLife
 //   node scripts/article-images/generate-images.mjs --topic retirement
+//   node scripts/article-images/generate-images.mjs --files-from added.txt
 //   node scripts/article-images/generate-images.mjs               # everything
 //
 // See scripts/article-images/README.md for full setup instructions,
@@ -39,7 +40,7 @@ function sleep(ms) {
 }
 
 function parseArgs(argv) {
-  const args = { dryRun: false, force: false, limit: Infinity, only: null, topic: null };
+  const args = { dryRun: false, force: false, limit: Infinity, only: null, topic: null, filesFrom: null };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--dry-run') args.dryRun = true;
@@ -47,9 +48,22 @@ function parseArgs(argv) {
     else if (a === '--only') args.only = argv[++i];
     else if (a === '--topic') args.topic = argv[++i];
     else if (a === '--limit') args.limit = Number(argv[++i]);
+    else if (a === '--files-from') args.filesFrom = argv[++i];
     else if (a === '--help' || a === '-h') args.help = true;
   }
   return args;
+}
+
+/** Read a newline-delimited list of exact article relPaths (e.g. from a
+ *  CI diff) to scope a run to. Blank lines and '#'-comments are ignored. */
+async function loadFileList(filePath) {
+  const text = await fs.readFile(filePath, 'utf8');
+  return new Set(
+    text
+      .split(/\r?\n/)
+      .map((l) => l.trim())
+      .filter((l) => l && !l.startsWith('#'))
+  );
 }
 
 function printHelp() {
@@ -57,12 +71,15 @@ function printHelp() {
 Generate hero + thumbnail images for articles via Gemini (gemini-3-pro-image).
 
 Options:
-  --dry-run          Build prompts and print what would happen; no API calls, no writes.
-  --only <substring>  Only process articles whose file path contains this string.
-  --topic <name>      Only process one topic folder (divorce, retirement, inheritance,
-                       moneymindset, relationships, adultchildren, ageingparents).
-  --limit <n>          Process at most n articles.
-  --force              Regenerate even if hero/thumb images already exist for an article.
+  --dry-run             Build prompts and print what would happen; no API calls, no writes.
+  --only <substring>    Only process articles whose file path contains this string.
+  --topic <name>        Only process one topic folder (divorce, retirement, inheritance,
+                        moneymindset, relationships, adultchildren, ageingparents).
+  --limit <n>           Process at most n articles.
+  --files-from <path>   Only process articles whose relPath (e.g. retirement/Article-X.dc.html)
+                        appears in this newline-delimited file. Used by the CI workflow to scope
+                        a run to just-added articles.
+  --force               Regenerate even if hero/thumb images already exist for an article.
   --help               Show this message.
 
 Examples:
@@ -229,6 +246,10 @@ Set it before running this script for real:
   let articles = await discoverArticles();
   if (args.topic) articles = articles.filter((a) => a.topic === args.topic);
   if (args.only) articles = articles.filter((a) => a.relPath.includes(args.only));
+  if (args.filesFrom) {
+    const wanted = await loadFileList(args.filesFrom);
+    articles = articles.filter((a) => wanted.has(a.relPath));
+  }
   articles = articles.slice(0, args.limit);
 
   if (articles.length === 0) {

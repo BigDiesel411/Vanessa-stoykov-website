@@ -84,6 +84,7 @@ Useful flags:
 | `--topic <name>` | Only one topic folder                                     |
 | `--limit <n>`    | Stop after `n` articles                                   |
 | `--force`        | Regenerate even if images already exist                   |
+| `--files-from <path>` | Only articles whose relPath is listed in this file (used by CI) |
 
 ## Approving flagged images
 
@@ -103,6 +104,50 @@ and the matching Topic-page thumbnail/featured slot — exactly what
 `generate-images.mjs` would have done automatically had the article not
 been flagged. It only touches entries the generator marked `flagged:
 true` in `generation-log.json`, so it's safe to re-run.
+
+## Automatic generation via GitHub Actions
+
+You don't have to run this by hand anymore. `.github/workflows/generate-article-images.yml`
+watches for new article files and runs the pipeline automatically:
+
+1. **Trigger**: any push to `main` that adds a new `Article-*.dc.html` file under one
+   of the 7 topic folders (a direct push, or a merged PR). It diffs the push to find
+   files that were newly *added* — editing an existing article doesn't re-trigger it.
+2. **Scope**: only the newly added article(s) are processed (`--files-from`), not the
+   whole site — so a single new article doesn't re-touch everything.
+3. **Flagging**: identical to a manual run — divorce/inheritance/death/grief articles
+   are generated but left in `needs-review/`, unlinked from any page.
+4. **Output**: results are pushed to a new branch (`auto/article-images-<run-number>`)
+   and opened as a pull request against `main` — never merged automatically. The PR
+   body lists which articles were auto-linked vs. flagged for review.
+5. **Notification**: the PR requests `BigDiesel411` as reviewer and assignee, which
+   sends a GitHub notification (web + email, depending on your GitHub notification
+   settings) the moment it opens.
+
+A manual **"Run workflow"** button is also available on the Actions tab (workflow
+name **Generate article images**) as a catch-all — it scans every article, but
+already-generated ones are skipped automatically, so it's safe to click any time.
+
+### Setting up the `GEMINI_API_KEY` secret
+
+The workflow needs your Gemini API key as a **GitHub Actions secret** — it's kept out
+of the repo entirely and only ever injected as an environment variable during the run.
+
+1. Go to your repository on GitHub.
+2. Click **Settings** (top tab bar of the repo, not your account settings).
+3. In the left sidebar: **Secrets and variables** → **Actions**.
+4. Under the **Secrets** tab, click **New repository secret**.
+5. **Name**: `GEMINI_API_KEY` (must match exactly — the workflow reads this name).
+6. **Secret**: paste your Gemini API key (the same one from `.env` — get a new one at
+   https://aistudio.google.com/apikey if you don't have it handy).
+7. Click **Add secret**.
+
+That's it — no code change needed, and the key never appears in any file in the repo.
+
+One more repo setting worth checking once: **Settings → Actions → General →
+Workflow permissions**, make sure **"Allow GitHub Actions to create and approve pull
+requests"** is checked. Without it, the workflow can generate images but will fail at
+the final "open a pull request" step.
 
 ## How flagging works
 
