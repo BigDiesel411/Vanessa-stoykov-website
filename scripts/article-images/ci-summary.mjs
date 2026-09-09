@@ -8,6 +8,8 @@
 
 import fs from 'node:fs/promises';
 import { MANIFEST_PATH } from './lib/config.mjs';
+import { isArticleFile } from './lib/articles.mjs';
+import path from 'node:path';
 
 async function loadFileList(filePath) {
   const text = await fs.readFile(filePath, 'utf8');
@@ -39,8 +41,17 @@ async function main() {
   const published = [];
   const flagged = [];
   const missing = [];
+  const ignored = [];
 
   for (const relPath of list) {
+    // The workflow's diff is broad on purpose (any .html file added under
+    // a topic folder) — a non-article page (Topic-*.html, etc.) can show
+    // up here without ever having been processed. Report it separately
+    // rather than as a failure.
+    if (!isArticleFile(path.basename(relPath))) {
+      ignored.push(relPath);
+      continue;
+    }
     const entry = manifest[relPath];
     if (!entry) {
       missing.push(relPath);
@@ -79,7 +90,15 @@ async function main() {
     );
   }
 
-  if (!published.length && !flagged.length && !missing.length) {
+  if (ignored.length) {
+    lines.push(
+      '**Not an article** (skipped — matched a known site-structure filename pattern):',
+      ...ignored.map((f) => `- \`${f}\``),
+      ''
+    );
+  }
+
+  if (!published.length && !flagged.length && !missing.length && !ignored.length) {
     lines.push('No new article files were detected in this push.');
   }
 

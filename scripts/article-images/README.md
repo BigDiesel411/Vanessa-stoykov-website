@@ -110,9 +110,9 @@ true` in `generation-log.json`, so it's safe to re-run.
 You don't have to run this by hand anymore. `.github/workflows/generate-article-images.yml`
 watches for new article files and runs the pipeline automatically:
 
-1. **Trigger**: any push to `main` that adds a new `Article-*.dc.html` file under one
-   of the 7 topic folders (a direct push, or a merged PR). It diffs the push to find
-   files that were newly *added* — editing an existing article doesn't re-trigger it.
+1. **Trigger**: any push to `main` that adds a new `.html` file under one of the 7
+   topic folders (a direct push, or a merged PR). It diffs the push to find files
+   that were newly *added* — editing an existing article doesn't re-trigger it.
 2. **Scope**: only the newly added article(s) are processed (`--files-from`), not the
    whole site — so a single new article doesn't re-touch everything.
 3. **Flagging**: identical to a manual run — divorce/inheritance/death/grief articles
@@ -127,6 +127,37 @@ watches for new article files and runs the pipeline automatically:
 A manual **"Run workflow"** button is also available on the Actions tab (workflow
 name **Generate article images**) as a catch-all — it scans every article, but
 already-generated ones are skipped automatically, so it's safe to click any time.
+
+### What counts as an "article" — naming convention doesn't matter
+
+Detection isn't tied to the original `Article-<Topic>-<Name>.dc.html` naming style.
+**Any `.html` file added directly inside a topic folder is treated as an article**,
+whatever you name it — `stop-saying-im-bad-with-money.html` works exactly like
+`Article-Retirement-SavingsToLife.dc.html` did. The only files excluded are known
+site-structure pages: currently `Topic-*.html` (the topic listing pages) — see
+`isArticleFile()` in `lib/articles.mjs` if you ever need to exclude another pattern;
+it's the single place both the CI workflow and a manual run consult, so you only
+ever add an exclusion once.
+
+Since title and body text aren't always built with the Claude Design canvas
+template, `parseArticle()` (`lib/articles.mjs`) falls back through a few
+strategies for both:
+
+- **Title**: the site's own `<h2>` convention → generic `<h1>` → `<title>` tag →
+  any `<h2>` → and only as a last resort, the filename itself turned into a title
+  (`stop-saying-im-bad-with-money.html` → "Stop Saying Im Bad With Money").
+- **Body text** (used for the sensitive-topic keyword scan): the site's own
+  `<section>` marker → generic `<main>`/`<article>` down to `<footer>` → the
+  whole page as a last resort.
+
+**One thing that doesn't have a fallback**: images only get wired into the page
+if it contains an `<image-slot id="...-hero" placeholder="...">` tag (see
+`image-slot.js`) — that's the site's actual image-fill mechanism, independent of
+the article's filename or HTML structure. A hero/thumbnail image still gets
+generated for an article with no `<image-slot>` tags (saved under
+`assets/generated/<topic>/`), but nothing gets patched into the page since there's
+no slot to point at. If your new-style articles use a different image mechanism
+entirely, tell me and I'll extend the wiring logic for it.
 
 ### Setting up the `GEMINI_API_KEY` secret
 
