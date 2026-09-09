@@ -8,19 +8,27 @@ name: Generate article images
 # are generated but left out of needs-review/, unlinked from any page,
 # same as a manual run.
 #
+# Any .html file added under a topic folder counts as an article,
+# whatever naming convention it uses — the old "Article-*.dc.html"
+# pattern is just one style among others now. Known non-article pages
+# (Topic-*.html listing pages, etc.) are excluded by
+# scripts/article-images/lib/articles.mjs's isArticleFile(), which is
+# the single source of truth for what counts as an article — add new
+# exclusions there, not here.
+#
 # See scripts/article-images/README.md for the full pipeline docs.
 
 on:
   push:
     branches: [main]
     paths:
-      - 'divorce/Article-*.dc.html'
-      - 'retirement/Article-*.dc.html'
-      - 'inheritance/Article-*.dc.html'
-      - 'moneymindset/Article-*.dc.html'
-      - 'relationships/Article-*.dc.html'
-      - 'adultchildren/Article-*.dc.html'
-      - 'ageingparents/Article-*.dc.html'
+      - 'divorce/*.html'
+      - 'retirement/*.html'
+      - 'inheritance/*.html'
+      - 'moneymindset/*.html'
+      - 'relationships/*.html'
+      - 'adultchildren/*.html'
+      - 'ageingparents/*.html'
   # Manual safety net: re-run against every article. Already-generated
   # articles are skipped automatically (see --force in the README) so
   # this is safe to run any time without duplicating work.
@@ -53,15 +61,20 @@ jobs:
             exit 0
           fi
 
+          # Broad on purpose: every .html file added under a topic folder,
+          # whatever it's named. Non-article pages (Topic-*.html, etc.)
+          # are filtered out downstream by generate-images.mjs itself
+          # (via isArticleFile()), which is the single place that
+          # distinction is maintained.
           git diff --name-status --diff-filter=A \
             "${{ github.event.before }}" "${{ github.event.after }}" \
-            -- 'divorce/Article-*.dc.html' 'retirement/Article-*.dc.html' \
-               'inheritance/Article-*.dc.html' 'moneymindset/Article-*.dc.html' \
-               'relationships/Article-*.dc.html' 'adultchildren/Article-*.dc.html' \
-               'ageingparents/Article-*.dc.html' \
+            -- 'divorce/*.html' 'retirement/*.html' \
+               'inheritance/*.html' 'moneymindset/*.html' \
+               'relationships/*.html' 'adultchildren/*.html' \
+               'ageingparents/*.html' \
             | awk '{print $2}' > added-articles.txt
 
-          echo "Newly added article files:"
+          echo "Newly added .html files under topic folders (not yet filtered for non-article pages):"
           cat added-articles.txt || true
           echo "scoped=true" >> "$GITHUB_OUTPUT"
 
