@@ -235,3 +235,27 @@ needs-review/<topic>/<article-slug>-hero.<ext>    (flagged articles)
 needs-review/<topic>/<article-slug>-thumb.<ext>
 scripts/article-images/generation-log.json         (run history / idempotency)
 ```
+
+## Site-wide fallback images
+
+Two images the site references everywhere but that don't come from the
+per-article pipeline:
+
+- `assets/og-default.jpg` — the default social share card (`og:image` /
+  `twitter:image`) for articles with no image of their own, 1200x630.
+- `assets/article-placeholder.jpg` — the generic placeholder shown while a
+  real hero hasn't loaded or been generated, same footprint as a normal
+  generated hero image.
+
+Regenerate either with:
+
+```
+node scripts/article-images/generate-brand-assets.mjs
+node scripts/article-images/generate-brand-assets.mjs --dry-run   # preview prompts only
+```
+
+This is the one script in this directory that needs an extra dependency —
+`sharp`, to crop `og-default.jpg` to an exact 1200x630 (Gemini's
+`imageConfig` only offers fixed aspect ratios, not arbitrary pixel sizes).
+Install it first: `npm install sharp --no-save` (it's gitignored, not part
+of the main pipeline's dependency-free design).
