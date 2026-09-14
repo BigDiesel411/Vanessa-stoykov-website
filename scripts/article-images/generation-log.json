@@ -492,7 +492,7 @@
     "topic": "ageingparents",
     "flagged": false,
     "flagReason": null,
-    "heroPath": null,
+    "heroPath": "assets/generated/ageingparents/aged-care-planning-three-costly-mistakes-hero.jpg",
     "thumbPath": "assets/generated/ageingparents/aged-care-planning-three-costly-mistakes-thumb.jpg",
     "patchedFiles": [
       "ageingparents/aged-care-planning-three-costly-mistakes.html"
@@ -500,7 +500,8 @@
     "model": "gemini-3-pro-image",
     "generatedAt": "2026-09-14T07:07:12.191Z",
     "approvedAt": "2026-09-14T07:30:28.176Z",
-    "pendingReason": "Hero filename collided with Article-AgeingParents-AgedCare.dc.html; renamed to a unique target (aged-care-planning-three-costly-mistakes-hero.jpg) but regeneration is blocked on depleted Gemini API credits. Do NOT regenerate via a plain generate-images.mjs run — this article still matches the \"divorce\" keyword and would get re-flagged to needs-review/, undoing the approval already given. Regenerate just the hero directly (bypassing the sensitivity gate) once credits are restored."
+    "regeneratedAt": "2026-09-14T07:40:23.430Z",
+    "regeneratedReason": "Original hero filename collided with Article-AgeingParents-AgedCare.dc.html; regenerated under a unique name."
   },
   "ageingparents/inheritance-is-not-a-financial-plan.html": {
     "title": "Inheritance Isn't a Financial Plan",
