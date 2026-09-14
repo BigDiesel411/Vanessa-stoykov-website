@@ -32,7 +32,7 @@ import { buildThumbMap } from './lib/topicPages.mjs';
 import { assessSensitivity } from './lib/review.mjs';
 import { buildHeroPrompt, buildThumbPrompt } from './lib/prompt.mjs';
 import { generateImage, extensionForMime } from './lib/gemini.mjs';
-import { setSlotSrc } from './lib/htmlPatch.mjs';
+import { setSlotSrc, setFigureImageSrc } from './lib/htmlPatch.mjs';
 import { relHref } from './lib/paths.mjs';
 
 function sleep(ms) {
@@ -106,7 +106,7 @@ async function processArticle({ article, thumbMap, manifest, args, apiKey, model
   const parsed = await parseArticle(article.absPath);
   const sensitivity = assessSensitivity(article.topic, `${parsed.title} ${parsed.bodyText}`);
   const baseDir = sensitivity.flagged ? REVIEW_DIR : OUTPUT_DIR;
-  const slug = article.file.replace(/\.dc\.html$/, '');
+  const slug = article.file.replace(/\.dc\.html$/, '').replace(/\.html$/, '');
   const outDir = path.join(baseDir, article.topic);
 
   const manifestKey = article.relPath;
@@ -127,7 +127,9 @@ async function processArticle({ article, thumbMap, manifest, args, apiKey, model
   console.log(`\n${'─'.repeat(70)}`);
   console.log(`${article.relPath}`);
   console.log(`  Title: ${parsed.title}`);
-  console.log(`  Hero slot: ${parsed.hero ? parsed.hero.id : '(none found)'}`);
+  console.log(
+    `  Hero image: ${parsed.hero ? `${parsed.heroMechanism} (${parsed.hero.id || parsed.hero.heroTarget})` : '(none found — nothing to wire into)'}`
+  );
   console.log(`  Review status: ${sensitivity.flagged ? `FLAGGED — ${sensitivity.reason}` : 'auto-publish'}`);
 
   if (args.dryRun) {
@@ -151,7 +153,15 @@ async function processArticle({ article, thumbMap, manifest, args, apiKey, model
     aspectRatio: HERO_IMAGE_CONFIG.aspectRatio,
     imageSize: HERO_IMAGE_CONFIG.imageSize,
   });
-  const heroFile = path.join(outDir, `${slug}-hero.${extensionForMime(heroImg.mimeType)}`);
+  // The newer <figure data-image-target="X.jpg"> mechanism names its own
+  // exact output filename — honor it verbatim (including its own
+  // extension) so the page's declared contract is satisfied and re-runs
+  // stay idempotent against the name the article itself expects.
+  const heroName =
+    parsed.heroMechanism === 'figure' && parsed.hero.heroTarget
+      ? parsed.hero.heroTarget
+      : `${slug}-hero.${extensionForMime(heroImg.mimeType)}`;
+  const heroFile = path.join(outDir, heroName);
   await fs.writeFile(heroFile, heroImg.data);
   console.log(`  Wrote ${path.relative(REPO_ROOT, heroFile)}`);
 
@@ -165,21 +175,31 @@ async function processArticle({ article, thumbMap, manifest, args, apiKey, model
     aspectRatio: THUMB_IMAGE_CONFIG.aspectRatio,
     imageSize: THUMB_IMAGE_CONFIG.imageSize,
   });
-  const thumbFile = path.join(outDir, `${slug}-thumb.${extensionForMime(thumbImg.mimeType)}`);
+  const thumbName =
+    parsed.heroMechanism === 'figure' && parsed.hero.thumbTarget
+      ? parsed.hero.thumbTarget
+      : `${slug}-thumb.${extensionForMime(thumbImg.mimeType)}`;
+  const thumbFile = path.join(outDir, thumbName);
   await fs.writeFile(thumbFile, thumbImg.data);
   console.log(`  Wrote ${path.relative(REPO_ROOT, thumbFile)}`);
 
   const patchedFiles = new Set();
 
   if (!sensitivity.flagged) {
-    // Wire the hero image into the article's own hero slot.
+    // Wire the hero image into the article's own hero slot — via
+    // whichever mechanism this article actually uses.
     if (parsed.hero) {
       const html = await fs.readFile(article.absPath, 'utf8');
-      const patched = setSlotSrc(html, parsed.hero.id, relHref(article.absPath, heroFile));
+      const patched =
+        parsed.heroMechanism === 'image-slot'
+          ? setSlotSrc(html, parsed.hero.id, relHref(article.absPath, heroFile))
+          : setFigureImageSrc(html, parsed.hero.heroTarget, relHref(article.absPath, heroFile));
       if (patched) {
         await fs.writeFile(article.absPath, patched);
         patchedFiles.add(article.relPath);
-        console.log(`  Linked hero into ${article.relPath} (slot ${parsed.hero.id})`);
+        console.log(`  Linked hero into ${article.relPath} (${parsed.heroMechanism})`);
+      } else {
+        console.log(`  WARNING: found a ${parsed.heroMechanism} hero reference but couldn't patch it — check the markup.`);
       }
     }
 

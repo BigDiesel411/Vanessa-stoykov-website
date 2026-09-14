@@ -395,5 +395,18 @@
     "model": "gemini-3-pro-image",
     "generatedAt": "2026-09-02T06:12:07.042Z",
     "approvedAt": "2026-09-02T08:43:33.669Z"
+  },
+  "careerincome/career-you-built-isnt-what-you-want.html": {
+    "title": "What If the Career You Built Isn't the Career You Want Anymore?",
+    "topic": "careerincome",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/careerincome/career-you-built-isnt-what-you-want-hero.jpg",
+    "thumbPath": "assets/generated/careerincome/career-you-built-isnt-what-you-want-thumb.jpg",
+    "patchedFiles": [
+      "careerincome/career-you-built-isnt-what-you-want.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T06:45:44.353Z"
   }
 }

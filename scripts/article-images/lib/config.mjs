@@ -12,6 +12,8 @@ export const TOPICS = [
   'relationships',
   'adultchildren',
   'ageingparents',
+  'careerincome',
+  'investing',
 ];
 
 export const TOPIC_LABELS = {
@@ -22,6 +24,8 @@ export const TOPIC_LABELS = {
   relationships: 'Relationships',
   adultchildren: 'Adult Children',
   ageingparents: 'Ageing Parents',
+  careerincome: 'Career & Income',
+  investing: 'Investing',
 };
 
 export const BRAND = {
