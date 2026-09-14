@@ -490,46 +490,60 @@
   "ageingparents/aged-care-planning-three-costly-mistakes.html": {
     "title": "Aged Care Planning: Avoid These 3 Costly Mistakes in Your Family",
     "topic": "ageingparents",
-    "flagged": true,
-    "flagReason": "content mentions \"divorce\"",
-    "heroPath": "needs-review/ageingparents/Article-AgeingParents-AgedCare-hero.jpg",
-    "thumbPath": "needs-review/ageingparents/aged-care-planning-three-costly-mistakes-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/ageingparents/aged-care-planning-three-costly-mistakes-hero.jpg",
+    "thumbPath": "assets/generated/ageingparents/aged-care-planning-three-costly-mistakes-thumb.jpg",
+    "patchedFiles": [
+      "ageingparents/aged-care-planning-three-costly-mistakes.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-14T07:07:12.191Z"
+    "generatedAt": "2026-09-14T07:07:12.191Z",
+    "approvedAt": "2026-09-14T07:30:28.176Z",
+    "regeneratedAt": "2026-09-14T07:40:23.430Z",
+    "regeneratedReason": "Original hero filename collided with Article-AgeingParents-AgedCare.dc.html; regenerated under a unique name."
   },
   "ageingparents/inheritance-is-not-a-financial-plan.html": {
     "title": "Inheritance Isn't a Financial Plan",
     "topic": "ageingparents",
-    "flagged": true,
-    "flagReason": "content mentions \"widow(er)\"",
-    "heroPath": "needs-review/ageingparents/inheritance-is-not-a-financial-plan-hero.jpg",
-    "thumbPath": "needs-review/ageingparents/inheritance-is-not-a-financial-plan-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/ageingparents/inheritance-is-not-a-financial-plan-hero.jpg",
+    "thumbPath": "assets/generated/ageingparents/inheritance-is-not-a-financial-plan-thumb.jpg",
+    "patchedFiles": [
+      "ageingparents/inheritance-is-not-a-financial-plan.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-14T07:07:57.250Z"
+    "generatedAt": "2026-09-14T07:07:57.250Z",
+    "approvedAt": "2026-09-14T07:30:28.200Z"
   },
   "ageingparents/talk-to-parents-before-a-crisis.html": {
     "title": "The Conversation You Need to Have With Your Parents Before There's a Crisis",
     "topic": "ageingparents",
-    "flagged": true,
-    "flagReason": "content mentions \"funeral\"",
-    "heroPath": "needs-review/ageingparents/talk-to-parents-before-a-crisis-hero.jpg",
-    "thumbPath": "needs-review/ageingparents/talk-to-parents-before-a-crisis-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/ageingparents/talk-to-parents-before-a-crisis-hero.jpg",
+    "thumbPath": "assets/generated/ageingparents/talk-to-parents-before-a-crisis-thumb.jpg",
+    "patchedFiles": [
+      "ageingparents/talk-to-parents-before-a-crisis.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-14T07:08:40.753Z"
+    "generatedAt": "2026-09-14T07:08:40.753Z",
+    "approvedAt": "2026-09-14T07:30:28.206Z"
   },
   "ageingparents/what-do-your-parents-own-and-owe.html": {
     "title": "Do You Actually Know What Your Parents Own — and Owe?",
     "topic": "ageingparents",
-    "flagged": true,
-    "flagReason": "content mentions \"bereavement\"",
-    "heroPath": "needs-review/ageingparents/what-do-your-parents-own-and-owe-hero.jpg",
-    "thumbPath": "needs-review/ageingparents/what-do-your-parents-own-and-owe-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/ageingparents/what-do-your-parents-own-and-owe-hero.jpg",
+    "thumbPath": "assets/generated/ageingparents/what-do-your-parents-own-and-owe-thumb.jpg",
+    "patchedFiles": [
+      "ageingparents/what-do-your-parents-own-and-owe.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-14T07:09:26.151Z"
+    "generatedAt": "2026-09-14T07:09:26.151Z",
+    "approvedAt": "2026-09-14T07:30:28.210Z"
   },
   "ageingparents/when-you-become-parent-to-your-parents.html": {
     "title": "When You Become the Parent to Your Parents",
@@ -547,13 +561,16 @@
   "ageingparents/who-pays-for-ageing-parents.html": {
     "title": "Who Pays for Mum and Dad? When Siblings Don't Agree",
     "topic": "ageingparents",
-    "flagged": true,
-    "flagReason": "content mentions \"grief\"",
-    "heroPath": "needs-review/ageingparents/who-pays-for-ageing-parents-hero.jpg",
-    "thumbPath": "needs-review/ageingparents/who-pays-for-ageing-parents-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/ageingparents/who-pays-for-ageing-parents-hero.jpg",
+    "thumbPath": "assets/generated/ageingparents/who-pays-for-ageing-parents-thumb.jpg",
+    "patchedFiles": [
+      "ageingparents/who-pays-for-ageing-parents.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-14T07:10:49.705Z"
+    "generatedAt": "2026-09-14T07:10:49.705Z",
+    "approvedAt": "2026-09-14T07:30:28.217Z"
   },
   "careerincome/financial-cost-of-staying-in-a-job-you-hate.html": {
     "title": "The Hidden Financial Cost of Staying in a Job You Hate",
@@ -675,13 +692,16 @@
   "investing/investment-conversation-every-couple-needs.html": {
     "title": "The Investment Conversation Every Couple Should Have",
     "topic": "investing",
-    "flagged": true,
-    "flagReason": "content mentions \"death\"",
-    "heroPath": "needs-review/investing/Article-Investing-investment-conversation-every-couple-needs-hero.jpg",
-    "thumbPath": "needs-review/investing/Article-Investing-investment-conversation-every-couple-needs-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-investment-conversation-every-couple-needs-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-investment-conversation-every-couple-needs-thumb.jpg",
+    "patchedFiles": [
+      "investing/investment-conversation-every-couple-needs.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-14T07:18:05.269Z"
+    "generatedAt": "2026-09-14T07:18:05.269Z",
+    "approvedAt": "2026-09-14T07:30:28.226Z"
   },
   "investing/pay-off-debt-or-start-investing.html": {
     "title": "Should You Pay Off Debt or Start Investing?",
@@ -738,12 +758,15 @@
   "investing/women-investing-in-midlife.html": {
     "title": "What Women Need to Know About Investing in Midlife",
     "topic": "investing",
-    "flagged": true,
-    "flagReason": "content mentions \"divorce\"",
-    "heroPath": "needs-review/investing/Article-Investing-women-investing-in-midlife-hero.jpg",
-    "thumbPath": "needs-review/investing/Article-Investing-women-investing-in-midlife-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-women-investing-in-midlife-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-women-investing-in-midlife-thumb.jpg",
+    "patchedFiles": [
+      "investing/women-investing-in-midlife.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-14T07:21:49.584Z"
+    "generatedAt": "2026-09-14T07:21:49.584Z",
+    "approvedAt": "2026-09-14T07:30:28.230Z"
   }
 }
