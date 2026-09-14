@@ -408,5 +408,342 @@
     ],
     "model": "gemini-3-pro-image",
     "generatedAt": "2026-09-14T06:45:44.353Z"
+  },
+  "moneymindset/financial-decisions-made-from-fear.html": {
+    "title": "The Financial Decisions We Make When We're Afraid",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/financial-decisions-made-from-fear-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/financial-decisions-made-from-fear-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/financial-decisions-made-from-fear.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:02:43.677Z"
+  },
+  "moneymindset/stop-saying-im-bad-with-money.html": {
+    "title": "Stop Saying 'I'm Bad With Money'",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/stop-saying-im-bad-with-money-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/stop-saying-im-bad-with-money-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/stop-saying-im-bad-with-money.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:03:24.390Z"
+  },
+  "moneymindset/three-ways-to-improve-your-money-mindset.html": {
+    "title": "Three Ways to Improve Your Money Mindset",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/Article-MoneyMindset-ThreeWays-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/three-ways-to-improve-your-money-mindset-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/three-ways-to-improve-your-money-mindset.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:04:08.212Z"
+  },
+  "moneymindset/what-does-enough-look-like.html": {
+    "title": "What Does 'Enough' Actually Look Like for You?",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/what-does-enough-look-like-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/what-does-enough-look-like-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/what-does-enough-look-like.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:04:51.568Z"
+  },
+  "moneymindset/where-your-money-habits-came-from.html": {
+    "title": "Your Money Habits Didn't Start With You",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/where-your-money-habits-came-from-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/where-your-money-habits-came-from-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/where-your-money-habits-came-from.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:05:38.260Z"
+  },
+  "moneymindset/why-more-income-doesnt-feel-secure.html": {
+    "title": "Why Earning More Doesn't Always Make You Feel Financially Secure",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/why-more-income-doesnt-feel-secure-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/why-more-income-doesnt-feel-secure-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/why-more-income-doesnt-feel-secure.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:06:21.881Z"
+  },
+  "ageingparents/aged-care-planning-three-costly-mistakes.html": {
+    "title": "Aged Care Planning: Avoid These 3 Costly Mistakes in Your Family",
+    "topic": "ageingparents",
+    "flagged": true,
+    "flagReason": "content mentions \"divorce\"",
+    "heroPath": "needs-review/ageingparents/Article-AgeingParents-AgedCare-hero.jpg",
+    "thumbPath": "needs-review/ageingparents/aged-care-planning-three-costly-mistakes-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:07:12.191Z"
+  },
+  "ageingparents/inheritance-is-not-a-financial-plan.html": {
+    "title": "Inheritance Isn't a Financial Plan",
+    "topic": "ageingparents",
+    "flagged": true,
+    "flagReason": "content mentions \"widow(er)\"",
+    "heroPath": "needs-review/ageingparents/inheritance-is-not-a-financial-plan-hero.jpg",
+    "thumbPath": "needs-review/ageingparents/inheritance-is-not-a-financial-plan-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:07:57.250Z"
+  },
+  "ageingparents/talk-to-parents-before-a-crisis.html": {
+    "title": "The Conversation You Need to Have With Your Parents Before There's a Crisis",
+    "topic": "ageingparents",
+    "flagged": true,
+    "flagReason": "content mentions \"funeral\"",
+    "heroPath": "needs-review/ageingparents/talk-to-parents-before-a-crisis-hero.jpg",
+    "thumbPath": "needs-review/ageingparents/talk-to-parents-before-a-crisis-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:08:40.753Z"
+  },
+  "ageingparents/what-do-your-parents-own-and-owe.html": {
+    "title": "Do You Actually Know What Your Parents Own — and Owe?",
+    "topic": "ageingparents",
+    "flagged": true,
+    "flagReason": "content mentions \"bereavement\"",
+    "heroPath": "needs-review/ageingparents/what-do-your-parents-own-and-owe-hero.jpg",
+    "thumbPath": "needs-review/ageingparents/what-do-your-parents-own-and-owe-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:09:26.151Z"
+  },
+  "ageingparents/when-you-become-parent-to-your-parents.html": {
+    "title": "When You Become the Parent to Your Parents",
+    "topic": "ageingparents",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/ageingparents/when-you-become-parent-to-your-parents-hero.jpg",
+    "thumbPath": "assets/generated/ageingparents/when-you-become-parent-to-your-parents-thumb.jpg",
+    "patchedFiles": [
+      "ageingparents/when-you-become-parent-to-your-parents.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:10:08.678Z"
+  },
+  "ageingparents/who-pays-for-ageing-parents.html": {
+    "title": "Who Pays for Mum and Dad? When Siblings Don't Agree",
+    "topic": "ageingparents",
+    "flagged": true,
+    "flagReason": "content mentions \"grief\"",
+    "heroPath": "needs-review/ageingparents/who-pays-for-ageing-parents-hero.jpg",
+    "thumbPath": "needs-review/ageingparents/who-pays-for-ageing-parents-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:10:49.705Z"
+  },
+  "careerincome/financial-cost-of-staying-in-a-job-you-hate.html": {
+    "title": "The Hidden Financial Cost of Staying in a Job You Hate",
+    "topic": "careerincome",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/careerincome/financial-cost-of-staying-in-a-job-you-hate-hero.jpg",
+    "thumbPath": "assets/generated/careerincome/financial-cost-of-staying-in-a-job-you-hate-thumb.jpg",
+    "patchedFiles": [
+      "careerincome/financial-cost-of-staying-in-a-job-you-hate.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:11:33.991Z"
+  },
+  "careerincome/income-is-your-biggest-financial-asset.html": {
+    "title": "Your Income Is Your Biggest Financial Asset. Are You Investing in It?",
+    "topic": "careerincome",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/careerincome/income-is-your-biggest-financial-asset-hero.jpg",
+    "thumbPath": "assets/generated/careerincome/income-is-your-biggest-financial-asset-thumb.jpg",
+    "patchedFiles": [
+      "careerincome/income-is-your-biggest-financial-asset.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:12:15.942Z"
+  },
+  "careerincome/not-too-old-to-earn-more.html": {
+    "title": "You're Not Too Old to Earn More Money",
+    "topic": "careerincome",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/careerincome/not-too-old-to-earn-more-hero.jpg",
+    "thumbPath": "assets/generated/careerincome/not-too-old-to-earn-more-thumb.jpg",
+    "patchedFiles": [
+      "careerincome/not-too-old-to-earn-more.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:12:57.593Z"
+  },
+  "careerincome/pay-rise-conversation-women-delay.html": {
+    "title": "The Pay Rise Conversation Most Women Put Off for Too Long",
+    "topic": "careerincome",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/careerincome/pay-rise-conversation-women-delay-hero.jpg",
+    "thumbPath": "assets/generated/careerincome/pay-rise-conversation-women-delay-thumb.jpg",
+    "patchedFiles": [
+      "careerincome/pay-rise-conversation-women-delay.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:13:43.993Z"
+  },
+  "investing/how-much-investment-risk-can-you-handle.html": {
+    "title": "How Much Risk Can You Really Handle?",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-how-much-investment-risk-can-you-handle-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-how-much-investment-risk-can-you-handle-thumb.jpg",
+    "patchedFiles": [
+      "investing/how-much-investment-risk-can-you-handle.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:14:26.422Z"
+  },
+  "investing/how-to-start-investing.html": {
+    "title": "How to Start Investing When You Don't Know Where to Begin",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-how-to-start-investing-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-how-to-start-investing-thumb.jpg",
+    "patchedFiles": [
+      "investing/how-to-start-investing.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:15:11.796Z"
+  },
+  "investing/investing-isnt-just-for-wealthy-people.html": {
+    "title": "Investing Isn't Just for Wealthy People",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-investing-isnt-just-for-wealthy-people-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-investing-isnt-just-for-wealthy-people-thumb.jpg",
+    "patchedFiles": [
+      "investing/investing-isnt-just-for-wealthy-people.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:15:54.898Z"
+  },
+  "investing/investing-mistakes-when-markets-fall.html": {
+    "title": "The Investing Mistakes We Make When Markets Fall",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-investing-mistakes-when-markets-fall-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-investing-mistakes-when-markets-fall-thumb.jpg",
+    "patchedFiles": [
+      "investing/investing-mistakes-when-markets-fall.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:16:36.016Z"
+  },
+  "investing/investing-or-following-the-crowd.html": {
+    "title": "Are You Investing—or Just Following the Crowd?",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-investing-or-following-the-crowd-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-investing-or-following-the-crowd-thumb.jpg",
+    "patchedFiles": [
+      "investing/investing-or-following-the-crowd.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:17:20.095Z"
+  },
+  "investing/investment-conversation-every-couple-needs.html": {
+    "title": "The Investment Conversation Every Couple Should Have",
+    "topic": "investing",
+    "flagged": true,
+    "flagReason": "content mentions \"death\"",
+    "heroPath": "needs-review/investing/Article-Investing-investment-conversation-every-couple-needs-hero.jpg",
+    "thumbPath": "needs-review/investing/Article-Investing-investment-conversation-every-couple-needs-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:18:05.269Z"
+  },
+  "investing/pay-off-debt-or-start-investing.html": {
+    "title": "Should You Pay Off Debt or Start Investing?",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-pay-off-debt-or-start-investing-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-pay-off-debt-or-start-investing-thumb.jpg",
+    "patchedFiles": [
+      "investing/pay-off-debt-or-start-investing.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:18:49.968Z"
+  },
+  "investing/property-or-shares-which-is-right.html": {
+    "title": "Property or Shares: Which Investment Is Right for Your Life?",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-property-or-shares-which-is-right-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-property-or-shares-which-is-right-thumb.jpg",
+    "patchedFiles": [
+      "investing/property-or-shares-which-is-right.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:19:34.154Z"
+  },
+  "investing/time-matters-more-than-perfect-investment.html": {
+    "title": "Why Time Matters More Than Finding the Perfect Investment",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-time-matters-more-than-perfect-investment-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-time-matters-more-than-perfect-investment-thumb.jpg",
+    "patchedFiles": [
+      "investing/time-matters-more-than-perfect-investment.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:20:19.047Z"
+  },
+  "investing/what-is-an-etf.html": {
+    "title": "What Is an ETF? A Simple Explanation for New Investors",
+    "topic": "investing",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/investing/Article-Investing-what-is-an-etf-hero.jpg",
+    "thumbPath": "assets/generated/investing/Article-Investing-what-is-an-etf-thumb.jpg",
+    "patchedFiles": [
+      "investing/what-is-an-etf.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:21:06.705Z"
+  },
+  "investing/women-investing-in-midlife.html": {
+    "title": "What Women Need to Know About Investing in Midlife",
+    "topic": "investing",
+    "flagged": true,
+    "flagReason": "content mentions \"divorce\"",
+    "heroPath": "needs-review/investing/Article-Investing-women-investing-in-midlife-hero.jpg",
+    "thumbPath": "needs-review/investing/Article-Investing-women-investing-in-midlife-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-14T07:21:49.584Z"
   }
 }
