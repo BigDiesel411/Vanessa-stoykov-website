@@ -18,7 +18,7 @@ import path from 'node:path';
 import { REPO_ROOT, OUTPUT_DIR, MANIFEST_PATH } from './lib/config.mjs';
 import { parseArticle } from './lib/articles.mjs';
 import { buildThumbMap } from './lib/topicPages.mjs';
-import { setSlotSrc } from './lib/htmlPatch.mjs';
+import { setSlotSrc, setFigureImageSrc } from './lib/htmlPatch.mjs';
 import { relHref } from './lib/paths.mjs';
 
 function parseArgs(argv) {
@@ -88,11 +88,16 @@ async function main() {
 
     if (parsed.hero) {
       const html = await fs.readFile(articleAbs, 'utf8');
-      const patched = setSlotSrc(html, parsed.hero.id, relHref(articleAbs, heroFile));
+      const patched =
+        parsed.heroMechanism === 'image-slot'
+          ? setSlotSrc(html, parsed.hero.id, relHref(articleAbs, heroFile))
+          : setFigureImageSrc(html, parsed.hero.heroTarget, relHref(articleAbs, heroFile));
       if (patched) {
         await fs.writeFile(articleAbs, patched);
         patchedFiles.add(relPath);
-        console.log(`  Linked hero into ${relPath} (slot ${parsed.hero.id})`);
+        console.log(`  Linked hero into ${relPath} (${parsed.heroMechanism})`);
+      } else {
+        console.log(`  WARNING: found a ${parsed.heroMechanism} hero reference but couldn't patch it — check the markup.`);
       }
     }
 

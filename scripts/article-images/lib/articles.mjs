@@ -112,9 +112,45 @@ function extractBodyText(html) {
 }
 
 /**
- * Parse one article file: title, every <image-slot> (id + placeholder
- * caption written by whoever built the page — a ready-made scene brief),
- * and the full plain-text body for keyword scanning.
+ * Detect the newer image mechanism used by non-canvas articles: a
+ * `<figure data-image-direction="..." data-image-target="X-hero.jpg"
+ * data-thumb-target="X-thumb.jpg">` wrapper around a placeholder `<img>`,
+ * instead of an `<image-slot>` custom element. Attribute order varies
+ * between articles, so each is matched independently. Only the first such
+ * figure is used — every article seen so far has exactly one.
+ */
+function extractFigureImage(html) {
+  const figureRe = /<figure\s+([^>]*?)>/gi;
+  let m;
+  while ((m = figureRe.exec(html))) {
+    const attrs = m[1];
+    const targetMatch = attrs.match(/\bdata-image-target="([^"]*)"/);
+    if (!targetMatch) continue;
+    const directionMatch = attrs.match(/\bdata-image-direction="([^"]*)"/);
+    const thumbMatch = attrs.match(/\bdata-thumb-target="([^"]*)"/);
+    return {
+      placeholder: directionMatch ? decodeEntities(directionMatch[1]) : '',
+      heroTarget: targetMatch[1],
+      thumbTarget: thumbMatch ? thumbMatch[1] : null,
+    };
+  }
+  return null;
+}
+
+/**
+ * Parse one article file: title, its hero image mechanism (whichever of
+ * <image-slot> or the newer <figure data-image-target> wrapper it uses —
+ * see extractFigureImage), and the full plain-text body for keyword
+ * scanning.
+ *
+ * `hero` is normalized across both mechanisms to always carry a
+ * `placeholder` (the scene brief). `heroMechanism` tells the caller which
+ * one it came from — 'image-slot' patches via setSlotSrc(html, hero.id,
+ * ...), 'figure' patches via setFigureImageSrc(html, hero.heroTarget,
+ * ...) and additionally names the exact hero/thumb output filenames the
+ * article itself expects (hero.heroTarget / hero.thumbTarget). An article
+ * with neither mechanism gets hero: null — images still generate, they
+ * just have nothing to wire into.
  */
 export async function parseArticle(absPath) {
   const html = await fs.readFile(absPath, 'utf8');
@@ -136,9 +172,19 @@ export async function parseArticle(absPath) {
     });
   }
 
-  const hero = slots.find((s) => s.id.endsWith('-hero')) || null;
+  let hero = slots.find((s) => s.id.endsWith('-hero')) || null;
+  let heroMechanism = hero ? 'image-slot' : null;
+
+  if (!hero) {
+    const figureImage = extractFigureImage(html);
+    if (figureImage) {
+      hero = figureImage;
+      heroMechanism = 'figure';
+    }
+  }
+
   const others = slots.filter((s) => s !== hero);
   const bodyText = extractBodyText(html);
 
-  return { absPath, title, slots, hero, others, bodyText, html };
+  return { absPath, title, slots, hero, heroMechanism, others, bodyText, html };
 }

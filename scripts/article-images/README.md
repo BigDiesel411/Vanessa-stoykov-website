@@ -150,14 +150,37 @@ strategies for both:
   `<section>` marker → generic `<main>`/`<article>` down to `<footer>` → the
   whole page as a last resort.
 
-**One thing that doesn't have a fallback**: images only get wired into the page
-if it contains an `<image-slot id="...-hero" placeholder="...">` tag (see
-`image-slot.js`) — that's the site's actual image-fill mechanism, independent of
-the article's filename or HTML structure. A hero/thumbnail image still gets
-generated for an article with no `<image-slot>` tags (saved under
-`assets/generated/<topic>/`), but nothing gets patched into the page since there's
-no slot to point at. If your new-style articles use a different image mechanism
-entirely, tell me and I'll extend the wiring logic for it.
+**Two image mechanisms are supported**, and every article needs exactly one of
+them for images to actually get wired in (`parseArticle()` checks for
+`<image-slot>` first, then falls back to the figure mechanism):
+
+- The original Claude Design canvas pages: `<image-slot id="...-hero"
+  placeholder="...">` (see `image-slot.js`), patched via its `src` attribute.
+- Newer articles: a `<figure data-image-direction="scene brief"
+  data-image-target="my-article-hero.jpg" data-thumb-target="my-article-thumb.jpg">`
+  wrapping a placeholder `<img>` — `data-image-direction` becomes the prompt's
+  scene brief (same role `placeholder` plays for `<image-slot>`), and
+  `data-image-target`/`data-thumb-target` name the *exact* filenames the
+  generated images are saved as (honored verbatim, including the `.jpg`
+  extension) so the article's own contract is satisfied. The `<img src>`
+  inside the figure gets patched to point at the result.
+
+A hero/thumbnail image still gets generated for an article with neither
+mechanism (saved under `assets/generated/<topic>/`), but nothing gets patched
+into the page since there's nowhere to point it. If a future article uses a
+third mechanism, tell me and I'll extend `lib/htmlPatch.mjs` for it.
+
+### Topic folders
+
+`TOPICS` in `lib/config.mjs` is the list of folders scanned for articles —
+currently: divorce, retirement, inheritance, moneymindset, relationships,
+adultchildren, ageingparents, careerincome, investing. **A new topic folder
+needs an entry in two places**: `TOPICS`/`TOPIC_LABELS` in `lib/config.mjs`
+(so a manual run scans it) and the `paths` trigger + diff pathspec in
+`.github/workflows/generate-article-images.yml` (so the workflow fires at
+all for it) — the workflow file's header comment flags this too. Forgetting
+the second one is exactly what caused the automation to silently never fire
+for `careerincome/` and `investing/` when they were first added.
 
 ### Setting up the `GEMINI_API_KEY` secret
 

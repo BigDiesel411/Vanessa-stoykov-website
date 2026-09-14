@@ -16,6 +16,11 @@ name: Generate article images
 # the single source of truth for what counts as an article — add new
 # exclusions there, not here.
 #
+# The topic folder list below must be kept in sync with TOPICS in
+# scripts/article-images/lib/config.mjs — a new topic folder needs an
+# entry in both places (this one so the workflow even fires, that one so
+# generate-images.mjs scans it).
+#
 # See scripts/article-images/README.md for the full pipeline docs.
 
 on:
@@ -29,6 +34,8 @@ on:
       - 'relationships/*.html'
       - 'adultchildren/*.html'
       - 'ageingparents/*.html'
+      - 'careerincome/*.html'
+      - 'investing/*.html'
   # Manual safety net: re-run against every article. Already-generated
   # articles are skipped automatically (see --force in the README) so
   # this is safe to run any time without duplicating work.
@@ -71,7 +78,7 @@ jobs:
             -- 'divorce/*.html' 'retirement/*.html' \
                'inheritance/*.html' 'moneymindset/*.html' \
                'relationships/*.html' 'adultchildren/*.html' \
-               'ageingparents/*.html' \
+               'ageingparents/*.html' 'careerincome/*.html' 'investing/*.html' \
             | awk '{print $2}' > added-articles.txt
 
           echo "Newly added .html files under topic folders (not yet filtered for non-article pages):"
