@@ -1,0 +1,8 @@
+{
+  "name": "vanessa-stoykov-website",
+  "private": true,
+  "description": "Only dependency is sharp, used by scripts/article-images to resize/compress generated images. The site itself is static HTML with no build step.",
+  "dependencies": {
+    "sharp": "^0.35.4"
+  }
+}

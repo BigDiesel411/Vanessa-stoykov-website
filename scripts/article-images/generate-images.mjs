@@ -31,7 +31,8 @@ import { discoverArticles, parseArticle } from './lib/articles.mjs';
 import { buildThumbMap } from './lib/topicPages.mjs';
 import { assessSensitivity } from './lib/review.mjs';
 import { buildHeroPrompt, buildThumbPrompt } from './lib/prompt.mjs';
-import { generateImage, extensionForMime } from './lib/gemini.mjs';
+import { generateImage } from './lib/gemini.mjs';
+import { optimizeHero, optimizeThumb } from './lib/imageOptimize.mjs';
 import { setSlotSrc, setFigureImageSrc } from './lib/htmlPatch.mjs';
 import { relHref } from './lib/paths.mjs';
 
@@ -153,17 +154,22 @@ async function processArticle({ article, thumbMap, manifest, args, apiKey, model
     aspectRatio: HERO_IMAGE_CONFIG.aspectRatio,
     imageSize: HERO_IMAGE_CONFIG.imageSize,
   });
+  const heroBytes = await optimizeHero(heroImg.data);
   // The newer <figure data-image-target="X.jpg"> mechanism names its own
-  // exact output filename — honor it verbatim (including its own
-  // extension) so the page's declared contract is satisfied and re-runs
-  // stay idempotent against the name the article itself expects.
+  // exact output filename — honor it verbatim so the page's declared
+  // contract is satisfied and re-runs stay idempotent against the name
+  // the article itself expects. Optimization always re-encodes to JPEG
+  // regardless of what Gemini returned, so the fallback name is always
+  // .jpg too rather than depending on the original mimeType.
   const heroName =
     parsed.heroMechanism === 'figure' && parsed.hero.heroTarget
       ? parsed.hero.heroTarget
-      : `${slug}-hero.${extensionForMime(heroImg.mimeType)}`;
+      : `${slug}-hero.jpg`;
   const heroFile = path.join(outDir, heroName);
-  await fs.writeFile(heroFile, heroImg.data);
-  console.log(`  Wrote ${path.relative(REPO_ROOT, heroFile)}`);
+  await fs.writeFile(heroFile, heroBytes);
+  console.log(
+    `  Wrote ${path.relative(REPO_ROOT, heroFile)} (${(heroBytes.length / 1024).toFixed(0)}KB)`
+  );
 
   await sleep(1200);
 
@@ -175,13 +181,16 @@ async function processArticle({ article, thumbMap, manifest, args, apiKey, model
     aspectRatio: THUMB_IMAGE_CONFIG.aspectRatio,
     imageSize: THUMB_IMAGE_CONFIG.imageSize,
   });
+  const thumbBytes = await optimizeThumb(thumbImg.data);
   const thumbName =
     parsed.heroMechanism === 'figure' && parsed.hero.thumbTarget
       ? parsed.hero.thumbTarget
-      : `${slug}-thumb.${extensionForMime(thumbImg.mimeType)}`;
+      : `${slug}-thumb.jpg`;
   const thumbFile = path.join(outDir, thumbName);
-  await fs.writeFile(thumbFile, thumbImg.data);
-  console.log(`  Wrote ${path.relative(REPO_ROOT, thumbFile)}`);
+  await fs.writeFile(thumbFile, thumbBytes);
+  console.log(
+    `  Wrote ${path.relative(REPO_ROOT, thumbFile)} (${(thumbBytes.length / 1024).toFixed(0)}KB)`
+  );
 
   const patchedFiles = new Set();
 

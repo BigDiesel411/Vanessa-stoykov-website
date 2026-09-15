@@ -97,6 +97,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.find.outputs.has_files != 'false'
+        run: npm ci
 
       - name: Generate images
         if: steps.find.outputs.has_files != 'false'
