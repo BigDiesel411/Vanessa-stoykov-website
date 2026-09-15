@@ -11,13 +11,12 @@
 //                                    been generated yet. Same footprint as
 //                                    a normal generated hero image.
 //
-// Unlike the rest of this toolkit, this script needs an image-resize step
-// to hit an exact pixel size (Gemini's imageConfig only offers fixed
-// aspect ratios + 1K/2K/4K tiers, not arbitrary dimensions), so it depends
-// on `sharp` — install it ad hoc before running:
-//   npm install sharp --no-save
-// (sharp is NOT a dependency of the main article pipeline — this is the
-// one script in this directory that needs it.)
+// This script needs an image-resize step to hit an exact pixel size
+// (Gemini's imageConfig only offers fixed aspect ratios + 1K/2K/4K tiers,
+// not arbitrary dimensions), so like the rest of this toolkit's image
+// generation it depends on `sharp` (see lib/imageOptimize.mjs, which
+// generate-images.mjs uses on every run) — `npm install` at the repo root
+// before running this.
 //
 // Usage: node scripts/article-images/generate-brand-assets.mjs [--dry-run]
 
@@ -83,8 +82,7 @@ async function main() {
     ({ default: sharp } = await import('sharp'));
   } catch {
     console.error(
-      'This script needs sharp to crop og-default.jpg to an exact 1200x630 — install it first:\n' +
-        '  npm install sharp --no-save'
+      'This script needs sharp to crop og-default.jpg to an exact 1200x630 — run `npm install` at the repo root first.'
     );
     process.exitCode = 1;
     return;

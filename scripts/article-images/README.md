@@ -254,8 +254,42 @@ node scripts/article-images/generate-brand-assets.mjs
 node scripts/article-images/generate-brand-assets.mjs --dry-run   # preview prompts only
 ```
 
-This is the one script in this directory that needs an extra dependency —
-`sharp`, to crop `og-default.jpg` to an exact 1200x630 (Gemini's
-`imageConfig` only offers fixed aspect ratios, not arbitrary pixel sizes).
-Install it first: `npm install sharp --no-save` (it's gitignored, not part
-of the main pipeline's dependency-free design).
+It needs `sharp` to crop `og-default.jpg` to an exact 1200x630 (Gemini's
+`imageConfig` only offers fixed aspect ratios, not arbitrary pixel sizes)
+— see the next section, `sharp` is a real dependency of this toolkit now.
+
+## Image optimization
+
+Gemini's raw output runs ~2.5MB per hero image at full resolution — far
+more than any browser needs for a page banner or a small list thumbnail.
+`generate-images.mjs` automatically resizes and re-compresses every hero
+and thumbnail it generates before writing it to disk (`lib/imageOptimize.mjs`):
+
+| | Max width | Typical result |
+|---|---|---|
+| Hero | 1600px | ~100-180KB (down from ~2.5MB) |
+| Thumbnail | 640px | ~30-50KB |
+
+Both are re-encoded as mozjpeg-quality-82 JPEGs — well under 500KB with no
+visible quality loss at the sizes these actually render on the page.
+Filenames are never affected by this, only the bytes, so no article or
+Topic page needs re-patching when this runs.
+
+This is why `sharp` is a real dependency now (`package.json` at the repo
+root) rather than the ad-hoc, gitignored install it started as for
+`generate-brand-assets.mjs` — run `npm install` (or `npm ci` in CI, which
+the GitHub Action does automatically) before running any of these
+scripts.
+
+To re-process images that were generated before this existed (or if you
+ever change the quality/width targets and want to re-apply them
+everywhere):
+
+```
+node scripts/article-images/optimize-existing-images.mjs
+node scripts/article-images/optimize-existing-images.mjs --dry-run   # preview sizes only
+```
+
+It walks every hero/thumb under `assets/generated/` and `needs-review/`
+and re-compresses each in place — same filenames, so nothing else needs
+to change.

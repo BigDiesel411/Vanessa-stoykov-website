@@ -75,9 +75,3 @@ export async function generateImage({
     };
   }
 }
-
-export function extensionForMime(mimeType) {
-  if (mimeType.includes('png')) return 'png';
-  if (mimeType.includes('webp')) return 'webp';
-  return 'jpg';
-}
