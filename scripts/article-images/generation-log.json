@@ -768,5 +768,142 @@
     "model": "gemini-3-pro-image",
     "generatedAt": "2026-09-14T07:21:49.584Z",
     "approvedAt": "2026-09-14T07:30:28.230Z"
+  },
+  "bank-of-mum-and-dad-help-or-headache.html": {
+    "title": "The Bank of Mum and Dad: Help or Financial Headache?",
+    "topic": "property",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/property/bank-of-mum-and-dad-help-or-headache-hero.jpg",
+    "thumbPath": "assets/generated/property/bank-of-mum-and-dad-help-or-headache-thumb.jpg",
+    "patchedFiles": [
+      "bank-of-mum-and-dad-help-or-headache.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:46:29.331Z"
+  },
+  "buying-a-home-or-an-identity.html": {
+    "title": "Are You Buying a Home — or Buying the Life You Think You Should Have?",
+    "topic": "property",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/property/buying-a-home-or-an-identity-hero.jpg",
+    "thumbPath": "assets/generated/property/buying-a-home-or-an-identity-thumb.jpg",
+    "patchedFiles": [
+      "buying-a-home-or-an-identity.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:47:06.693Z"
+  },
+  "five-conversations-before-buying-property-together.html": {
+    "title": "Before You Buy Property With Someone, Have These Five Conversations",
+    "topic": "property",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/property/five-conversations-before-buying-property-together-hero.jpg",
+    "thumbPath": "assets/generated/property/five-conversations-before-buying-property-together-thumb.jpg",
+    "patchedFiles": [
+      "five-conversations-before-buying-property-together.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:47:43.042Z"
+  },
+  "stay-or-sell-property-in-your-50s.html": {
+    "title": "Should I Stay or Should I Sell? The Property Decision That Gets Harder in Your 50s",
+    "topic": "property",
+    "flagged": true,
+    "flagReason": "content mentions \"divorce\"",
+    "heroPath": "needs-review/property/stay-or-sell-property-in-your-50s-hero.jpg",
+    "thumbPath": "needs-review/property/stay-or-sell-property-in-your-50s-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:48:20.188Z"
+  },
+  "timely-advice-massive-tax-savings.html": {
+    "title": "Timely Advice Provides Massive Tax Savings",
+    "topic": "property",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/property/property-jenny-hero.jpg",
+    "thumbPath": "assets/generated/property/timely-advice-massive-tax-savings-thumb.jpg",
+    "patchedFiles": [
+      "timely-advice-massive-tax-savings.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:48:57.480Z"
+  },
+  "why-property-fomo-is-expensive.html": {
+    "title": "Why Property FOMO Can Be an Expensive Emotion",
+    "topic": "property",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/property/why-property-fomo-is-expensive-hero.jpg",
+    "thumbPath": "assets/generated/property/why-property-fomo-is-expensive-thumb.jpg",
+    "patchedFiles": [
+      "why-property-fomo-is-expensive.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:49:33.049Z"
+  },
+  "could-you-afford-to-leave-your-relationship.html": {
+    "title": "Could You Afford to Leave Your Relationship?",
+    "topic": "relationships",
+    "flagged": true,
+    "flagReason": "content mentions \"divorce\"",
+    "heroPath": "needs-review/relationships/could-you-afford-to-leave-your-relationship-hero.jpg",
+    "thumbPath": "needs-review/relationships/could-you-afford-to-leave-your-relationship-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:50:10.459Z"
+  },
+  "financial-infidelity-hidden-money.html": {
+    "title": "Financial Infidelity: What Happens When Your Partner Is Hiding Money From You?",
+    "topic": "relationships",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/financial-infidelity-hidden-money-hero.jpg",
+    "thumbPath": "assets/generated/relationships/financial-infidelity-hidden-money-thumb.jpg",
+    "patchedFiles": [
+      "financial-infidelity-hidden-money.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:50:48.423Z"
+  },
+  "money-conversation-couples-should-have.html": {
+    "title": "The Money Conversation Every Couple Should Have Before Things Go Wrong",
+    "topic": "relationships",
+    "flagged": true,
+    "flagReason": "content mentions \"grieving\"",
+    "heroPath": "needs-review/relationships/money-conversation-couples-should-have-hero.jpg",
+    "thumbPath": "needs-review/relationships/money-conversation-couples-should-have-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:51:25.553Z"
+  },
+  "when-one-person-earns-more.html": {
+    "title": "When One Person Earns More: How Money Changes the Power in a Relationship",
+    "topic": "relationships",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/when-one-person-earns-more-hero.jpg",
+    "thumbPath": "assets/generated/relationships/when-one-person-earns-more-thumb.jpg",
+    "patchedFiles": [
+      "when-one-person-earns-more.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:52:02.247Z"
+  },
+  "why-smart-couples-still-fight-about-money.html": {
+    "title": "Why Smart Couples Still Fight About Money",
+    "topic": "relationships",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/why-smart-couples-still-fight-about-money-hero.jpg",
+    "thumbPath": "assets/generated/relationships/why-smart-couples-still-fight-about-money-thumb.jpg",
+    "patchedFiles": [
+      "why-smart-couples-still-fight-about-money.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-16T04:52:39.679Z"
   }
 }
