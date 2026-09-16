@@ -122,10 +122,15 @@ function extractBodyText(html) {
  * `<figure data-image-direction="..." data-image-target="X-hero.jpg"
  * data-thumb-target="X-thumb.jpg">` wrapper around a placeholder `<img>`,
  * instead of an `<image-slot>` custom element. Attribute order varies
- * between articles, so each is matched independently. Only the first such
- * figure is used — every article seen so far has exactly one.
+ * between articles, so each is matched independently.
+ *
+ * Returns every such figure in document order (usually just one — the
+ * hero — but a longer article can have extra body figures further down,
+ * e.g. a `-mid.jpg`, with no `data-thumb-target` since only the hero
+ * needs a thumbnail). Callers that only care about the hero use index 0.
  */
-function extractFigureImage(html) {
+function extractAllFigureImages(html) {
+  const figures = [];
   const figureRe = /<figure\s+([^>]*?)>/gi;
   let m;
   while ((m = figureRe.exec(html))) {
@@ -134,13 +139,13 @@ function extractFigureImage(html) {
     if (!targetMatch) continue;
     const directionMatch = attrs.match(/\bdata-image-direction="([^"]*)"/);
     const thumbMatch = attrs.match(/\bdata-thumb-target="([^"]*)"/);
-    return {
+    figures.push({
       placeholder: directionMatch ? decodeEntities(directionMatch[1]) : '',
       heroTarget: targetMatch[1],
       thumbTarget: thumbMatch ? thumbMatch[1] : null,
-    };
+    });
   }
-  return null;
+  return figures;
 }
 
 /**
@@ -157,6 +162,12 @@ function extractFigureImage(html) {
  * article itself expects (hero.heroTarget / hero.thumbTarget). An article
  * with neither mechanism gets hero: null — images still generate, they
  * just have nothing to wire into.
+ *
+ * `extraFigures` lists any additional `data-image-target` figures beyond
+ * the hero (figure-mechanism articles only) — e.g. a `-mid.jpg` body
+ * image further down the page. Each entry has the same shape as `hero`
+ * (placeholder/heroTarget/thumbTarget) and patches the same way via
+ * setFigureImageSrc(html, entry.heroTarget, ...).
  */
 export async function parseArticle(absPath) {
   const html = await fs.readFile(absPath, 'utf8');
@@ -180,17 +191,19 @@ export async function parseArticle(absPath) {
 
   let hero = slots.find((s) => s.id.endsWith('-hero')) || null;
   let heroMechanism = hero ? 'image-slot' : null;
+  let extraFigures = [];
 
   if (!hero) {
-    const figureImage = extractFigureImage(html);
-    if (figureImage) {
-      hero = figureImage;
+    const figureImages = extractAllFigureImages(html);
+    if (figureImages.length) {
+      hero = figureImages[0];
       heroMechanism = 'figure';
+      extraFigures = figureImages.slice(1);
     }
   }
 
   const others = slots.filter((s) => s !== hero);
   const bodyText = extractBodyText(html);
 
-  return { absPath, title, slots, hero, heroMechanism, others, bodyText, html };
+  return { absPath, title, slots, hero, heroMechanism, extraFigures, others, bodyText, html };
 }
