@@ -174,6 +174,7 @@
           </label>
           <div style="font-size:13px;color:#5a6a8f;">You can unsubscribe from these communications at any time.</div>
         </div>
+        <input type="text" name="_gotcha" value="{{ formData.honeypot }}" onChange="{{ onHoneypotChange }}" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
         <sc-if value="{{ submitError }}" hint-placeholder-val="{{ false }}">
           <div style="font-size:13px;font-weight:600;color:#8a1c0f;">Something went wrong sending your message. Please try again, or email us directly.</div>
         </sc-if>
@@ -257,13 +258,17 @@
 </div>]]>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="">
-// Get this from https://formspree.io after creating a free form (see setup
-// steps in the PR/chat) — looks like https://formspree.io/f/xxxxxxxx.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mwlperzr';
+// Formspree's own honeypot convention: a hidden field named "_gotcha" that
+// real visitors never see or fill, but naive bots that auto-fill every
+// input do — Formspree silently discards any submission where it's
+// non-empty (same shape as the honeypot on newsletter-mailchimp.js /
+// lead-capture.js, just keyed to what this backend recognizes).
+const HONEYPOT_FIELD = '_gotcha';
 
 class Component extends DCLogic {
   state = {
-    formData: { reason: '', firstName: '', lastName: '', email: '', subject: '', message: '', newsletter: false },
+    formData: { reason: '', firstName: '', lastName: '', email: '', subject: '', message: '', newsletter: false, honeypot: '' },
     formSubmitted: false,
     submitting: false,
     submitError: false
@@ -290,13 +295,16 @@ class Component extends DCLogic {
       onSubjectChange: (e) => setField('subject', e.target.value),
       onMessageChange: (e) => setField('message', e.target.value),
       onNewsletterToggle: (e) => setField('newsletter', e.target.checked),
+      onHoneypotChange: (e) => setField('honeypot', e.target.value),
       handleSubmit: (e) => {
         e.preventDefault();
         this.setState({ submitting: true, submitError: false });
+        const fd = this.state.formData;
+        const { honeypot, ...rest } = fd;
         fetch(FORMSPREE_ENDPOINT, {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(this.state.formData)
+          body: JSON.stringify({ ...rest, [HONEYPOT_FIELD]: honeypot })
         })
           .then((res) => {
             if (!res.ok) throw new Error('Formspree returned ' + res.status);
