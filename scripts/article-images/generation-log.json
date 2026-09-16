@@ -811,13 +811,16 @@
   "stay-or-sell-property-in-your-50s.html": {
     "title": "Should I Stay or Should I Sell? The Property Decision That Gets Harder in Your 50s",
     "topic": "property",
-    "flagged": true,
-    "flagReason": "content mentions \"divorce\"",
-    "heroPath": "needs-review/property/stay-or-sell-property-in-your-50s-hero.jpg",
-    "thumbPath": "needs-review/property/stay-or-sell-property-in-your-50s-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/property/stay-or-sell-property-in-your-50s-hero.jpg",
+    "thumbPath": "assets/generated/property/stay-or-sell-property-in-your-50s-thumb.jpg",
+    "patchedFiles": [
+      "stay-or-sell-property-in-your-50s.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-16T04:48:20.188Z"
+    "generatedAt": "2026-09-16T04:48:20.188Z",
+    "approvedAt": "2026-09-16T12:27:24.467Z"
   },
   "timely-advice-massive-tax-savings.html": {
     "title": "Timely Advice Provides Massive Tax Savings",
@@ -848,13 +851,16 @@
   "could-you-afford-to-leave-your-relationship.html": {
     "title": "Could You Afford to Leave Your Relationship?",
     "topic": "relationships",
-    "flagged": true,
-    "flagReason": "content mentions \"divorce\"",
-    "heroPath": "needs-review/relationships/could-you-afford-to-leave-your-relationship-hero.jpg",
-    "thumbPath": "needs-review/relationships/could-you-afford-to-leave-your-relationship-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/could-you-afford-to-leave-your-relationship-hero.jpg",
+    "thumbPath": "assets/generated/relationships/could-you-afford-to-leave-your-relationship-thumb.jpg",
+    "patchedFiles": [
+      "could-you-afford-to-leave-your-relationship.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-16T04:50:10.459Z"
+    "generatedAt": "2026-09-16T04:50:10.459Z",
+    "approvedAt": "2026-09-16T12:27:24.481Z"
   },
   "financial-infidelity-hidden-money.html": {
     "title": "Financial Infidelity: What Happens When Your Partner Is Hiding Money From You?",
@@ -872,13 +878,16 @@
   "money-conversation-couples-should-have.html": {
     "title": "The Money Conversation Every Couple Should Have Before Things Go Wrong",
     "topic": "relationships",
-    "flagged": true,
-    "flagReason": "content mentions \"grieving\"",
-    "heroPath": "needs-review/relationships/money-conversation-couples-should-have-hero.jpg",
-    "thumbPath": "needs-review/relationships/money-conversation-couples-should-have-thumb.jpg",
-    "patchedFiles": [],
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/money-conversation-couples-should-have-hero.jpg",
+    "thumbPath": "assets/generated/relationships/money-conversation-couples-should-have-thumb.jpg",
+    "patchedFiles": [
+      "money-conversation-couples-should-have.html"
+    ],
     "model": "gemini-3-pro-image",
-    "generatedAt": "2026-09-16T04:51:25.553Z"
+    "generatedAt": "2026-09-16T04:51:25.553Z",
+    "approvedAt": "2026-09-16T12:27:24.484Z"
   },
   "when-one-person-earns-more.html": {
     "title": "When One Person Earns More: How Money Changes the Power in a Relationship",
