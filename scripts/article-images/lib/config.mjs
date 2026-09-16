@@ -26,7 +26,30 @@ export const TOPIC_LABELS = {
   ageingparents: 'Ageing Parents',
   careerincome: 'Career & Income',
   investing: 'Investing',
+  property: 'Property',
 };
+
+// Newer articles are sometimes authored as flat files at the repo root
+// instead of inside a topic folder (no "property/" folder exists at all,
+// and several other topics have root-level articles alongside their
+// folder-based ones). discoverArticles() can't find these via directory
+// scanning, so they're listed explicitly here with the topic their own
+// articleSection metadata declares. A root file already duplicated inside
+// a real topic folder (same content, different location) is NOT listed
+// here — the folder copy is the canonical one the site actually links to.
+export const ROOT_ARTICLES = [
+  { file: 'bank-of-mum-and-dad-help-or-headache.html', topic: 'property' },
+  { file: 'buying-a-home-or-an-identity.html', topic: 'property' },
+  { file: 'five-conversations-before-buying-property-together.html', topic: 'property' },
+  { file: 'stay-or-sell-property-in-your-50s.html', topic: 'property' },
+  { file: 'timely-advice-massive-tax-savings.html', topic: 'property' },
+  { file: 'why-property-fomo-is-expensive.html', topic: 'property' },
+  { file: 'could-you-afford-to-leave-your-relationship.html', topic: 'relationships' },
+  { file: 'financial-infidelity-hidden-money.html', topic: 'relationships' },
+  { file: 'money-conversation-couples-should-have.html', topic: 'relationships' },
+  { file: 'when-one-person-earns-more.html', topic: 'relationships' },
+  { file: 'why-smart-couples-still-fight-about-money.html', topic: 'relationships' },
+];
 
 export const BRAND = {
   navy: '#001E60',

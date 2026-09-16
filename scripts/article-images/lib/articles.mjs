@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { REPO_ROOT, TOPICS } from './config.mjs';
+import { REPO_ROOT, TOPICS, ROOT_ARTICLES } from './config.mjs';
 
 function decodeEntities(str) {
   return str
@@ -32,7 +32,10 @@ export function isArticleFile(filename) {
   return !NON_ARTICLE_PATTERNS.some((re) => re.test(filename));
 }
 
-/** Find every article file under each topic folder. */
+/** Find every article file under each topic folder, plus the explicit
+ *  ROOT_ARTICLES list of articles authored as flat files at the repo root
+ *  (see the comment on ROOT_ARTICLES in config.mjs for why those can't be
+ *  discovered by directory scanning). */
 export async function discoverArticles() {
   const articles = [];
   for (const topic of TOPICS) {
@@ -49,6 +52,9 @@ export async function discoverArticles() {
         articles.push({ topic, file, absPath, relPath: path.join(topic, file) });
       }
     }
+  }
+  for (const { file, topic } of ROOT_ARTICLES) {
+    articles.push({ topic, file, absPath: path.join(REPO_ROOT, file), relPath: file });
   }
   return articles;
 }
