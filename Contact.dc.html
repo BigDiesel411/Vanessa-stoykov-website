@@ -139,7 +139,7 @@
     <sc-if value="{{ !formSubmitted }}" hint-placeholder-val="{{ true }}">
       <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:20px;">
         <div>
-          <select required="true" value="{{ formData.reason }}" onChange="{{ updateField('reason') }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
+          <select required="true" value="{{ formData.reason }}" onChange="{{ onReasonChange }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
             <option value="">Reason for Contact*</option>
             <option value="speaking">Speaking Enquiry</option>
             <option value="partnership">Partnership</option>
@@ -150,31 +150,37 @@
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
           <div>
-            <input type="text" required="true" placeholder="First Name*" value="{{ formData.firstName }}" onChange="{{ updateField('firstName') }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
+            <input type="text" required="true" placeholder="First Name*" value="{{ formData.firstName }}" onChange="{{ onFirstNameChange }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
           </div>
           <div>
-            <input type="text" placeholder="Last Name" value="{{ formData.lastName }}" onChange="{{ updateField('lastName') }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
+            <input type="text" placeholder="Last Name" value="{{ formData.lastName }}" onChange="{{ onLastNameChange }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
           </div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
           <div>
-            <input type="email" required="true" placeholder="Email Address*" value="{{ formData.email }}" onChange="{{ updateField('email') }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
+            <input type="email" required="true" placeholder="Email Address*" value="{{ formData.email }}" onChange="{{ onEmailChange }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
           </div>
           <div>
-            <input type="text" required="true" placeholder="Subject*" value="{{ formData.subject }}" onChange="{{ updateField('subject') }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
+            <input type="text" required="true" placeholder="Subject*" value="{{ formData.subject }}" onChange="{{ onSubjectChange }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;">
           </div>
         </div>
         <div>
-          <textarea rows="4" required="true" placeholder="Message*" value="{{ formData.message }}" onChange="{{ updateField('message') }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;resize:vertical;"></textarea>
+          <textarea rows="4" required="true" placeholder="Message*" value="{{ formData.message }}" onChange="{{ onMessageChange }}" style="width:100%;border:1px solid #D7D2CB;background:#FFFFFF;padding:14px;font-size:15px;font-family:inherit;color:#001E60;resize:vertical;"></textarea>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px;">
           <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#33456f;">
-            <input type="checkbox" checked="{{ formData.newsletter }}" onChange="{{ toggleField('newsletter') }}" style="width:18px;height:18px;">
+            <input type="checkbox" checked="{{ formData.newsletter }}" onChange="{{ onNewsletterToggle }}" style="width:18px;height:18px;">
             Yes! Sign me up for Vanessa's newsletter.
           </label>
           <div style="font-size:13px;color:#5a6a8f;">You can unsubscribe from these communications at any time.</div>
         </div>
-        <button type="submit" style="font-size:15px;font-weight:700;background:#001E60;color:#FFFFFF;padding:16px 32px;border:none;cursor:pointer;margin-top:8px;">SEND</button>
+        <sc-if value="{{ submitError }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:13px;font-weight:600;color:#8a1c0f;">Something went wrong sending your message. Please try again, or email us directly.</div>
+        </sc-if>
+        <button type="submit" disabled="{{ submitting }}" style="font-size:15px;font-weight:700;background:#001E60;color:#FFFFFF;padding:16px 32px;border:none;cursor:pointer;margin-top:8px;">
+          <sc-if value="{{ !submitting }}" hint-placeholder-val="{{ true }}">SEND</sc-if>
+          <sc-if value="{{ submitting }}" hint-placeholder-val="{{ false }}">SENDING...</sc-if>
+        </button>
       </form>
     </sc-if>
     <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
@@ -251,19 +257,53 @@
 </div>]]>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="">
+// Get this from https://formspree.io after creating a free form (see setup
+// steps in the PR/chat) — looks like https://formspree.io/f/xxxxxxxx.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
 class Component extends DCLogic {
   state = {
-    formData: { reason: '', firstName: '', lastName: '', email: '', subject: '', message: '', updates: false, newsletter: false },
-    formSubmitted: false
+    formData: { reason: '', firstName: '', lastName: '', email: '', subject: '', message: '', newsletter: false },
+    formSubmitted: false,
+    submitting: false,
+    submitError: false
   };
 
+  // Note: the {{ updateField('firstName') }} curried-handler pattern this
+  // form used to use doesn't work with this site's template engine — its
+  // expression resolver only understands bare identifiers and .dot/[bracket]
+  // paths, not function calls with arguments, so that attribute silently
+  // evaluated to undefined and every input was effectively read-only. Each
+  // field gets its own named handler instead, matching the pattern
+  // Homepage.dc.html's newsletter form already uses successfully.
   renderVals() {
+    const setField = (field, value) => this.setState(s => ({ formData: { ...s.formData, [field]: value } }));
     return {
       formData: this.state.formData,
       formSubmitted: this.state.formSubmitted,
-      updateField: (field) => (e) => this.setState(s => ({ formData: { ...s.formData, [field]: e.target.value } })),
-      toggleField: (field) => (e) => this.setState(s => ({ formData: { ...s.formData, [field]: e.target.checked } })),
-      handleSubmit: (e) => { e.preventDefault(); this.setState({ formSubmitted: true }); }
+      submitting: this.state.submitting,
+      submitError: this.state.submitError,
+      onReasonChange: (e) => setField('reason', e.target.value),
+      onFirstNameChange: (e) => setField('firstName', e.target.value),
+      onLastNameChange: (e) => setField('lastName', e.target.value),
+      onEmailChange: (e) => setField('email', e.target.value),
+      onSubjectChange: (e) => setField('subject', e.target.value),
+      onMessageChange: (e) => setField('message', e.target.value),
+      onNewsletterToggle: (e) => setField('newsletter', e.target.checked),
+      handleSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ submitting: true, submitError: false });
+        fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(this.state.formData)
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error('Formspree returned ' + res.status);
+            this.setState({ submitting: false, formSubmitted: true });
+          })
+          .catch(() => this.setState({ submitting: false, submitError: true }));
+      }
     };
   }
 }
