@@ -71,6 +71,7 @@
 <script src="mobile-nav.js"></script>
 <script src="hash-scroll.js"></script>
 <script src="newsletter-mailchimp.js"></script>
+<script src="image-slot.js"></script>
 </helmet>
 <div style="width:100%;background:#FDFCFB;overflow-x:hidden;">
 <header style="width:100%;background:#FFFFFF;border-bottom:1px solid #D7D2CB;">
@@ -133,10 +134,13 @@
 <section style="padding:72px 24px;">
   <div style="max-width:1000px;margin:0 auto;">
     <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;color:#F09491;margin-bottom:14px;">FEATURED ON INVESTING</div>
-    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3vw,32px);color:#001E60;margin:0 0 24px;max-width:700px;">Content coming soon</h2>
-    <div style="height:280px;background:repeating-linear-gradient(135deg,#F7F5F2,#F7F5F2 12px,#EDEAE4 12px,#EDEAE4 24px);display:flex;align-items:center;justify-content:center;">
-      <span style="font-family:monospace;font-size:12px;color:#8a8378;">FEATURED IMAGE</span>
-    </div>
+    <a href="investing/how-to-start-investing.html" style="text-decoration:none;">
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3vw,32px);color:#001E60;margin:0 0 12px;max-width:760px;">How to Start Investing When You Don't Know Where to Begin</h2>
+      <p style="font-size:16px;color:#5a6a8f;margin:0 0 28px;max-width:640px;">A practical starting framework for new investors covering goals, time frames, risk, costs and professional advice.</p>
+      <div style="aspect-ratio:21/9;border-radius:16px;overflow:hidden;background:#F7F5F2;">
+        <image-slot id="investing-article1-featured" shape="rect" style="width:100%;height:100%;" placeholder="Featured image" src="assets/generated/investing/Article-Investing-how-to-start-investing-hero.jpg"></image-slot>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -161,10 +165,116 @@
   <div style="max-width:1000px;margin:0 auto;">
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.8vw,28px);color:#001E60;margin:0 0 24px;">Everything on Investing</h2>
     <div style="border-top:1px solid #D7D2CB;">
-      <div style="padding:28px 0;border-bottom:1px solid #D7D2CB;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#8a8a8a;margin-bottom:8px;">COMING SOON</div>
-        <div style="font-size:17px;font-weight:700;color:#001E60;">New articles and episodes on this topic are on their way.</div>
-      </div>
+      <a href="investing/how-to-start-investing.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">How to Start Investing When You Don't Know Where to Begin</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">A practical starting framework for new investors covering goals, time frames, risk, costs and professional advice.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article1-how-to-start-investing-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-how-to-start-investing-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/how-much-investment-risk-can-you-handle.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">How Much Risk Can You Really Handle?</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why investment risk involves financial capacity, emotional tolerance and the time available to recover from losses.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article2-how-much-investment-risk-can-you-handle-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-how-much-investment-risk-can-you-handle-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/investing-isnt-just-for-wealthy-people.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Investing Isn't Just for Wealthy People</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why investing is not reserved for wealthy people and how starting with a manageable amount can build knowledge, confidence and financial choice.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article3-investing-isnt-just-for-wealthy-people-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-investing-isnt-just-for-wealthy-people-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/investing-mistakes-when-markets-fall.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Investing Mistakes We Make When Markets Fall</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why falling markets trigger panic, prediction and costly changes, and how investors can make calmer decisions.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article4-investing-mistakes-when-markets-fall-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-investing-mistakes-when-markets-fall-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/investing-or-following-the-crowd.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Are You Investing—or Just Following the Crowd?</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">How social proof, trends and fear of missing out can push people towards investments they do not understand.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article5-investing-or-following-the-crowd-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-investing-or-following-the-crowd-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/investment-conversation-every-couple-needs.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Investment Conversation Every Couple Should Have</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">How couples can discuss investment goals, risk, ownership, access and decision-making when they have different attitudes to money.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article6-investment-conversation-every-couple-needs-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-investment-conversation-every-couple-needs-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/pay-off-debt-or-start-investing.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Should You Pay Off Debt or Start Investing?</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">How to weigh interest costs, risk, emergency savings and motivation when deciding between reducing debt and investing.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article7-pay-off-debt-or-start-investing-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-pay-off-debt-or-start-investing-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/property-or-shares-which-is-right.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Property or Shares: Which Investment Is Right for Your Life?</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">A practical comparison of property and shares across cost, diversification, borrowing, flexibility, effort and lifestyle.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article8-property-or-shares-which-is-right-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-property-or-shares-which-is-right-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/time-matters-more-than-perfect-investment.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Why Time Matters More Than Finding the Perfect Investment</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why consistently investing over time may matter more than endlessly searching for the perfect entry point or product.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article9-time-matters-more-than-perfect-investment-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-time-matters-more-than-perfect-investment-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/what-is-an-etf.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">What Is an ETF? A Simple Explanation for New Investors</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">What is an ETF and how does it work? This straightforward guide explains diversification, fees, risks and what new investors should understand.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article10-what-is-an-etf-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-what-is-an-etf-thumb.jpg"></image-slot>
+        </div>
+      </a>
+      <a href="investing/women-investing-in-midlife.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">What Women Need to Know About Investing in Midlife</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why career breaks, divorce, longevity and retirement savings make investing an important midlife conversation for women.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <image-slot id="investing-article11-women-investing-in-midlife-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/investing/Article-Investing-women-investing-in-midlife-thumb.jpg"></image-slot>
+        </div>
+      </a>
     </div>
   </div>
 </section>

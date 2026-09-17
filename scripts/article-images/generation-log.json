@@ -914,5 +914,18 @@
     ],
     "model": "gemini-3-pro-image",
     "generatedAt": "2026-09-16T04:52:39.679Z"
+  },
+  "moneymindset/the-account-youve-never-opened.html": {
+    "title": "The Account You've Never Opened",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/the-account-youve-never-opened-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/the-account-youve-never-opened-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/the-account-youve-never-opened.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-09-17T05:42:42.483Z"
   }
 }
