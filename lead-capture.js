@@ -78,6 +78,16 @@
     document.getElementById('vs-lead-done').style.display = 'none';
     document.getElementById('vs-lead-err').style.display = 'none';
     document.getElementById('vs-lead-kicker').textContent = label ? label.toUpperCase() : 'FREE GUIDE';
+    // The modal is a shared singleton reused across every guide button on
+    // the page (build() only constructs it once) — reset the previous
+    // request's leftover state so a second guide doesn't inherit a
+    // disabled "SENDING..." button or the first guide's name/email.
+    document.getElementById('vs-lead-name').value = '';
+    document.getElementById('vs-lead-email').value = '';
+    document.getElementById('vs-lead-check').checked = true;
+    var submitBtn = document.getElementById('vs-lead-submit');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'SEND ME THE GUIDE';
     document.getElementById('vs-lead-backdrop').classList.add('open');
     document.body.style.overflow = 'hidden';
     setTimeout(function () { document.getElementById('vs-lead-name').focus(); }, 60);
@@ -150,8 +160,10 @@
     // Same TOPIC merge field the newsletter form already populates
     // (confirmed working there) — distinguishes these as guide downloads
     // rather than plain newsletter signups, and which guide, right in the
-    // TOPIC column of the Mailchimp audience.
-    body.append('TOPIC', 'Free Guide — ' + guideLabel);
+    // TOPIC column of the Mailchimp audience. guideLabel is already the
+    // full tag text (from data-guide-label, or prefixed in wire()'s
+    // fallback), so it's used as-is rather than prefixed again here.
+    body.append('TOPIC', guideLabel);
     // Best-effort extra signal in case a SOURCE merge field exists on the
     // list — Mailchimp silently ignores POST fields with no matching
     // merge tag, so this is harmless either way.
@@ -177,13 +189,18 @@
       a.setAttribute('data-vs-lead', '1');
       var href = a.getAttribute('href');
       var filename = a.getAttribute('download');
-      // guide title = nearest card heading
-      var label = 'Free guide';
-      var card = a.closest('div');
-      while (card && card.parentElement) {
-        var kick = card.querySelector('div[style*="letter-spacing:0.08em"]');
-        if (kick && kick.textContent.trim()) { label = kick.textContent.trim(); break; }
-        card = card.parentElement;
+      // Prefer an explicit label set on the link itself (exact tag text,
+      // e.g. "Guide — Adult Children") over guessing from nearby markup —
+      // guarantees the Mailchimp TOPIC value matches the guide requested.
+      var label = a.getAttribute('data-guide-label');
+      if (!label) {
+        label = 'Free guide';
+        var card = a.closest('div');
+        while (card && card.parentElement) {
+          var kick = card.querySelector('div[style*="letter-spacing:0.08em"]');
+          if (kick && kick.textContent.trim()) { label = 'Free Guide — ' + kick.textContent.trim(); break; }
+          card = card.parentElement;
+        }
       }
       a.removeAttribute('download');
       a.setAttribute('href', '#');
