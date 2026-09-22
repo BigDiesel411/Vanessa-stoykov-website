@@ -1,0 +1,150 @@
+# Netlify config for this static, no-build site (see package.json).
+# No [build] section is defined here deliberately — this repo has no
+# build step, and Netlify's own dashboard build settings for this site
+# are left untouched by this file.
+
+# The homepage is authored as Homepage.dc.html (this site's "Claude
+# Design" canvas pages are all named PageName.dc.html rather than
+# index.html), so Netlify's default "serve index.html at /" has nothing
+# to serve at the root and shows its default 404. This rewrite (status
+# 200, not a redirect) makes "/" transparently serve Homepage.dc.html
+# while the visible URL stays "/".
+[[redirects]]
+  from = "/"
+  to = "/Homepage.dc.html"
+  status = 200
+
+# Clean-URL rewrites for the 10 topic hub pages, ahead of the real
+# domain eventually wanting pretty URLs instead of Topic-Name.dc.html.
+# Slugs match each topic's own folder name (divorce/, investing/, etc.)
+# used throughout the codebase (see scripts/article-images/lib/config.mjs
+# TOPICS), so there's no separate naming scheme to keep in sync.
+# Each pair covers the path with and without a trailing slash.
+[[redirects]]
+  from = "/divorce"
+  to = "/divorce/Topic-Divorce.dc.html"
+  status = 200
+[[redirects]]
+  from = "/divorce/"
+  to = "/divorce/Topic-Divorce.dc.html"
+  status = 200
+[[redirects]]
+  from = "/retirement"
+  to = "/Topic-Retirement.dc.html"
+  status = 200
+[[redirects]]
+  from = "/retirement/"
+  to = "/Topic-Retirement.dc.html"
+  status = 200
+[[redirects]]
+  from = "/inheritance"
+  to = "/inheritance/Topic-Inheritance.dc.html"
+  status = 200
+[[redirects]]
+  from = "/inheritance/"
+  to = "/inheritance/Topic-Inheritance.dc.html"
+  status = 200
+[[redirects]]
+  from = "/moneymindset"
+  to = "/Topic-MoneyMindset.dc.html"
+  status = 200
+[[redirects]]
+  from = "/moneymindset/"
+  to = "/Topic-MoneyMindset.dc.html"
+  status = 200
+[[redirects]]
+  from = "/relationships"
+  to = "/Topic-Relationships.dc.html"
+  status = 200
+[[redirects]]
+  from = "/relationships/"
+  to = "/Topic-Relationships.dc.html"
+  status = 200
+[[redirects]]
+  from = "/adultchildren"
+  to = "/Topic-AdultChildren.dc.html"
+  status = 200
+[[redirects]]
+  from = "/adultchildren/"
+  to = "/Topic-AdultChildren.dc.html"
+  status = 200
+[[redirects]]
+  from = "/ageingparents"
+  to = "/Topic-AgeingParents.dc.html"
+  status = 200
+[[redirects]]
+  from = "/ageingparents/"
+  to = "/Topic-AgeingParents.dc.html"
+  status = 200
+[[redirects]]
+  from = "/careerincome"
+  to = "/Topic-CareerIncome.dc.html"
+  status = 200
+[[redirects]]
+  from = "/careerincome/"
+  to = "/Topic-CareerIncome.dc.html"
+  status = 200
+[[redirects]]
+  from = "/investing"
+  to = "/Topic-Investing.dc.html"
+  status = 200
+[[redirects]]
+  from = "/investing/"
+  to = "/Topic-Investing.dc.html"
+  status = 200
+[[redirects]]
+  from = "/property"
+  to = "/Topic-Property.dc.html"
+  status = 200
+[[redirects]]
+  from = "/property/"
+  to = "/Topic-Property.dc.html"
+  status = 200
+
+# Clean-URL rewrites for the core top-level marketing/utility pages.
+# Same reasoning as above — unambiguous one-to-one mapping to an
+# existing PageName.dc.html file, so no naming decision to make.
+[[redirects]]
+  from = "/about"
+  to = "/About.dc.html"
+  status = 200
+[[redirects]]
+  from = "/speaking"
+  to = "/Speaking.dc.html"
+  status = 200
+[[redirects]]
+  from = "/guides"
+  to = "/Guides.dc.html"
+  status = 200
+[[redirects]]
+  from = "/courses"
+  to = "/Courses.dc.html"
+  status = 200
+[[redirects]]
+  from = "/podcasts"
+  to = "/Podcasts.dc.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/Contact.dc.html"
+  status = 200
+[[redirects]]
+  from = "/authors"
+  to = "/Authors.dc.html"
+  status = 200
+[[redirects]]
+  from = "/find-an-advisor"
+  to = "/FindAnAdvisor.dc.html"
+  status = 200
+[[redirects]]
+  from = "/books"
+  to = "/Books.dc.html"
+  status = 200
+
+# Deliberately NOT included: clean URLs for individual articles.
+# Several articles exist at two paths (inside their topic folder, and
+# duplicated at the repo root from an earlier migration — see PR #26),
+# and picking a "clean" URL for each would mean silently choosing which
+# copy is canonical. That's a real decision, not a mechanical mapping,
+# so it's left for a follow-up once that's settled rather than guessed
+# here.
