@@ -70,14 +70,15 @@
 </style>
 <link rel="stylesheet" href="mobile.css">
 <script src="mobile-nav.js"></script>
+<script src="search.js"></script>
 <script src="hash-scroll.js"></script>
 
 <div style="width:100%;background:#FDFCFB;overflow-x:hidden;">
 <header style="width:100%;background:#FFFFFF;border-bottom:1px solid #D7D2CB;">
-  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-    <a href="Homepage.dc.html"><img src="assets/vslogo-transparent.png" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
-    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 20px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;">
-      <nav style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap;">
+    <a href="Homepage.dc.html"><img src="uploads/vslogo.jpg" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
+    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;flex-shrink:0;">
+      <nav style="display:flex;align-items:center;gap:18px;flex-wrap:nowrap;">
       <div class="topics-nav" style="position:relative;padding-bottom:14px;margin-bottom:-14px;">
         <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;padding:8px 14px;border-radius:999px;border:1px solid transparent;">Topics <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"></path></svg></span>
         <div class="topics-menu" style="display:none;position:absolute;top:100%;left:0;background:#FFFFFF;border:1px solid #D7D2CB;border-radius:12px;box-shadow:0 12px 32px rgba(0,30,96,0.18);padding:8px 0;min-width:190px;z-index:50;">
@@ -101,14 +102,16 @@
         </div>
       </div>
       <div class="topics-nav" style="position:relative;padding-bottom:14px;margin-bottom:-14px;">
-        <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;padding:8px 14px;border-radius:999px;border:1px solid transparent;">About <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;padding:8px 14px;border-radius:999px;border:1px solid transparent;">About <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"></path></svg></span>
         <div class="topics-menu" style="display:none;position:absolute;top:100%;right:0;left:auto;background:#FFFFFF;border-radius:16px;box-shadow:0 16px 40px rgba(0,30,96,0.22);padding:8px 0;min-width:300px;z-index:50;">
                             <a href="About.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">About Vanessa</a>
               <a href="Speaking.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Speaking</a>
               <a href="Books.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Books</a>
               <a href="Books.dc.html#breakfast-club" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Breakfast Club for 40 Somethings</a>
               <a href="Books.dc.html#five-conversations" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Five Conversations About Money</a>
-              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Podcasts</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="VanessaStoykovPodcast.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Vanessa Stoykov Podcast</a>
               <a href="Authors.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Authors</a>
               <a href="Contact.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Contact</a>
         </div>
@@ -125,7 +128,7 @@
 </section>
 
 <section style="width:100%;aspect-ratio:16/7;overflow:hidden;margin-top:40px;">
-  <image-slot id="books-hero" shape="rect" style="width:100%;height:100%;" placeholder="Photo: Vanessa handing out books"></image-slot>
+  <image-slot id="books-hero" src="assets/slot-books-hero.webp" shape="rect" style="width:100%;height:100%;" placeholder="Photo: Vanessa handing out books"></image-slot>
 </section>
 
 <section id="breakfast-club" style="padding:96px 24px 130px;scroll-margin-top:24px;min-height:100vh;display:flex;align-items:center;">
@@ -146,7 +149,7 @@ But scratch the surface and the reality is very different.
 Behind closed doors, each of them is dealing with something they haven't been sharing — and money is tangled up in all of it.
 Debt. Relationships. Career choices. Family expectations. Financial secrets. Regret. The pressure to keep up appearances. And the uncomfortable realisation that the life you thought you'd have by now isn't necessarily the life you're living.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="#" style="display:inline-block;background:#FFB81C;color:#001E60;padding:16px 32px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.06em;">GET THE BOOK</a>
+        <a href="https://www.booktopia.com.au/the-breakfast-club-for-40-somethings-vanessa-stoykov/book/9780730348634.html" target="_blank" rel="noopener" style="display:inline-block;background:#FFB81C;color:#001E60;padding:16px 32px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.06em;">GET THE BOOK</a>
       </div>
     </div>
   </div>
@@ -158,7 +161,7 @@ Debt. Relationships. Career choices. Family expectations. Financial secrets. Reg
       <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4.2vw,44px);margin:0 0 16px;line-height:1.1;">The Five Conversations About Money That Will Radically Change Your Life</h2>
       <p style="font-size:18px;font-weight:700;color:#33456f;margin:0 0 24px;">The most important money decisions in your life rarely begin with a spreadsheet. They begin with a conversation.</p>
       <div style="display:flex;flex-direction:column;gap:12px;margin:0 0 28px;">
-        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#F09491;color:#001E60;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px;">✓</span><span style="font-size:15px;color:#33456f;">27+ years of experience in financial services</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#F09491;color:#001E60;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px;">✓</span><span style="font-size:15px;color:#33456f;">More than 25 years of experience in financial services</span></div>
         <div style="display:flex;align-items:flex-start;gap:10px;"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#F09491;color:#001E60;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px;">✓</span><span style="font-size:15px;color:#33456f;">Five key conversations for every stage of life</span></div>
         <div style="display:flex;align-items:flex-start;gap:10px;"><span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#F09491;color:#001E60;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px;">✓</span><span style="font-size:15px;color:#33456f;">"Vanessa Stoykov is the 'Oprah of Money'" — Saxton Speakers Bureau</span></div>
       </div>
@@ -168,9 +171,9 @@ Yet it can be one of the hardest things to talk about.
 We avoid conversations because they feel awkward. We don't want to argue. We don't want to appear greedy, controlling, unsuccessful or uninformed. Sometimes we simply don't know how to begin.
 But avoiding money conversations can have consequences that last for years.
 In The Five Conversations You Need to Have About Money, Vanessa Stoykov helps you start the conversations that can change what happens next.
-Drawing on more than two decades of conversations about money, the book explores how our beliefs, behaviours and relationships shape the financial decisions we make — often without us even realising it.</p>
+Drawing on more than 25 years of conversations about money, the book explores how our beliefs, behaviours and relationships shape the financial decisions we make — often without us even realising it.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="#" style="display:inline-block;background:#FFB81C;color:#001E60;padding:16px 32px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.06em;">GET THE BOOK</a>
+        <a href="https://www.booktopia.com.au/the-five-conversations-you-need-to-have-about-money-vanessa-stoykov/book/9781684810246.html" target="_blank" rel="noopener" style="display:inline-block;background:#FFB81C;color:#001E60;padding:16px 32px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.06em;">GET THE BOOK</a>
       </div>
     </div>
     <div style="flex:0 0 340px;filter:drop-shadow(0 24px 40px rgba(0,30,96,0.18));">
@@ -207,17 +210,18 @@ Drawing on more than two decades of conversations about money, the book explores
           <div style="font-size:13px;font-weight:700;margin-bottom:16px;">Explore</div>
           <div style="display:flex;flex-direction:column;gap:10px;">
             <a href="Guides.dc.html" style="font-size:14px;color:#33456f;">Guides</a>
-          <a href="Books.dc.html" style="font-size:14px;color:#33456f;">Books</a>
+            <a href="Books.dc.html" style="font-size:14px;color:#33456f;">Books</a>
             <a href="Books.dc.html#breakfast-club" style="font-size:13px;color:#5a6a8f;padding-left:12px;">The Breakfast Club for 40 Somethings</a>
             <a href="Books.dc.html#five-conversations" style="font-size:13px;color:#5a6a8f;padding-left:12px;">The Five Conversations About Money</a>
           <a href="FindAnAdvisor.dc.html" style="font-size:14px;color:#33456f;">Find an Advisor</a>
           <a href="Podcasts.dc.html" style="font-size:14px;color:#33456f;">Flourishing After 50</a>
+          <a href="VanessaStoykovPodcast.dc.html" style="font-size:14px;color:#33456f;">The Vanessa Stoykov Podcast</a>
+          </div>
         </div>
-      </div>
-      <div>
-        <div style="font-size:13px;font-weight:700;margin-bottom:16px;">About</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-                    <a href="About.dc.html" style="font-size:14px;color:#33456f;">About Vanessa</a>
+        <div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:16px;">About</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+                      <a href="About.dc.html" style="font-size:14px;color:#33456f;">About Vanessa</a>
           <a href="Speaking.dc.html" style="font-size:14px;color:#33456f;">Speaking</a>
           <a href="Authors.dc.html" style="font-size:14px;color:#33456f;">Authors</a>
           <a href="Contact.dc.html" style="font-size:14px;color:#33456f;">Contact</a>

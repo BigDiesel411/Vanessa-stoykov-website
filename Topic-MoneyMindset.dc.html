@@ -70,15 +70,16 @@
 </style>
 <link rel="stylesheet" href="mobile.css">
 <script src="mobile-nav.js"></script>
+<script src="search.js"></script>
 <script src="hash-scroll.js"></script>
 <script src="newsletter-mailchimp.js"></script>
 </helmet>
 <div style="width:100%;background:#FDFCFB;overflow-x:hidden;">
 <header style="width:100%;background:#FFFFFF;border-bottom:1px solid #D7D2CB;">
-  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-    <a href="Homepage.dc.html"><img src="assets/vslogo-transparent.png" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
-    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 20px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;">
-      <nav style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap;">
+    <a href="Homepage.dc.html"><img src="uploads/vslogo.jpg" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
+    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;flex-shrink:0;">
+      <nav style="display:flex;align-items:center;gap:18px;flex-wrap:nowrap;">
       <div class="topics-nav" style="position:relative;padding-bottom:14px;margin-bottom:-14px;">
         <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;padding:8px 14px;border-radius:999px;border:1px solid transparent;">Topics <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
         <div class="topics-menu" style="display:none;position:absolute;top:100%;left:0;background:#FFFFFF;border:1px solid #D7D2CB;border-radius:12px;box-shadow:0 12px 32px rgba(0,30,96,0.18);padding:8px 0;min-width:190px;z-index:50;">
@@ -109,7 +110,9 @@
               <a href="Books.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Books</a>
               <a href="Books.dc.html#breakfast-club" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Breakfast Club for 40 Somethings</a>
               <a href="Books.dc.html#five-conversations" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Five Conversations About Money</a>
-              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Podcasts</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="VanessaStoykovPodcast.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Vanessa Stoykov Podcast</a>
               <a href="Authors.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Authors</a>
               <a href="Contact.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Contact</a>
         </div>
@@ -136,9 +139,9 @@
     <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;color:#F09491;margin-bottom:14px;">LATEST ARTICLE ON THIS TOPIC</div>
     <a href="moneymindset/the-account-youve-never-opened.html" style="text-decoration:none;">
       <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3vw,32px);color:#001E60;margin:0 0 12px;max-width:760px;">The Account You've Never Opened</h2>
-      <p style="font-size:16px;color:#5a6a8f;margin:0 0 28px;max-width:640px;">Why so many Australians leave their superannuation unopened for years — and the three questions to sit with before touching anything.</p>
+      <p style="font-size:16px;color:#5a6a8f;margin:0 0 28px;max-width:640px;">Why so many people leave their superannuation unopened for years, and the three questions to sit with before touching anything.</p>
       <div style="aspect-ratio:21/9;border-radius:16px;overflow:hidden;background:#F7F5F2;">
-        <image-slot id="moneymindset-article1-featured" shape="rect" style="width:100%;height:100%;" placeholder="Featured image" src="assets/generated/moneymindset/the-account-youve-never-opened-hero.jpg"></image-slot>
+        <img src="assets/generated/moneymindset/the-account-youve-never-opened-hero.jpg" alt="A woman sitting at a kitchen table looking out the window, an unopened envelope beside her" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </a>
   </div>
@@ -165,74 +168,84 @@
   <div style="max-width:1000px;margin:0 auto;">
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.8vw,28px);color:#001E60;margin:0 0 24px;">Everything on Money Mindset</h2>
     <div style="border-top:1px solid #D7D2CB;">
-      <a href="moneymindset/Article-MoneyMindset-ThreeWays.dc.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+      <a href="moneymindset/the-account-youve-never-opened.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
         <div style="flex:1;min-width:0;">
           <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
-          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Three Ways to Improve Your Money Mindset</div>
-          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Practical ways to stay grounded and hopeful when money feels overwhelming.</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Account You've Never Opened</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why so many people leave their superannuation unopened for years, and the three questions to sit with before touching anything.</div>
         </div>
         <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="moneymindset-article1-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/moneymindset/Article-MoneyMindset-ThreeWays-thumb.jpg"></image-slot>
-        </div>
-      </a>
-      <a href="moneymindset/financial-decisions-made-from-fear.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
-          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Financial Decisions We Make When We're Afraid</div>
-          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">How fear drives avoidance, panic spending, over-control and staying stuck — and a framework for calmer money decisions.</div>
-        </div>
-        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="moneymindset-article2-financial-decisions-made-from-fear-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/moneymindset/financial-decisions-made-from-fear-thumb.jpg"></image-slot>
-        </div>
-      </a>
-      <a href="moneymindset/stop-saying-im-bad-with-money.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
-          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Stop Saying 'I'm Bad With Money'</div>
-          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why turning financial mistakes into an identity makes change harder, and how to build confidence through small evidence.</div>
-        </div>
-        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="moneymindset-article3-stop-saying-im-bad-with-money-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/moneymindset/stop-saying-im-bad-with-money-thumb.jpg"></image-slot>
-        </div>
-      </a>
-      <a href="moneymindset/what-does-enough-look-like.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
-          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">What Does 'Enough' Actually Look Like for You?</div>
-          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">How defining enough can bring clarity to saving, spending, work and the kind of life you are trying to fund.</div>
-        </div>
-        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="moneymindset-article4-what-does-enough-look-like-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/moneymindset/what-does-enough-look-like-thumb.jpg"></image-slot>
+          <img src="assets/generated/moneymindset/the-account-youve-never-opened-thumb.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
       </a>
       <a href="moneymindset/where-your-money-habits-came-from.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
         <div style="flex:1;min-width:0;">
           <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
           <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Your Money Habits Didn't Start With You</div>
-          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">How childhood, family messages and early experiences shape adult money behaviour — and how to choose new patterns.</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Before you blame yourself for being too anxious, generous, avoidant or impulsive with money, look at what money taught you growing up.</div>
         </div>
         <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="moneymindset-article5-where-your-money-habits-came-from-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/moneymindset/where-your-money-habits-came-from-thumb.jpg"></image-slot>
+          <img src="assets/generated/moneymindset/where-your-money-habits-came-from-thumb.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
       </a>
       <a href="moneymindset/why-more-income-doesnt-feel-secure.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
         <div style="flex:1;min-width:0;">
           <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
           <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Why Earning More Doesn't Always Make You Feel Financially Secure</div>
-          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why financial anxiety can remain after income grows, and how to build security through clarity, systems and enough.</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Income can rise faster than your sense of safety. More money helps, but it cannot calm a fear you have never examined.</div>
         </div>
         <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="moneymindset-article6-why-more-income-doesnt-feel-secure-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/moneymindset/why-more-income-doesnt-feel-secure-thumb.jpg"></image-slot>
+          <img src="assets/generated/moneymindset/why-more-income-doesnt-feel-secure-thumb.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
       </a>
-      <a href="moneymindset/the-account-youve-never-opened.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+      <a href="moneymindset/rich-or-wealthy-whats-the-difference.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
         <div style="flex:1;min-width:0;">
           <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
-          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Account You've Never Opened</div>
-          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Why so many Australians leave their superannuation unopened for years — and the three questions to sit with before touching anything.</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Rich or Wealthy? There's a Difference</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Looking rich and being wealthy are not the same thing. Why luxury display often masks debt, and what a wealthy mindset actually looks like.</div>
         </div>
         <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="moneymindset-article7-the-account-youve-never-opened-thumb" shape="rect" style="width:100%;height:100%;" placeholder="Thumbnail" src="assets/generated/moneymindset/the-account-youve-never-opened-thumb.jpg"></image-slot>
+          <img src="assets/article-placeholder.jpg" alt="" data-thumb-target="rich-or-wealthy-whats-the-difference-thumb.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </a>
+      <a href="moneymindset/financial-decisions-made-from-fear.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Financial Decisions We Make When We're Afraid</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Fear can make us move too quickly or not move at all. The first task is not to eliminate emotion, but to stop it making the whole decision.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <img src="assets/generated/moneymindset/financial-decisions-made-from-fear-thumb.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </a>
+      <a href="moneymindset/stop-saying-im-bad-with-money.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Stop Saying 'I'm Bad With Money'</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">'I'm bad with money' sounds like a fact. Usually it is a verdict — and verdicts leave very little room for learning.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <img src="assets/generated/moneymindset/stop-saying-im-bad-with-money-thumb.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </a>
+      <a href="moneymindset/what-does-enough-look-like.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">What Does 'Enough' Actually Look Like for You?</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">If you never define enough, every achievement becomes a brief stop on the way to another moving target.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <img src="assets/generated/moneymindset/what-does-enough-look-like-thumb.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </a>
+      <a href="moneymindset/three-ways-to-improve-your-money-mindset.html" style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid #D7D2CB;text-decoration:none;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:8px;">ARTICLE</div>
+          <div style="font-size:19px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">Three Ways to Improve Your Money Mindset</div>
+          <div style="font-size:15px;color:#5a6a8f;line-height:1.5;">Practical ways to stay grounded and hopeful when money feels overwhelming.</div>
+        </div>
+        <div style="flex:0 0 140px;height:100px;border-radius:12px;overflow:hidden;background:#F7F5F2;">
+          <img src="moneymindset/Article-MoneyMindset-ThreeWays-thumb.jpg" alt="Article thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
       </a>
     </div>
@@ -288,6 +301,7 @@
             <a href="Books.dc.html#five-conversations" style="font-size:13px;color:#5a6a8f;padding-left:12px;">The Five Conversations About Money</a>
           <a href="FindAnAdvisor.dc.html" style="font-size:14px;color:#33456f;">Find an Advisor</a>
           <a href="Podcasts.dc.html" style="font-size:14px;color:#33456f;">Flourishing After 50</a>
+          <a href="VanessaStoykovPodcast.dc.html" style="font-size:14px;color:#33456f;">The Vanessa Stoykov Podcast</a>
         </div>
       </div>
       <div>

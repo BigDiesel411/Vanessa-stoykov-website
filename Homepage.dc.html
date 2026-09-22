@@ -68,6 +68,7 @@
 </style>
 <link rel="stylesheet" href="mobile.css">
 <script src="mobile-nav.js"></script>
+<script src="search.js"></script>
 <script src="hash-scroll.js"></script>
 <script src="newsletter-mailchimp.js"></script>
 </helmet>
@@ -79,13 +80,13 @@
   <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,30,96,0.88) 0%,rgba(0,30,96,0.55) 32%,rgba(0,30,96,0.08) 60%,rgba(0,30,96,0.02) 100%);"></div>
 
   <header style="position:relative;z-index:30;width:100%;background:transparent;">
-    <div style="max-width:1280px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <div style="max-width:1280px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap;">
 
       <a href="#top" style="display:block;flex-shrink:0;"><img src="assets/vslogo-transparent.png" alt="Vanessa Stoykov" style="height:34px;width:auto;display:block;filter:brightness(0) invert(1);"></a>
 
       <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
-        <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 20px;box-shadow:0 8px 24px rgba(0,30,96,0.25);">
-          <nav style="display:flex;align-items:center;gap:24px;flex-wrap:nowrap;">
+        <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 8px 24px rgba(0,30,96,0.25);flex-shrink:0;">
+          <nav style="display:flex;align-items:center;gap:18px;flex-wrap:nowrap;">
             <div style="position:relative;padding-bottom:14px;margin-bottom:-14px;" onMouseEnter="{{ openTopicsMenu }}" onMouseLeave="{{ closeMenu }}">
               <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;">Topics <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
               <sc-if value="{{ topicsMenuOpen }}" hint-placeholder-val="{{ false }}">
@@ -101,10 +102,11 @@
 
             <a href="Guides.dc.html" class="topics-trigger" style="font-size:14px;font-weight:600;white-space:nowrap;flex-shrink:0;">Guides</a>
 
-            <div style="position:relative;padding-bottom:14px;margin-bottom:-14px;" onMouseEnter="{{ openAdviceMenu }}" onMouseLeave="{{ closeMenu }}">
-              <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;">Get Advice <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
-              <sc-if value="{{ adviceMenuOpen }}" hint-placeholder-val="{{ false }}">
-                <div style="position:absolute;top:100%;right:0;left:auto;background:#FFFFFF;border-radius:16px;box-shadow:0 16px 40px rgba(0,30,96,0.22);padding:16px;width:220px;">
+            
+            <div style="position:relative;padding-bottom:14px;margin-bottom:-14px;" onMouseEnter="{{ openPartnersMenu }}" onMouseLeave="{{ closeMenu }}">
+              <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap;flex-shrink:0;">Get Advice <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+              <sc-if value="{{ partnersMenuOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;top:100%;right:0;left:auto;background:#FFFFFF;border-radius:16px;box-shadow:0 16px 40px rgba(0,30,96,0.22);padding:16px;width:280px;">
                   <a href="FindAnAdvisor.dc.html" class="topic-link" style="display:block;font-size:15px;font-weight:500;padding:9px 0;border-bottom:1px solid #F3F1EE;">Find an Advisor</a>
                 </div>
               </sc-if>
@@ -127,7 +129,7 @@
       </sc-if>
 
       <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ toggleMobileMenu }}" aria-label="Menu" style="background:#FFFFFF;border:none;border-radius:999px;cursor:pointer;padding:12px;display:flex;flex-direction:column;gap:5px;box-shadow:0 8px 24px rgba(0,30,96,0.25);">
+        <button onClick="{{ toggleMobileMenu }}" aria-label="Menu" style="background:#FFFFFF;border:none;border-radius:999px;cursor:pointer;width:46px;height:46px;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:0 8px 24px rgba(0,30,96,0.25);flex-shrink:0;">
           <span style="width:22px;height:2px;background:#001E60;display:block;"></span>
           <span style="width:22px;height:2px;background:#001E60;display:block;"></span>
           <span style="width:22px;height:2px;background:#001E60;display:block;"></span>
@@ -140,18 +142,25 @@
         <div style="background:#FFFFFF;border-radius:24px;padding:16px 24px 24px;display:flex;flex-direction:column;gap:4px;box-shadow:0 16px 40px rgba(0,30,96,0.25);">
           <a href="#media" onClick="{{ toggleMobileMenu }}" style="padding:14px 0;font-size:16px;font-weight:600;border-bottom:1px solid #F3F1EE;">Topics</a>
           <a href="Guides.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:14px 0;font-size:16px;font-weight:600;border-bottom:1px solid #F3F1EE;">Guides</a>
-          <a href="FindAnAdvisor.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:14px 0;font-size:16px;font-weight:600;border-bottom:1px solid #F3F1EE;">Get Advice</a>
-          <a href="About.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:14px 0;font-size:16px;font-weight:600;border-bottom:1px solid #F3F1EE;">About</a>
+          <a href="FindAnAdvisor.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:14px 0;font-size:16px;font-weight:600;border-bottom:1px solid #F3F1EE;">Find an Advisor</a>
+          <a href="About.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:14px 0;font-size:16px;font-weight:600;border-bottom:1px solid #F3F1EE;">About Vanessa</a>
+          <a href="Speaking.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Speaking</a>
+          <a href="Books.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Books</a>
+          <a href="Podcasts.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+          <a href="VanessaStoykovPodcast.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">The Vanessa Stoykov Podcast</a>
+          <a href="Authors.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Authors</a>
+          <a href="Contact.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Contact</a>
           <a href="Contact.dc.html" onClick="{{ toggleMobileMenu }}" style="margin-top:12px;text-align:center;font-size:15px;font-weight:700;background:#001E60;color:#FFFFFF;padding:14px 24px;border-radius:999px;">Work With Vanessa</a>
         </div>
       </div>
     </sc-if>
   </header>
 
-  <div style="position:relative;z-index:10;max-width:1280px;margin:0 auto;padding:0 24px;min-height:calc(100vh - 96px);">
-    <div style="position:absolute;left:24px;right:24px;bottom:210px;">
+  <div style="position:relative;z-index:10;max-width:1280px;margin:0 auto;padding:0 24px;min-height:calc(100vh - 96px);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:210px;">
+    <div>
       <div style="display:inline-block;width:fit-content;font-size:13px;font-weight:700;letter-spacing:0.08em;color:#001E60;background:#F09491;padding:6px 14px;margin-bottom:24px;">EVERY GREAT DECISION STARTS WITH THE RIGHT CONVERSATION</div>
-      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,88px);line-height:0.98;letter-spacing:0.01em;margin:0;color:#FFFFFF;max-width:780px;">MONEY DECISIONS<br>ARE LIFE DECISIONS.</h1>
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,88px);line-height:0.98;letter-spacing:0.01em;margin:0 0 32px;color:#FFFFFF;max-width:780px;">MONEY DECISIONS<br>ARE LIFE DECISIONS.</h1>
+      <a href="Guides.dc.html" style="display:inline-block;background:#FFFFFF;color:#001E60;padding:17px 34px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.06em;">EXPLORE THE GUIDES</a>
     </div>
     <div class="hero-endorsements" style="position:absolute;left:24px;right:24px;bottom:40px;display:flex;flex-direction:column;gap:6px;max-width:420px;">
       <p style="font-size:20px;font-weight:700;line-height:1.3;color:#FFFFFF;margin:0;font-style:italic;">"{{ currentEndorsement.quote }}"</p>
@@ -223,21 +232,51 @@
   </div>
 </section>
 
+<section style="padding:80px 24px 0;">
+  <div style="max-width:1280px;margin:0 auto;background:#001E60;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center;">
+    <div style="aspect-ratio:1/1;width:100%;min-width:0;max-width:100%;background:#0a2c7a;">
+      <image-slot id="home-podcast-teaser" src="assets/slot-home-podcast-teaser.webp" shape="rect" style="width:100%;height:100%;" placeholder="Flourishing After 50 cover art"></image-slot>
+    </div>
+    <div style="padding:64px 56px;min-width:0;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <span style="width:36px;height:2px;background:#FFB81C;"></span>
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#FFB81C;">PODCAST</span>
+      </div>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,48px);line-height:1.02;color:#FFFFFF;margin:0 0 18px;">Tune In: Flourishing After 50</h2>
+      <p style="font-size:17px;line-height:1.7;color:#C7D0E4;margin:0 0 34px;max-width:420px;">Life-changing conversations about money, reinvention and what comes next. Vanessa Stoykov talks with inspiring guests about navigating the second half of life with greater confidence, purpose and freedom.</p>
+      <a href="Podcasts.dc.html" style="display:inline-flex;align-items:center;gap:11px;background:#FFB81C;color:#001E60;padding:17px 34px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.08em;">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;" fill="#001E60"><path d="M8 5v14l11-7z"/></svg>
+        LISTEN NOW
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="books" style="padding:80px 24px;">
   <div style="max-width:1280px;margin:0 auto;">
     <div style="font-size:13px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:10px;">BOOKS</div>
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,44px);margin:0 0 44px;color:#001E60;">Read the books</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;max-width:840px;margin:0 auto;">
-      <sc-for list="{{ books }}" as="book" hint-placeholder-count="2">
-        <a href="{{ book.href }}" style="display:block;background:{{ book.bg }};border-radius:16px;padding:36px 30px;text-decoration:none;">
-          <div style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <img src="{{ book.cover }}" alt="{{ book.title }}" style="max-width:70%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,0.22));">
-          </div>
-          <div style="font-size:16px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">{{ book.title }}</div>
-          <div style="font-size:13px;line-height:1.55;white-space:pre-line;color:{{ book.textColor }};margin-bottom:22px;">{{ book.blurb }}</div>
-          <span style="display:inline-block;background:#001E60;color:#FFFFFF;padding:13px 26px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.06em;">DISCOVER THE BOOK</span>
-        </a>
-      </sc-for>
+      <a href="Books.dc.html#breakfast-club" style="display:block;background:#F09491;border-radius:16px;padding:36px 30px;text-decoration:none;">
+        <div style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <img src="uploads/book-img.png" alt="The Breakfast Club for 40 Somethings" style="max-width:70%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,0.22));">
+        </div>
+        <div style="font-size:16px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Breakfast Club for 40 Somethings</div>
+        <div style="font-size:13px;line-height:1.55;white-space:pre-line;color:#3a2a2a;margin-bottom:22px;">Five old friends. One school reunion. And lives that aren't quite what they seem.
+
+On social media, they look successful. Scratch the surface and each is hiding a very different reality — and money is at the heart of it.</div>
+        <span style="display:inline-block;background:#001E60;color:#FFFFFF;padding:13px 26px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.06em;">DISCOVER THE BOOK</span>
+      </a>
+      <a href="Books.dc.html#five-conversations" style="display:block;background:#FFB81C;border-radius:16px;padding:36px 30px;text-decoration:none;">
+        <div style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <img src="uploads/five-conv-book-img.png" alt="The Five Conversations About Money That Will Radically Change Your Life" style="max-width:70%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,0.22));">
+        </div>
+        <div style="font-size:16px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Five Conversations About Money That Will Radically Change Your Life</div>
+        <div style="font-size:13px;line-height:1.55;white-space:pre-line;color:#4a3a12;margin-bottom:22px;">The money conversations we avoid are often the ones that matter most.
+
+A practical guide to talking about money, relationships, family and your future — before avoiding a difficult conversation becomes a financial regret.</div>
+        <span style="display:inline-block;background:#001E60;color:#FFFFFF;padding:13px 26px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.06em;">DISCOVER THE BOOK</span>
+      </a>
     </div>
   </div>
 </section>
@@ -279,6 +318,7 @@
             <a href="Books.dc.html#five-conversations" style="font-size:13px;color:#5a6a8f;padding-left:12px;">The Five Conversations About Money</a>
             <a href="FindAnAdvisor.dc.html" style="font-size:14px;color:#33456f;">Find an Advisor</a>
             <a href="Podcasts.dc.html" style="font-size:14px;color:#33456f;">Flourishing After 50</a>
+            <a href="VanessaStoykovPodcast.dc.html" style="font-size:14px;color:#33456f;">The Vanessa Stoykov Podcast</a>
           </div>
         </div>
         <div>
@@ -331,7 +371,7 @@ class Component extends DCLogic {
     mq.addEventListener('change', this.handleMq);
 
     this.endorsements = [
-      { quote: 'Vanessa Stoykov is the "Oprah of Money"…. She knows how important it is to have courageous conversations in order to achieve financial freedom.', source: 'Saxton Speakers Bureau' },
+      { quote: 'Vanessa Stoykov is the Oprah of Money', source: 'Saxton Speakers Bureau' },
       { quote: 'Energy. Charisma. A speaker who really connected with our audience.', source: 'AMP North' },
       { quote: 'Vanessa made talking about money fun.', source: 'Glencore Mining' },
       { quote: 'Life changing. People took action and had conversations they never would have had.', source: 'Boston Scientific' },
@@ -437,9 +477,11 @@ class Component extends DCLogic {
       { label: 'About Vanessa', href: 'About.dc.html', fontSize: '15px', weight: '500', indent: '0' },
       { label: 'Speaking', href: 'Speaking.dc.html', fontSize: '15px', weight: '500', indent: '0' },
       { label: 'Books', href: 'Books.dc.html', fontSize: '15px', weight: '500', indent: '0' },
-      { label: 'The Breakfast Club for 40 Somethings', href: 'Books.dc.html#breakfast-club', fontSize: '14px', weight: '400', indent: '30px' },
-      { label: 'The Five Conversations About Money', href: 'Books.dc.html#five-conversations', fontSize: '14px', weight: '400', indent: '30px' },
-      { label: 'Flourishing After 50', href: 'Podcasts.dc.html', fontSize: '15px', weight: '500', indent: '0' },
+      { label: 'The Breakfast Club for 40 Somethings', href: 'Books.dc.html#breakfast-club', fontSize: '14px', weight: '400', indent: '14px' },
+      { label: 'The Five Conversations About Money', href: 'Books.dc.html#five-conversations', fontSize: '14px', weight: '400', indent: '14px' },
+      { label: 'Podcasts', href: 'Podcasts.dc.html', fontSize: '15px', weight: '500', indent: '0' },
+      { label: 'Flourishing After 50', href: 'Podcasts.dc.html', fontSize: '14px', weight: '400', indent: '14px' },
+      { label: 'The Vanessa Stoykov Podcast', href: 'VanessaStoykovPodcast.dc.html', fontSize: '14px', weight: '400', indent: '14px' },
       { label: 'Authors', href: 'Authors.dc.html', fontSize: '15px', weight: '500', indent: '0' },
       { label: 'Contact', href: 'Contact.dc.html', fontSize: '15px', weight: '500', indent: '0' }
     ];
@@ -451,11 +493,15 @@ class Component extends DCLogic {
       toggleMobileMenu: () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen })),
       closeMenu: () => this.setState({ activeMenu: null }),
       openTopicsMenu: () => this.setState({ activeMenu: 'topics' }),
-      openAdviceMenu: () => this.setState({ activeMenu: 'advice' }),
+      openBooksMenu: () => this.setState({ activeMenu: 'books' }),
       openAboutMenu: () => this.setState({ activeMenu: 'about' }),
+      openPodcastsMenu: () => this.setState({ activeMenu: 'podcasts' }),
+      openPartnersMenu: () => this.setState({ activeMenu: 'partners' }),
       topicsMenuOpen: this.state.activeMenu === 'topics',
-      adviceMenuOpen: this.state.activeMenu === 'advice',
+      booksMenuOpen: this.state.activeMenu === 'books',
       aboutMenuOpen: this.state.activeMenu === 'about',
+      podcastsMenuOpen: this.state.activeMenu === 'podcasts',
+      partnersMenuOpen: this.state.activeMenu === 'partners',
       topics, guides, books, mediaItems, aboutLinks,
       currentEndorsement: (this.endorsements || [{quote:'',source:''}])[this.state.endorsementIndex],
       endorsementDots: (this.endorsements || []).map((e, i) => ({

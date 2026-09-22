@@ -1,13 +1,38 @@
 (function () {
-  // Same Mailchimp audience/list and embedded-form pattern already used by
-  // newsletter-mailchimp.js — see that file for the working reference.
-  // Reusing the identical endpoint + honeypot field name (Mailchimp ties
-  // the honeypot's expected name to this specific list) rather than
-  // inventing a second integration.
-  var ACTION = 'https://vanessastoykov.us18.list-manage.com/subscribe/post?u=5bafccece958e5ca2514b2ee2&id=0681d8d525';
-  var HONEYPOT = 'b_5bafccece958e5ca2514b2ee2_0681d8d525';
-
   var pending = null;
+
+  // Only this guide is wired to Mailchimp. The other four opt-ins keep their
+  // existing local-only behaviour until their tags are confirmed.
+  var MC = {
+    'https://vanessastoykov.com.au/uploads/Vanessa_AdultChildrenMoneyGuide-1.pdf': {
+      action: 'https://vanessastoykov.us18.list-manage.com/subscribe/post?u=5bafccece958e5ca2514b2ee2&id=0681d8d525&f_id=00cfa4e6f0',
+      honeypot: 'b_5bafccece958e5ca2514b2ee2_0681d8d525',
+      tags: '3078310,3078464',
+      thanks: 'Your guide is on its way! Check your inbox.'
+    },
+    'https://vanessastoykov.com.au/uploads/Vanessa_DivorceGuide_Formatted_v4-1.pdf': {
+      action: 'https://vanessastoykov.us18.list-manage.com/subscribe/post?u=5bafccece958e5ca2514b2ee2&id=0681d8d525&f_id=00f1a4e6f0',
+      honeypot: 'b_5bafccece958e5ca2514b2ee2_0681d8d525',
+      tags: '3078470,3078310',
+      thanks: 'Your guide is on its way! Check your inbox.'
+    },
+    'https://vanessastoykov.com.au/uploads/Vanessa_InheritanceGuide_Formatted_Fixed.pdf': {
+      action: 'https://vanessastoykov.us18.list-manage.com/subscribe/post?u=5bafccece958e5ca2514b2ee2&id=0681d8d525&f_id=00cba4e6f0',
+      honeypot: 'b_5bafccece958e5ca2514b2ee2_0681d8d525',
+      tags: '3078459,3078310',
+      thanks: 'Your guide is on its way! Check your inbox.'
+    },
+    'https://vanessastoykov.com.au/uploads/Vanessa_FindingAFinancialPlanner.pdf': {
+      action: 'https://vanessastoykov.us18.list-manage.com/subscribe/post?u=5bafccece958e5ca2514b2ee2&id=0681d8d525&f_id=0099a4e6f0',
+      honeypot: 'b_5bafccece958e5ca2514b2ee2_0681d8d525',
+      tags: '1061622,3078525',
+      thanks: 'Your guide is on its way! Check your inbox.'
+    }
+  };
+
+  function mcFor(href) { return (href && MC[href]) || null; }
+
+  var defaultThanks = null;
 
   function css() {
     if (document.getElementById('vs-lead-css')) return;
@@ -28,7 +53,6 @@
       '#vs-lead-consent input{margin-top:3px;flex-shrink:0;}',
       '#vs-lead-submit{width:100%;background:#001E60;color:#FFFFFF;border:none;padding:16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.06em;cursor:pointer;}',
       '#vs-lead-submit:hover{background:#0a2c7a;}',
-      '#vs-lead-submit:disabled{opacity:0.6;cursor:default;}',
       '#vs-lead-err{font-size:13px;color:#c0392b;margin:0 0 14px;display:none;}',
       '#vs-lead-done{display:none;text-align:center;}',
       '#vs-lead-done p{font-size:15px;line-height:1.6;color:#33456f;margin:0 0 24px;}'
@@ -47,21 +71,19 @@
         '<form id="vs-lead-form" novalidate>' +
           '<div id="vs-lead-kicker">FREE GUIDE</div>' +
           '<h2 id="vs-lead-title">Where should we send it?</h2>' +
-          '<p id="vs-lead-sub">Pop in your details and we’ll email your guide straight through.</p>' +
+          '<p id="vs-lead-sub">Pop in your details and we\u2019ll email your guide straight through.</p>' +
           '<p id="vs-lead-err"></p>' +
           '<input class="vs-lead-input" id="vs-lead-name" type="text" placeholder="First Name*" autocomplete="given-name">' +
           '<input class="vs-lead-input" id="vs-lead-email" type="email" placeholder="Email Address*" autocomplete="email">' +
-          '<input type="text" id="vs-lead-hp" name="' + HONEYPOT + '" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">' +
           '<label id="vs-lead-consent"><input type="checkbox" id="vs-lead-check" checked>' +
-            '<span>Yes, email me the guide and sign me up for <strong>Vanessa’s Newsletter</strong>. I agree to the Privacy Policy and Terms of Use.*</span>' +
+            '<span>Yes, email me the guide and sign me up for <strong>Vanessa\u2019s Newsletter</strong>. I agree to the Privacy Policy and Terms of Use.*</span>' +
           '</label>' +
           '<button id="vs-lead-submit" type="submit">SEND ME THE GUIDE</button>' +
         '</form>' +
         '<div id="vs-lead-done">' +
           '<div id="vs-lead-kicker2" style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:10px;">ON ITS WAY</div>' +
           '<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:28px;line-height:1.1;color:#001E60;margin:0 0 12px;">Thanks — check your inbox</h2>' +
-          '<p>We’ve got your details. Your guide is on its way to your email.</p>' +
-          '<a id="vs-lead-fallback" href="#" style="font-size:14px;font-weight:700;color:#001E60;border-bottom:1.5px solid #F09491;text-decoration:none;">Or open it now →</a>' +
+          '<p>We\u2019ve got your details. Your guide is on its way to your email.</p>' +
         '</div>' +
       '</div>';
     document.body.appendChild(b);
@@ -71,23 +93,53 @@
     document.getElementById('vs-lead-form').addEventListener('submit', submit);
   }
 
+  // Mailchimp's required off-screen honeypot plus the tag field, matching
+  // the pattern in newsletter-mailchimp.js (positioned away, not display:none).
+  // Re-injected per guide so wiring a second guide later is never a no-op.
+  function hidden(form, mc) {
+    if (!form) return;
+    Array.prototype.forEach.call(form.querySelectorAll('input[data-vs-mc="1"]'), function (n) { n.remove(); });
+    if (!mc) return;
+    [['tags', mc.tags], [mc.honeypot, '']].forEach(function (pair) {
+      var i = document.createElement('input');
+      i.type = 'text';
+      i.name = pair[0];
+      i.value = pair[1];
+      i.tabIndex = -1;
+      i.setAttribute('data-vs-mc', '1');
+      i.setAttribute('autocomplete', 'off');
+      i.setAttribute('aria-hidden', 'true');
+      i.style.cssText = 'position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;';
+      form.appendChild(i);
+    });
+  }
+
   function open(href, filename, label) {
     build();
     pending = { href: href, filename: filename, label: label };
+    var mc = mcFor(href);
+    hidden(document.getElementById('vs-lead-form'), mc);
+    var copy = document.querySelector('#vs-lead-done p');
+    if (copy) {
+      if (defaultThanks === null) defaultThanks = copy.textContent;
+      copy.textContent = mc ? mc.thanks : defaultThanks;
+    }
     document.getElementById('vs-lead-form').style.display = '';
     document.getElementById('vs-lead-done').style.display = 'none';
     document.getElementById('vs-lead-err').style.display = 'none';
-    document.getElementById('vs-lead-kicker').textContent = label ? label.toUpperCase() : 'FREE GUIDE';
-    // The modal is a shared singleton reused across every guide button on
-    // the page (build() only constructs it once) — reset the previous
-    // request's leftover state so a second guide doesn't inherit a
-    // disabled "SENDING..." button or the first guide's name/email.
+    // The modal is a shared singleton reused by every guide button on the
+    // page (build() constructs it once), so clear the previous request's
+    // state or a second guide inherits a disabled "SENDING..." button and
+    // the first guide's name and email.
     document.getElementById('vs-lead-name').value = '';
     document.getElementById('vs-lead-email').value = '';
     document.getElementById('vs-lead-check').checked = true;
-    var submitBtn = document.getElementById('vs-lead-submit');
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'SEND ME THE GUIDE';
+    var btn = document.getElementById('vs-lead-submit');
+    btn.disabled = false;
+    btn.style.opacity = '';
+    btn.style.cursor = 'pointer';
+    btn.textContent = 'SEND ME THE GUIDE';
+    document.getElementById('vs-lead-kicker').textContent = label ? label.toUpperCase() : 'FREE GUIDE';
     document.getElementById('vs-lead-backdrop').classList.add('open');
     document.body.style.overflow = 'hidden';
     setTimeout(function () { document.getElementById('vs-lead-name').focus(); }, 60);
@@ -106,21 +158,6 @@
     e.style.display = 'block';
   }
 
-  function showDone(lead) {
-    document.getElementById('vs-lead-form').style.display = 'none';
-    var done = document.getElementById('vs-lead-done');
-    done.style.display = 'block';
-    // The guide itself is available immediately regardless of whether the
-    // Mailchimp submission or any follow-up email actually goes through —
-    // this fallback always points straight at the real guide file.
-    var fb = document.getElementById('vs-lead-fallback');
-    if (pending) {
-      fb.setAttribute('href', pending.href);
-      fb.setAttribute('target', '_blank');
-      fb.setAttribute('rel', 'noopener');
-    }
-  }
-
   function submit(ev) {
     ev.preventDefault();
     var name = document.getElementById('vs-lead-name').value.trim();
@@ -130,19 +167,16 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('Please enter a valid email address.');
     if (!consent) return fail('Please tick the box so we can email your guide.');
 
-    var guideLabel = pending && pending.label ? pending.label : 'Free guide';
     var lead = {
       name: name,
       email: email,
-      guide: guideLabel,
+      guide: pending ? pending.label : '',
       file: pending ? pending.filename : '',
       page: location.pathname.split('/').pop(),
       at: new Date().toISOString()
     };
 
-    // Local backup so nothing is lost if the network request below fails —
-    // the mode:'no-cors' fetch to Mailchimp gives no readable response, so
-    // this is the only way to recover a submission if needed.
+    // Store locally so nothing is lost before the email provider is connected.
     try {
       var key = 'vs_guide_leads';
       var all = JSON.parse(localStorage.getItem(key) || '[]');
@@ -150,36 +184,24 @@
       localStorage.setItem(key, JSON.stringify(all));
     } catch (e) {}
 
-    var submitBtn = document.getElementById('vs-lead-submit');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'SENDING...';
+    // Hook for a real provider: window.vsSubmitLead(lead) can POST to Mailchimp/ConvertKit etc.
+    if (typeof window.vsSubmitLead === 'function') {
+      try { window.vsSubmitLead(lead); } catch (e) {}
+    }
 
-    var body = new URLSearchParams();
-    body.append('EMAIL', email);
-    body.append('FNAME', name);
-    // Same TOPIC merge field the newsletter form already populates
-    // (confirmed working there) — distinguishes these as guide downloads
-    // rather than plain newsletter signups, and which guide, right in the
-    // TOPIC column of the Mailchimp audience. guideLabel is already the
-    // full tag text (from data-guide-label, or prefixed in wire()'s
-    // fallback), so it's used as-is rather than prefixed again here.
-    body.append('TOPIC', guideLabel);
-    // Best-effort extra signal in case a SOURCE merge field exists on the
-    // list — Mailchimp silently ignores POST fields with no matching
-    // merge tag, so this is harmless either way.
-    body.append('SOURCE', 'Free Guide');
-    body.append(HONEYPOT, '');
+    var mc = mcFor(pending && pending.href);
+    if (mc) {
+      var body = new URLSearchParams();
+      body.append('EMAIL', email);
+      body.append('FNAME', name);
+      body.append('tags', mc.tags);
+      body.append(mc.honeypot, '');
+      try { fetch(mc.action, { method: 'POST', mode: 'no-cors', body: body }); } catch (e) {}
+    }
 
-    fetch(ACTION, { method: 'POST', mode: 'no-cors', body: body })
-      .catch(function () {})
-      .then(function () {
-        // Optional extra hook for a second integration (CRM, Zapier,
-        // etc.) alongside the Mailchimp submission above.
-        if (typeof window.vsSubmitLead === 'function') {
-          try { window.vsSubmitLead(lead); } catch (e) {}
-        }
-        showDone(lead);
-      });
+    document.getElementById('vs-lead-form').style.display = 'none';
+    var done = document.getElementById('vs-lead-done');
+    done.style.display = 'block';
   }
 
   function wire() {
@@ -189,16 +211,18 @@
       a.setAttribute('data-vs-lead', '1');
       var href = a.getAttribute('href');
       var filename = a.getAttribute('download');
-      // Prefer an explicit label set on the link itself (exact tag text,
-      // e.g. "Guide — Adult Children") over guessing from nearby markup —
-      // guarantees the Mailchimp TOPIC value matches the guide requested.
-      var label = a.getAttribute('data-guide-label');
-      if (!label) {
-        label = 'Free guide';
+      // guide title = nearest card heading
+      var label = 'Free guide';
+      // Prefer an explicit label attribute. Style-string matching is unreliable
+      // here because React re-serialises inline styles with spaces.
+      var tagged = a.closest('[data-guide-label]');
+      if (tagged) {
+        label = tagged.getAttribute('data-guide-label');
+      } else {
         var card = a.closest('div');
         while (card && card.parentElement) {
-          var kick = card.querySelector('div[style*="letter-spacing:0.08em"]');
-          if (kick && kick.textContent.trim()) { label = 'Free Guide — ' + kick.textContent.trim(); break; }
+          var kick = card.querySelector('div[style*="letter-spacing:0.08em"], div[style*="letter-spacing: 0.08em"]');
+          if (kick && kick.textContent.trim()) { label = kick.textContent.trim(); break; }
           card = card.parentElement;
         }
       }

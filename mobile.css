@@ -99,13 +99,14 @@ img, iframe, video { max-width: 100%; }
   text-decoration: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1060px) {
   #vs-burger { display: flex; }
   .hero-endorsements { display: none !important; }
   /* hide the desktop nav pill / inline nav */
   header nav { display: none !important; }
   header nav + * { display: none; }
-  header > div > div[style*="border-radius:999px"] { display: none !important; }
+  header > div > div[style*="border-radius:999px"],
+  header > div > div[style*="border-radius: 999px"] { display: none !important; }
   /* keep the logo and burger on one line */
   header > div {
     padding: 14px 18px !important;
@@ -114,6 +115,9 @@ img, iframe, video { max-width: 100%; }
     gap: 12px !important;
   }
   header img { height: 26px !important; }
+}
+
+@media (max-width: 1024px) {
   /* suppress any page's own mobile toggle so only the shared burger shows */
   html.vs-shared-nav header button:not(#vs-burger) { display: none !important; }
 
@@ -121,12 +125,14 @@ img, iframe, video { max-width: 100%; }
   section { padding-left: 20px !important; padding-right: 20px !important; }
 
   /* stack every multi-column grid */
-  div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-  div[style*="grid-template-columns"] > * { min-width: 0; }
+  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns"] > * { min-width: 0; }
   div[style*="aspect-ratio"] { width: 100%; max-width: 100%; }
 
-  /* footer columns stack */
-  footer > div > div[style*="display:flex"][style*="justify-content:space-between"] {
+  /* footer columns stack. React re-serialises inline styles with spaces, so both
+     forms are needed or DC pages wrap unevenly instead of stacking. */
+  footer > div > div[style*="display:flex"][style*="justify-content:space-between"],
+  footer > div > div[style*="display: flex"][style*="justify-content: space-between"] {
     flex-direction: column !important;
     gap: 32px !important;
   }
@@ -136,11 +142,30 @@ img, iframe, video { max-width: 100%; }
   h2, h3 { text-wrap: pretty; }
 
   /* embedded forms/videos */
-  iframe { height: 560px !important; }
+  iframe[src*="typeform"] { height: 560px !important; }
 }
 
 @media (max-width: 600px) {
   section { padding-left: 18px !important; padding-right: 18px !important; }
   footer { padding-left: 18px !important; padding-right: 18px !important; }
-  iframe { height: 520px !important; }
+  /* footer nav links sit at a 17px line box on a phone — too small a tap target,
+     especially for this site's older audience. Open the line box to ~31px without
+     adding padding (which would disturb the flex `gap` rhythm). Scoped by colour so
+     the social icon circles and logo link are untouched. Three forms needed: the
+     authored hex, React's spaced hex, and React's rgb() re-serialisation on DC pages. */
+  footer a[style*="color:#33456f"],
+  footer a[style*="color: #33456f"],
+  footer a[style*="color: rgb(51, 69, 111)"] { line-height: 2.2 !important; }
+  /* heavy desktop padding on guest/character cards and poster panels leaves
+     too little measure on a phone — reclaim ~24px of text width each side.
+     React re-serialises inline styles with a space, so match both forms. */
+  [style*="padding:40px 36px"],
+  [style*="padding: 40px 36px"] { padding: 28px 22px !important; }
+  [style*="padding:52px 44px"],
+  [style*="padding: 52px 44px"] { padding: 34px 24px !important; }
+  iframe[src*="typeform"] { height: 520px !important; }
+  /* no body text below 12px on a phone — kicker/eyebrow labels are set at 11px inline
+     (React re-serialises inline styles with a space, so match both forms) */
+  [style*="font-size:11px"],
+  [style*="font-size: 11px"] { font-size: 12px !important; }
 }

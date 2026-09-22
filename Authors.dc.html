@@ -65,18 +65,21 @@
   .topic-link:hover { color: #F09491 !important; text-decoration: underline; }
   .topics-nav:hover .topics-trigger svg { transform: rotate(180deg); }
   .topics-trigger svg { transition: transform 0.15s; }
+  .author-link { transition: color 0.15s; }
+  .author-link:hover { color: #F09491 !important; }
 </style>
 <link rel="stylesheet" href="mobile.css">
 <script src="mobile-nav.js"></script>
+<script src="search.js"></script>
 <script src="hash-scroll.js"></script>
 <script src="image-slot.js"></script>
 </helmet>
 <div style="width:100%;background:#FDFCFB;overflow-x:hidden;">
 <header style="width:100%;background:#FFFFFF;border-bottom:1px solid #D7D2CB;">
-  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-    <a href="Homepage.dc.html"><img src="assets/vslogo-transparent.png" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
-    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 20px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;">
-      <nav style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap;">
+    <a href="Homepage.dc.html"><img src="uploads/vslogo.jpg" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
+    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;flex-shrink:0;">
+      <nav style="display:flex;align-items:center;gap:18px;flex-wrap:nowrap;">
       <div class="topics-nav" style="position:relative;padding-bottom:14px;margin-bottom:-14px;">
         <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;padding:8px 14px;border-radius:999px;border:1px solid transparent;">Topics <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
         <div class="topics-menu" style="display:none;position:absolute;top:100%;left:0;background:#FFFFFF;border:1px solid #D7D2CB;border-radius:12px;box-shadow:0 12px 32px rgba(0,30,96,0.18);padding:8px 0;min-width:190px;z-index:50;">
@@ -107,7 +110,9 @@
               <a href="Books.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Books</a>
               <a href="Books.dc.html#breakfast-club" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Breakfast Club for 40 Somethings</a>
               <a href="Books.dc.html#five-conversations" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Five Conversations About Money</a>
-              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Podcasts</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="VanessaStoykovPodcast.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Vanessa Stoykov Podcast</a>
               <a href="Authors.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Authors</a>
               <a href="Contact.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Contact</a>
         </div>
@@ -131,46 +136,46 @@
   <div style="max-width:900px;margin:0 auto;">
       <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:36px 0;border-top:1px solid #D7D2CB;">
         <div style="flex:0 0 140px;width:140px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="author-vanessa-stoykov" src="uploads/Vanessa-thumb.jpg" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Vanessa Stoykov"></image-slot>
+          <image-slot id="author-vanessa-stoykov" src="assets/slot-author-vanessa-stoykov.webp" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Vanessa Stoykov"></image-slot>
         </div>
         <div style="flex:1;min-width:260px;padding-top:4px;">
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;">VANESSA STOYKOV</h2>
-          <p style="font-size:16px;line-height:1.7;color:#33456f;margin:0;max-width:560px;">Author, journalist, speaker and founder of Evolution Media Group. Almost 30 years spent making financial ideas more human, and helping people have the conversation before the decision.</p>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;"><a href="Author-VanessaStoykov.dc.html" class="author-link" style="color:#001E60;">VANESSA STOYKOV</a></h2>
+          <p style="font-size:16px;line-height:1.7;color:#33456f;margin:0;max-width:560px;">Author, journalist, speaker and founder of Evolution Media Group. More than 25 years spent making financial ideas more human, and helping people have the conversation before the decision.</p>
         </div>
       </div>
       <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:36px 0;border-top:1px solid #D7D2CB;">
         <div style="flex:0 0 140px;width:140px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="author-andrew-beks" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Andrew Beks"></image-slot>
+          <image-slot id="author-andrew-beks" src="assets/slot-author-andrew-beks.webp" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Andrew Beks"></image-slot>
         </div>
         <div style="flex:1;min-width:260px;padding-top:4px;">
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;">ANDREW BEKS</h2>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;"><a href="Author-AndrewBeks.dc.html" class="author-link" style="color:#001E60;">ANDREW BEKS</a></h2>
           <p style="font-size:16px;line-height:1.7;color:#33456f;margin:0;max-width:560px;">Andrew Beks is a Chartered Accountant and the founder of Simplified Business and Accounting.</p>
         </div>
       </div>
       <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:36px 0;border-top:1px solid #D7D2CB;">
         <div style="flex:0 0 140px;width:140px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="author-wayne-leggett" src="uploads/WL-headshot-0526-e1779707618430.jpg" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Wayne Leggett"></image-slot>
+          <image-slot id="author-wayne-leggett" src="assets/slot-author-wayne-leggett.webp" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Wayne Leggett"></image-slot>
         </div>
         <div style="flex:1;min-width:260px;padding-top:4px;">
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;">WAYNE LEGGETT</h2>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;"><a href="Author-WayneLeggett.dc.html" class="author-link" style="color:#001E60;">WAYNE LEGGETT</a></h2>
           <p style="font-size:16px;line-height:1.7;color:#33456f;margin:0;max-width:560px;">Wayne has been a recipient of numerous industry awards and was one of the first to qualify as a Certified Financial Planner (CFP). He has been heavily involved in industry affairs at the highest level, including serving as national president of the Association of Financial Advisers (now FAAA).</p>
         </div>
       </div>
       <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:36px 0;border-top:1px solid #D7D2CB;">
         <div style="flex:0 0 140px;width:140px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="author-natallia-smith" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Natallia Smith"></image-slot>
+          <image-slot id="author-natallia-smith" src="assets/slot-author-natallia-smith.webp" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Natallia Smith"></image-slot>
         </div>
         <div style="flex:1;min-width:260px;padding-top:4px;">
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;">NATALLIA SMITH</h2>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;"><a href="Author-NatalliaSmith.dc.html" class="author-link" style="color:#001E60;">NATALLIA SMITH</a></h2>
           <p style="font-size:16px;line-height:1.7;color:#33456f;margin:0;max-width:560px;">Natallia specializes in assisting pre-retiree single women—whether they are never married, widowed, separated, or divorced—understanding deeply the importance of financial stability during life's pivotal moments such as separation, divorce, retirement, and the loss of a loved one.</p>
         </div>
       </div>
       <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:36px 0;border-top:1px solid #D7D2CB;">
         <div style="flex:0 0 140px;width:140px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#F7F5F2;">
-          <image-slot id="author-conrad-francis" src="uploads/3cdd9694-0d0f-48ce-a468-7038b27fa012-e1779708024573.jpg" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Conrad Francis"></image-slot>
+          <image-slot id="author-conrad-francis" src="assets/slot-author-conrad-francis.webp" shape="rect" style="width:100%;height:100%;" placeholder="Headshot: Conrad Francis"></image-slot>
         </div>
         <div style="flex:1;min-width:260px;padding-top:4px;">
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;">CONRAD FRANCIS</h2>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;color:#001E60;margin:0 0 12px;"><a href="Author-ConradFrancis.dc.html" class="author-link" style="color:#001E60;">CONRAD FRANCIS</a></h2>
           <p style="font-size:16px;line-height:1.7;color:#33456f;margin:0;max-width:560px;">Conrad Francis is the Founding Director of Inspired Money, a Perth-based financial coaching and financial planning, mortgage broking and money coaching firm he established in 2011.</p>
         </div>
       </div>
@@ -211,6 +216,7 @@
             <a href="Books.dc.html#five-conversations" style="font-size:13px;color:#5a6a8f;padding-left:12px;">The Five Conversations About Money</a>
           <a href="FindAnAdvisor.dc.html" style="font-size:14px;color:#33456f;">Find an Advisor</a>
           <a href="Podcasts.dc.html" style="font-size:14px;color:#33456f;">Flourishing After 50</a>
+          <a href="VanessaStoykovPodcast.dc.html" style="font-size:14px;color:#33456f;">The Vanessa Stoykov Podcast</a>
         </div>
       </div>
       <div>

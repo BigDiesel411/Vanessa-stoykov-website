@@ -68,14 +68,15 @@
 </style>
 <link rel="stylesheet" href="mobile.css">
 <script src="mobile-nav.js"></script>
+<script src="search.js"></script>
 <script src="hash-scroll.js"></script>
 </helmet>
 <div style="width:100%;background:#FDFCFB;overflow-x:hidden;">
 <header style="width:100%;background:#FFFFFF;border-bottom:1px solid #D7D2CB;">
-  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-    <a href="Homepage.dc.html"><img src="assets/vslogo-transparent.png" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
-    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 20px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;">
-      <nav style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+  <div style="max-width:1280px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap;">
+    <a href="Homepage.dc.html"><img src="uploads/vslogo.jpg" alt="Vanessa Stoykov" style="height:32px;width:auto;display:block;"></a>
+    <div style="background:#FFFFFF;border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 4px 16px rgba(0,30,96,0.10);border:1px solid #EFEBE5;flex-shrink:0;">
+      <nav style="display:flex;align-items:center;gap:18px;flex-wrap:nowrap;">
       <div class="topics-nav" style="position:relative;padding-bottom:14px;margin-bottom:-14px;">
         <span class="topics-trigger" style="font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;padding:8px 14px;border-radius:999px;border:1px solid transparent;">Topics <svg viewBox="0 0 24 24" style="width:12px;height:12px;" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
         <div class="topics-menu" style="display:none;position:absolute;top:100%;left:0;background:#FFFFFF;border:1px solid #D7D2CB;border-radius:12px;box-shadow:0 12px 32px rgba(0,30,96,0.18);padding:8px 0;min-width:190px;z-index:50;">
@@ -106,7 +107,9 @@
               <a href="Books.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Books</a>
               <a href="Books.dc.html#breakfast-club" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Breakfast Club for 40 Somethings</a>
               <a href="Books.dc.html#five-conversations" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Five Conversations About Money</a>
-              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Podcasts</a>
+              <a href="Podcasts.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
+              <a href="VanessaStoykovPodcast.dc.html" class="topic-link" style="display:block;padding:8px 16px 8px 30px;font-size:14px;font-weight:400;color:#33456f;white-space:nowrap;border-bottom:1px solid #F3F1EE;">The Vanessa Stoykov Podcast</a>
               <a href="Authors.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Authors</a>
               <a href="Contact.dc.html" class="topic-link" style="display:block;padding:10px 16px;font-size:15px;font-weight:500;color:#001E60;white-space:nowrap;border-bottom:1px solid #F3F1EE;">Contact</a>
         </div>
@@ -120,14 +123,16 @@
 <section style="padding:72px 24px 24px;">
   <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;">
     <div>
-      <div style="font-size:13px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:10px;">FIND AN ADVISER</div>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:10px;">LOOKING FOR FINANCIAL ADVICE?</div>
       <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,52px);margin:0 0 12px;color:#001E60;">The right conversation starts with the right person</h1>
       <p style="font-size:19px;font-weight:600;color:#F09491;margin:0 0 24px;">Let me connect you to one of my trusted advisors</p>
-      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 20px;">Money decisions rarely need more information. They need someone you trust to talk them through with — a financial adviser who understands what's actually at stake in a divorce, an inheritance, a retirement, or a decision about ageing parents.</p>
-      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0;">Answer a few short questions below and we'll help match you with an independent, qualified adviser who suits your situation.</p>
+      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 20px;">We can help connect you with a financial adviser based on the areas you'd like advice on and the goals you want to discuss.</p>
+      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 20px;">Whether you're thinking about investing, retirement, super, building wealth or getting your finances organised, we can introduce you to an adviser whose services align with what you're looking for.</p>
+      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 20px;">There's no obligation to proceed. You can have an initial conversation, ask questions and decide for yourself whether you'd like to work with them.</p>
+      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0;">We facilitate the introduction. The decision about whether an adviser and their services are appropriate for you is yours.</p>
     </div>
-    <div style="border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(0,30,96,0.10);">
-      <img src="uploads/media-thumb1.jpg" alt="Vanessa Stoykov" style="width:100%;height:100%;object-fit:cover;display:block;">
+    <div style="border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(0,30,96,0.10);aspect-ratio:4/5;align-self:stretch;">
+      <img src="uploads/home-banner-1.jpg" alt="Vanessa Stoykov" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
   </div>
 </section>
@@ -172,6 +177,7 @@
             <a href="Books.dc.html#five-conversations" style="font-size:13px;color:#5a6a8f;padding-left:12px;">The Five Conversations About Money</a>
           <a href="FindAnAdvisor.dc.html" style="font-size:14px;color:#33456f;">Find an Advisor</a>
           <a href="Podcasts.dc.html" style="font-size:14px;color:#33456f;">Flourishing After 50</a>
+          <a href="VanessaStoykovPodcast.dc.html" style="font-size:14px;color:#33456f;">The Vanessa Stoykov Podcast</a>
         </div>
       </div>
       <div>
