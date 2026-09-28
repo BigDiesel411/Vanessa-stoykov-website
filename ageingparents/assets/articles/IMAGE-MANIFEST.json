@@ -1,0 +1,402 @@
+[
+  {
+    "slug": "inheritance-is-not-a-financial-plan",
+    "role": "hero",
+    "output": "ageingparents/inheritance-is-not-a-financial-plan-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "An adult child and older parent walking together outdoors, connection rather than money imagery."
+  },
+  {
+    "slug": "inheritance-is-not-a-financial-plan",
+    "role": "thumb",
+    "output": "ageingparents/inheritance-is-not-a-financial-plan-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "An adult child and older parent walking together outdoors, connection rather than money imagery."
+  },
+  {
+    "slug": "talk-to-parents-before-a-crisis",
+    "role": "hero",
+    "output": "ageingparents/talk-to-parents-before-a-crisis-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "An adult daughter having tea with an ageing parent at home, warm, attentive and natural."
+  },
+  {
+    "slug": "talk-to-parents-before-a-crisis",
+    "role": "thumb",
+    "output": "ageingparents/talk-to-parents-before-a-crisis-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "An adult daughter having tea with an ageing parent at home, warm, attentive and natural."
+  },
+  {
+    "slug": "what-do-your-parents-own-and-owe",
+    "role": "hero",
+    "output": "ageingparents/what-do-your-parents-own-and-owe-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "An older couple organising a small folder of documents with an adult child nearby."
+  },
+  {
+    "slug": "what-do-your-parents-own-and-owe",
+    "role": "thumb",
+    "output": "ageingparents/what-do-your-parents-own-and-owe-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "An older couple organising a small folder of documents with an adult child nearby."
+  },
+  {
+    "slug": "when-you-become-parent-to-your-parents",
+    "role": "hero",
+    "output": "ageingparents/when-you-become-parent-to-your-parents-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A middle-aged adult gently helping an older parent with everyday paperwork, warm and dignified."
+  },
+  {
+    "slug": "when-you-become-parent-to-your-parents",
+    "role": "thumb",
+    "output": "ageingparents/when-you-become-parent-to-your-parents-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A middle-aged adult gently helping an older parent with everyday paperwork, warm and dignified."
+  },
+  {
+    "slug": "who-pays-for-ageing-parents",
+    "role": "hero",
+    "output": "ageingparents/who-pays-for-ageing-parents-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "Three adult siblings in a calm family discussion, realistic age range and warm home setting."
+  },
+  {
+    "slug": "who-pays-for-ageing-parents",
+    "role": "thumb",
+    "output": "ageingparents/who-pays-for-ageing-parents-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "Three adult siblings in a calm family discussion, realistic age range and warm home setting."
+  },
+  {
+    "slug": "career-you-built-isnt-what-you-want",
+    "role": "hero",
+    "output": "careerincome/career-you-built-isnt-what-you-want-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A midlife professional at a crossroads between office and creative workspace, subtle and realistic."
+  },
+  {
+    "slug": "career-you-built-isnt-what-you-want",
+    "role": "thumb",
+    "output": "careerincome/career-you-built-isnt-what-you-want-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A midlife professional at a crossroads between office and creative workspace, subtle and realistic."
+  },
+  {
+    "slug": "financial-cost-of-staying-in-a-job-you-hate",
+    "role": "hero",
+    "output": "careerincome/financial-cost-of-staying-in-a-job-you-hate-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A tired professional leaving an office at dusk, with a hopeful sense of movement rather than despair."
+  },
+  {
+    "slug": "financial-cost-of-staying-in-a-job-you-hate",
+    "role": "thumb",
+    "output": "careerincome/financial-cost-of-staying-in-a-job-you-hate-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A tired professional leaving an office at dusk, with a hopeful sense of movement rather than despair."
+  },
+  {
+    "slug": "income-is-your-biggest-financial-asset",
+    "role": "hero",
+    "output": "careerincome/income-is-your-biggest-financial-asset-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A professional working with a notebook and laptop, learning and connecting rather than generic finance imagery."
+  },
+  {
+    "slug": "income-is-your-biggest-financial-asset",
+    "role": "thumb",
+    "output": "careerincome/income-is-your-biggest-financial-asset-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A professional working with a notebook and laptop, learning and connecting rather than generic finance imagery."
+  },
+  {
+    "slug": "not-too-old-to-earn-more",
+    "role": "hero",
+    "output": "careerincome/not-too-old-to-earn-more-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A confident professional in her 40s or 50s entering a modern workplace, natural and energetic."
+  },
+  {
+    "slug": "not-too-old-to-earn-more",
+    "role": "thumb",
+    "output": "careerincome/not-too-old-to-earn-more-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A confident professional in her 40s or 50s entering a modern workplace, natural and energetic."
+  },
+  {
+    "slug": "pay-rise-conversation-women-delay",
+    "role": "hero",
+    "output": "careerincome/pay-rise-conversation-women-delay-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A professional woman preparing notes before a meeting, calm, focused and contemporary."
+  },
+  {
+    "slug": "pay-rise-conversation-women-delay",
+    "role": "thumb",
+    "output": "careerincome/pay-rise-conversation-women-delay-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A professional woman preparing notes before a meeting, calm, focused and contemporary."
+  },
+  {
+    "slug": "financial-decisions-made-from-fear",
+    "role": "hero",
+    "output": "moneymindset/financial-decisions-made-from-fear-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A person pausing at a desk before making a decision, morning light and a calm notebook."
+  },
+  {
+    "slug": "financial-decisions-made-from-fear",
+    "role": "thumb",
+    "output": "moneymindset/financial-decisions-made-from-fear-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A person pausing at a desk before making a decision, morning light and a calm notebook."
+  },
+  {
+    "slug": "stop-saying-im-bad-with-money",
+    "role": "hero",
+    "output": "moneymindset/stop-saying-im-bad-with-money-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A person confidently opening a banking app or notebook, relaxed and ordinary."
+  },
+  {
+    "slug": "stop-saying-im-bad-with-money",
+    "role": "thumb",
+    "output": "moneymindset/stop-saying-im-bad-with-money-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A person confidently opening a banking app or notebook, relaxed and ordinary."
+  },
+  {
+    "slug": "what-does-enough-look-like",
+    "role": "hero",
+    "output": "moneymindset/what-does-enough-look-like-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A relaxed midlife person enjoying an ordinary meaningful moment outdoors, understated and authentic."
+  },
+  {
+    "slug": "what-does-enough-look-like",
+    "role": "thumb",
+    "output": "moneymindset/what-does-enough-look-like-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A relaxed midlife person enjoying an ordinary meaningful moment outdoors, understated and authentic."
+  },
+  {
+    "slug": "where-your-money-habits-came-from",
+    "role": "hero",
+    "output": "moneymindset/where-your-money-habits-came-from-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "An adult looking through a family photo album, reflective and warm, with no obvious cash imagery."
+  },
+  {
+    "slug": "where-your-money-habits-came-from",
+    "role": "thumb",
+    "output": "moneymindset/where-your-money-habits-came-from-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "An adult looking through a family photo album, reflective and warm, with no obvious cash imagery."
+  },
+  {
+    "slug": "why-more-income-doesnt-feel-secure",
+    "role": "hero",
+    "output": "moneymindset/why-more-income-doesnt-feel-secure-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A successful professional at home looking calm but reflective, understated rather than luxurious."
+  },
+  {
+    "slug": "why-more-income-doesnt-feel-secure",
+    "role": "thumb",
+    "output": "moneymindset/why-more-income-doesnt-feel-secure-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A successful professional at home looking calm but reflective, understated rather than luxurious."
+  },
+  {
+    "slug": "bank-of-mum-and-dad-help-or-headache",
+    "role": "hero",
+    "output": "property/bank-of-mum-and-dad-help-or-headache-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "Parents and an adult child talking at a dining table, papers present but mood warm and serious."
+  },
+  {
+    "slug": "bank-of-mum-and-dad-help-or-headache",
+    "role": "thumb",
+    "output": "property/bank-of-mum-and-dad-help-or-headache-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "Parents and an adult child talking at a dining table, papers present but mood warm and serious."
+  },
+  {
+    "slug": "buying-a-home-or-an-identity",
+    "role": "hero",
+    "output": "property/buying-a-home-or-an-identity-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A person viewing a modest, light-filled home, reflective rather than celebratory."
+  },
+  {
+    "slug": "buying-a-home-or-an-identity",
+    "role": "thumb",
+    "output": "property/buying-a-home-or-an-identity-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A person viewing a modest, light-filled home, reflective rather than celebratory."
+  },
+  {
+    "slug": "five-conversations-before-buying-property-together",
+    "role": "hero",
+    "output": "property/five-conversations-before-buying-property-together-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "Two or three co-buyers discussing a property plan with documents, inclusive and contemporary."
+  },
+  {
+    "slug": "five-conversations-before-buying-property-together",
+    "role": "thumb",
+    "output": "property/five-conversations-before-buying-property-together-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "Two or three co-buyers discussing a property plan with documents, inclusive and contemporary."
+  },
+  {
+    "slug": "stay-or-sell-property-in-your-50s",
+    "role": "hero",
+    "output": "property/stay-or-sell-property-in-your-50s-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A midlife homeowner standing thoughtfully in a familiar living room with moving boxes kept subtle."
+  },
+  {
+    "slug": "stay-or-sell-property-in-your-50s",
+    "role": "thumb",
+    "output": "property/stay-or-sell-property-in-your-50s-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A midlife homeowner standing thoughtfully in a familiar living room with moving boxes kept subtle."
+  },
+  {
+    "slug": "why-property-fomo-is-expensive",
+    "role": "hero",
+    "output": "property/why-property-fomo-is-expensive-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A crowded property auction viewed from behind one calm, reflective prospective buyer."
+  },
+  {
+    "slug": "why-property-fomo-is-expensive",
+    "role": "thumb",
+    "output": "property/why-property-fomo-is-expensive-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A crowded property auction viewed from behind one calm, reflective prospective buyer."
+  },
+  {
+    "slug": "could-you-afford-to-leave-your-relationship",
+    "role": "hero",
+    "output": "relationships/could-you-afford-to-leave-your-relationship-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A confident midlife woman walking through a bright doorway, hopeful and self-possessed."
+  },
+  {
+    "slug": "could-you-afford-to-leave-your-relationship",
+    "role": "thumb",
+    "output": "relationships/could-you-afford-to-leave-your-relationship-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A confident midlife woman walking through a bright doorway, hopeful and self-possessed."
+  },
+  {
+    "slug": "financial-infidelity-hidden-money",
+    "role": "hero",
+    "output": "relationships/financial-infidelity-hidden-money-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A person sitting thoughtfully with a bank statement, dignified and calm rather than distressed."
+  },
+  {
+    "slug": "financial-infidelity-hidden-money",
+    "role": "thumb",
+    "output": "relationships/financial-infidelity-hidden-money-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A person sitting thoughtfully with a bank statement, dignified and calm rather than distressed."
+  },
+  {
+    "slug": "money-conversation-couples-should-have",
+    "role": "hero",
+    "output": "relationships/money-conversation-couples-should-have-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "Two partners reviewing papers together at home, relaxed and collaborative, with no visible branded financial documents."
+  },
+  {
+    "slug": "money-conversation-couples-should-have",
+    "role": "thumb",
+    "output": "relationships/money-conversation-couples-should-have-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "Two partners reviewing papers together at home, relaxed and collaborative, with no visible branded financial documents."
+  },
+  {
+    "slug": "when-one-person-earns-more",
+    "role": "hero",
+    "output": "relationships/when-one-person-earns-more-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A midlife couple walking side by side, equal positioning, natural and confident."
+  },
+  {
+    "slug": "when-one-person-earns-more",
+    "role": "thumb",
+    "output": "relationships/when-one-person-earns-more-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A midlife couple walking side by side, equal positioning, natural and confident."
+  },
+  {
+    "slug": "why-smart-couples-still-fight-about-money",
+    "role": "hero",
+    "output": "relationships/why-smart-couples-still-fight-about-money-hero.jpg",
+    "width": 1600,
+    "height": 900,
+    "prompt": "A midlife couple talking calmly at a kitchen table, natural light, warm and contemporary rather than staged."
+  },
+  {
+    "slug": "why-smart-couples-still-fight-about-money",
+    "role": "thumb",
+    "output": "relationships/why-smart-couples-still-fight-about-money-thumb.jpg",
+    "width": 560,
+    "height": 400,
+    "prompt": "A midlife couple talking calmly at a kitchen table, natural light, warm and contemporary rather than staged."
+  }
+]
