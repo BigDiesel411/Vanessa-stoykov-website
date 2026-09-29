@@ -140,6 +140,22 @@
   from = "/books"
   to = "/Books.dc.html"
   status = 200
+[[redirects]]
+  from = "/privacy"
+  to = "/Privacy.dc.html"
+  status = 200
+[[redirects]]
+  from = "/privacy/"
+  to = "/Privacy.dc.html"
+  status = 200
+[[redirects]]
+  from = "/legal-disclaimer"
+  to = "/LegalDisclaimer.dc.html"
+  status = 200
+[[redirects]]
+  from = "/legal-disclaimer/"
+  to = "/LegalDisclaimer.dc.html"
+  status = 200
 
 # Deliberately NOT included: clean URLs for individual articles.
 # Several articles exist at two paths (inside their topic folder, and
