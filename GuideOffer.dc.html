@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section aria-label="Companion guide" style="background:#F4F1EC;border-top:1px solid #D7D2CB;padding:clamp(72px,9vw,120px) 24px;margin-top:88px;">
+  <div ref="{{ revealRef }}" style="max-width:1160px;margin:0 auto;display:flex;flex-direction:row-reverse;flex-wrap:wrap;align-items:center;gap:clamp(48px,6vw,88px);opacity:{{ revealOpacity }};transform:{{ revealTransform }};transition:opacity .8s ease, transform .8s ease;">
+
+    <div style="flex:1 1 360px;min-width:0;display:flex;justify-content:center;">
+      <div style="position:relative;width:100%;max-width:380px;padding:28px 0 44px;">
+        <div aria-hidden="true" style="position:absolute;left:50%;top:48%;width:118%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 50% 50%, #FBEBC4 0%, #F8E6B8 45%, rgba(248,230,184,0) 72%);"></div>
+        <div aria-hidden="true" style="position:absolute;left:12%;right:12%;bottom:22px;height:28px;border-radius:50%;background:rgba(0,30,96,0.28);filter:blur(16px);"></div>
+        <img src="{{ coverSrc }}" alt="{{ coverAlt }}" width="1122" height="1402" loading="lazy" style="position:relative;display:block;width:100%;height:auto;transform:rotate(-2deg);border-radius:3px;box-shadow:0 2px 4px rgba(0,30,96,0.12),0 18px 36px rgba(0,30,96,0.20),0 40px 70px rgba(0,30,96,0.14);">
+      </div>
+    </div>
+
+    <div style="flex:1 1 520px;min-width:0;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.22em;color:#8A6400;margin-bottom:22px;">THE NEXT STEP · COMPANION GUIDE</div>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,4.2vw,54px);line-height:1.02;letter-spacing:0.02em;color:#001E60;margin:0 0 18px;font-weight:400;max-width:620px;">{{ headline }}</h2>
+      <p style="font-size:clamp(17px,1.5vw,19px);line-height:1.7;color:rgba(0,30,96,0.8);margin:0 0 40px;max-width:560px;">{{ subhead }}</p>
+
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#001E60;margin-bottom:6px;">WHAT'S INSIDE</div>
+      <ol style="list-style:none;margin:0 0 36px;padding:0;max-width:600px;">
+        <li style="display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid #D7D2CB;"><span style="flex:0 0 28px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;color:#A87800;">01</span><span style="font-size:16.5px;line-height:1.6;color:#001E60;">{{ item1 }}</span></li>
+        <li style="display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid #D7D2CB;"><span style="flex:0 0 28px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;color:#A87800;">02</span><span style="font-size:16.5px;line-height:1.6;color:#001E60;">{{ item2 }}</span></li>
+        <li style="display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid #D7D2CB;"><span style="flex:0 0 28px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;color:#A87800;">03</span><span style="font-size:16.5px;line-height:1.6;color:#001E60;">{{ item3 }}</span></li>
+        <li style="display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid #D7D2CB;"><span style="flex:0 0 28px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;color:#A87800;">04</span><span style="font-size:16.5px;line-height:1.6;color:#001E60;">{{ item4 }}</span></li>
+      </ol>
+
+      <div style="width:36px;height:2px;background:#FFB81C;margin-bottom:12px;"></div>
+      <p style="font-size:14px;font-style:italic;line-height:1.5;color:#001E60;margin:0 0 14px;">{{ expert }}</p>
+      <p style="font-size:13px;line-height:1.6;color:rgba(0,30,96,0.7);margin:0 0 36px;max-width:560px;">{{ facts }}</p>
+
+      <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:baseline;gap:8px;">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,4.6vw,58px);line-height:0.9;color:#001E60;">$19.99</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;color:rgba(0,30,96,0.7);">AUD</span>
+        </div>
+        <a href="{{ link }}" class="guide-buy" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#001E60;color:#FFFFFF;padding:18px 34px;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:0.06em;text-decoration:none;transition:transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;" style-hover="background:#FFB81C;color:#001E60;transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,30,96,0.18);">Get the guide, $19.99</a>
+      </div>
+      <p style="font-size:12px;line-height:1.6;color:rgba(0,30,96,0.65);margin:16px 0 0;">Secure payment by Stripe<br>General financial education only, not personal advice.</p>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1300,&quot;height&quot;:1000},&quot;headline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;subhead&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;item1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;item2&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;item3&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;item4&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;expert&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;facts&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;link&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;coverSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;coverAlt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { shown: false };
+  revealRef = React.createRef();
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const el = this.revealRef.current;
+    if (reduce || !el || !('IntersectionObserver' in window)) { this.setState({ shown: true }); return; }
+    this.io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) { this.setState({ shown: true }); this.io.disconnect(); }
+    }, { threshold: 0.15 });
+    this.io.observe(el);
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+  renderVals() {
+    const p = this.props;
+    return {
+      revealRef: this.revealRef,
+      revealOpacity: this.state.shown ? 1 : 0,
+      revealTransform: this.state.shown ? 'none' : 'translateY(24px)',
+      headline: p.headline ?? '', subhead: p.subhead ?? '',
+      item1: p.item1 ?? '', item2: p.item2 ?? '', item3: p.item3 ?? '', item4: p.item4 ?? '',
+      expert: p.expert ?? '', facts: p.facts ?? '', link: p.link ?? '#',
+      coverSrc: p.coverSrc ?? '', coverAlt: p.coverAlt ?? ''
+    };
+  }
+}
+</script>
+</body>
+</html>

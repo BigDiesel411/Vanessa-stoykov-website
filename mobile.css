@@ -99,7 +99,7 @@ img, iframe, video { max-width: 100%; }
   text-decoration: none;
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1024px) {
   #vs-burger { display: flex; }
   .hero-endorsements { display: none !important; }
   /* hide the desktop nav pill / inline nav */
@@ -163,9 +163,26 @@ img, iframe, video { max-width: 100%; }
   [style*="padding: 40px 36px"] { padding: 28px 22px !important; }
   [style*="padding:52px 44px"],
   [style*="padding: 52px 44px"] { padding: 34px 24px !important; }
-  iframe[src*="typeform"] { height: 520px !important; }
   /* no body text below 12px on a phone — kicker/eyebrow labels are set at 11px inline
      (React re-serialises inline styles with a space, so match both forms) */
   [style*="font-size:11px"],
   [style*="font-size: 11px"] { font-size: 12px !important; }
+}
+
+
+/* tighten pill nav: keep all seven items on one line inside the pill on laptop widths */
+@media (min-width: 1025px) and (max-width: 1400px) {
+  header nav { gap: 2px !important; }
+  header nav .topics-trigger { padding-left: 9px !important; padding-right: 9px !important; font-size: 13.5px !important; }
+  header nav > a:last-child { padding-left: 14px !important; padding-right: 14px !important; }
+}
+@media (min-width: 1025px) and (max-width: 1180px) {
+  header > div { padding-left: 16px !important; padding-right: 16px !important; gap: 12px !important; }
+  header nav .topics-trigger { padding-left: 7px !important; padding-right: 7px !important; font-size: 13px !important; }
+  header img { height: 28px !important; }
+}
+
+/* companion guide buy button: full width on phones */
+@media (max-width: 600px) {
+  .guide-buy { display: block !important; text-align: center; }
 }

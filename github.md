@@ -3,7 +3,14 @@ branch: main
 path: assets/generated
 
 ## Last sync
-date: 2026-09-22T02:35:00Z
+date: 2026-09-28T01:20:00Z
+
+### Updated in this project
+- Pulled the 6 new character portraits from `assets/generated/vsp/` (Karen, Russ, Jasper, Jane, Josie, Brad) and replaced the monogram tiles on the five Vanessa Stoykov Podcast episode pages. Each image was viewed before its alt text was written; alt text marks them as illustrative portraits of fictional characters, and the FICTIONAL CHARACTER label stays on every card.
+- Ignored upstream's "* 2.jpg" files across assets/generated — duplicate copies from a sync, not new content.
+- No other upstream changes relevant to this project.
+
+### 2026-09-22T02:35:00Z
 
 ### Updated in this project
 - Nothing to pull. Both changes described upstream were already applied here: the nav is Topics | Guides | Get Advice | About | Work With Vanessa on all 102 pages (no "Free Guides", Courses, Partners, or top-level Books/Podcasts anywhere), and every Lydian Mortgage Connection reference is gone — `Lydian.dc.html` deleted, no nav or footer links remaining.
@@ -15,7 +22,7 @@ date: 2026-09-22T02:35:00Z
 - Property, Relationships and AgeingParents hubs: all three already had complete article grids locally (6 / 7 / 6, matching the articles on disk), so nothing structural to pull.
 - AgeingParents was the one real gap — wired all 6 images (featured hero + 5 thumbs) from files already in `assets/generated/ageingparents/`.
 - Found and fixed 3 mismatched thumbnails that showed the wrong article's image: Relationships money-conversation-couples-should-have and could-you-afford-to-leave-your-relationship, and Property stay-or-sell-property-in-your-50s. Cause was a greedy regex in an earlier wiring pass matching across row boundaries; the per-row pattern is now non-greedy (`(?:(?!</a>)[\s\S])*?`).
-- Audited all 10 hubs for the same class of mismatch. Only `rich-or-wealthy-whats-the-difference` still shows a placeholder, which is expected — no generated images upstream.
+- Audited all 10 hubs for the same class of mismatch. No placeholders remain after `rich-or-wealthy-whats-the-difference` was deleted.
 
 ### 2026-09-22T02:25:00Z
 
@@ -49,7 +56,6 @@ date: 2026-09-22T02:35:00Z
 
 ## Still awaiting images
 - Finding A Financial Planner guide PDF (card shows COMING SOON until the file is live)
-- moneymindset/rich-or-wealthy-whats-the-difference — no generated images upstream
 
 ## Open request upstream
 24 articles still use a 640x478 `-thumb.jpg` as their second body image, capped at 640px so it isn't upscaled. Only 8 slugs have a full-width `-mid.jpg`. Requesting `-mid` renders for the remaining slugs would let every second figure go full-bleed.

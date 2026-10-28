@@ -23,7 +23,7 @@
     var items = [];
     Array.prototype.forEach.call(nav.children, function (child) {
       if (child.tagName === 'A') {
-        items.push({ type: 'link', label: child.textContent.trim(), href: child.getAttribute('href') });
+        items.push({ type: 'link', label: child.getAttribute('data-label') || child.textContent.trim(), badge: child.getAttribute('data-badge') || '', href: child.getAttribute('href') });
         return;
       }
       // dropdown group: trigger span + menu of links
@@ -76,7 +76,7 @@
 
     items.forEach(function (it) {
       if (it.type === 'link') {
-        html += '<a class="vs-drawer-item" href="' + it.href + '">' + it.label + '</a>';
+        html += '<a class="vs-drawer-item" href="' + it.href + '">' + it.label + (it.badge ? ' <span style="display:inline-block;vertical-align:middle;margin-left:8px;background:#FFB81C;color:#001E60;font-size:12px;font-weight:800;letter-spacing:0.08em;padding:2px 9px;border-radius:999px;">' + it.badge + '</span>' : '') + '</a>';
       } else {
         html += '<details class="vs-drawer-group"><summary>' + it.label + CHEVRON + '</summary><div class="vs-drawer-sub">';
         it.links.forEach(function (l) {
