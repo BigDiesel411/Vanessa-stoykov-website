@@ -175,7 +175,7 @@
           <a href="Speaking.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Speaking</a>
           <a href="Books.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Books</a>
           <a href="Podcasts.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Flourishing After 50</a>
-          <a href="VanessaStoykovPodcast.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">The Vanessa Stoykov Podcast</a>
+          <a href="VanessaStoykovPodcast.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">The Breakfast Club Podcast</a>
           <a href="Authors.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Authors</a>
           <a href="EvolutionMediaGroup.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">evolution media group</a>
           <a href="Contact.dc.html" onClick="{{ toggleMobileMenu }}" style="padding:10px 0 10px 16px;font-size:15px;font-weight:400;color:#33456f;border-bottom:1px solid #F3F1EE;">Contact</a>
@@ -280,11 +280,11 @@
       <div style="width:120px;height:6px;border-radius:999px;background:#FF1F7A;margin:0 0 24px;"></div>
       <p style="font-size:18px;line-height:1.6;color:#C7D0E4;margin:0 0 34px;max-width:520px;">Your money problems solved by the experts. Some of the country's leading minds help unpack the everyday money dilemmas that shape people's lives.</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:22px;">
-        <a href="MoneyDilemmas.dc.html#episodes" style="display:inline-flex;align-items:center;gap:12px;background:#FFB81C;color:#001E60;padding:18px 32px;border-radius:999px;font-size:14px;font-weight:800;letter-spacing:0.08em;">
+        <a href="MoneyDilemmas.dc.html#trailer" style="display:inline-flex;align-items:center;gap:12px;background:#FFB81C;color:#001E60;padding:18px 32px;border-radius:999px;font-size:14px;font-weight:800;letter-spacing:0.08em;">
           <svg viewBox="0 0 24 24" style="width:15px;height:15px;" fill="#001E60"><path d="M8 5v14l11-7z"></path></svg>
-          WATCH EPISODE 1
+          WATCH THE TRAILER
         </a>
-        <a href="MoneyDilemmas.dc.html#listen" style="font-size:14px;font-weight:600;color:#FFD100;border-bottom:1px solid #FFD100;padding-bottom:2px;">Listen on Spotify, Apple Podcasts &amp; YouTube</a>
+        <a href="MoneyDilemmas.dc.html#listen" data-hidden-until-links="1" style="display:none;font-size:14px;font-weight:600;color:#FFD100;border-bottom:1px solid #FFD100;padding-bottom:2px;">Listen on Spotify, Apple Podcasts &amp; YouTube</a>
       </div>
     </div>
   </div>
@@ -295,7 +295,7 @@
     <div style="flex:1 1 420px;min-width:300px;">
       <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,4.2vw,48px);line-height:1.05;color:#001E60;margin:0 0 28px;">Money is rarely<br>just about money.</h2>
       <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 20px;">It's about relationships. Family. Freedom. Security. Ageing. Starting again. Helping your children. Planning for the future. And sometimes simply sleeping better at night.</p>
-      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 20px;">For more than 25 years, I've been helping people talk about money differently — through television, books, journalism, speaking and conversations with some of the world's leading financial experts.</p>
+      <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 20px;">For more than 25 years, I've been helping people talk about money differently, through television, books, journalism, speaking and conversations with some of the world's leading financial experts.</p>
       <p style="font-size:17px;line-height:1.75;color:#33456f;margin:0 0 36px;">Because when we can talk more openly about money, we can make better decisions about our lives.</p>
       <a href="About.dc.html" style="display:inline-block;font-size:14px;font-weight:700;letter-spacing:0.02em;background:#FFB81C;color:#001E60;padding:16px 28px;border-radius:999px;">About Vanessa</a>
     </div>
@@ -340,7 +340,7 @@
         </div>
         <label style="display:flex;align-items:flex-start;gap:10px;max-width:520px;margin:0 auto 28px;text-align:left;font-size:13px;color:#33456f;line-height:1.5;">
           <input type="checkbox" required="true" checked="{{ newsletterData.consent }}" onChange="{{ toggleNewsletterConsent }}" style="margin-top:3px;flex-shrink:0;">
-          <span>Yes! Sign me up for <strong>Vanessa's Newsletter</strong>. In doing so, I agree to the <a href="#" style="text-decoration:underline;">Privacy Policy</a> and <a href="#" style="text-decoration:underline;">Terms of Use</a>.*</span>
+          <span>Yes! Sign me up for <strong>Vanessa's Newsletter</strong>. In doing so, I agree to the <a href="Privacy.dc.html" style="text-decoration:underline;">Privacy Policy</a> and <a href="LegalDisclaimer.dc.html" style="text-decoration:underline;">Terms of Use</a>.*</span>
         </label>
         <button type="submit" style="background:#001E60;color:#FFFFFF;border:none;padding:16px 40px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.08em;cursor:pointer;">SIGN ME UP</button>
       </form>
@@ -380,17 +380,17 @@
         <div style="font-size:16px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Breakfast Club for 40 Somethings</div>
         <div style="font-size:13px;line-height:1.55;white-space:pre-line;color:#3a2a2a;margin-bottom:22px;">Five old friends. One school reunion. And lives that aren't quite what they seem.
 
-On social media, they look successful. Scratch the surface and each is hiding a very different reality — and money is at the heart of it.</div>
+On social media, they look successful. Scratch the surface and each is hiding a very different reality, and money is at the heart of it.</div>
         <span style="display:inline-block;background:#001E60;color:#FFFFFF;padding:13px 26px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.06em;">DISCOVER THE BOOK</span>
       </a>
       <a href="Books.dc.html#five-conversations" style="display:block;background:#FFB81C;border-radius:16px;padding:36px 30px;text-decoration:none;">
         <div style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-          <img src="uploads/five-conv-book-img.png" alt="The Five Conversations About Money That Will Radically Change Your Life" style="max-width:70%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,0.22));">
+          <img src="assets/five-conversations-cover.png" alt="The Five Conversations About Money That Will Radically Change Your Life" style="max-width:70%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,0.22));">
         </div>
         <div style="font-size:16px;font-weight:700;color:#001E60;margin-bottom:8px;line-height:1.3;">The Five Conversations About Money That Will Radically Change Your Life</div>
         <div style="font-size:13px;line-height:1.55;white-space:pre-line;color:#4a3a12;margin-bottom:22px;">The money conversations we avoid are often the ones that matter most.
 
-A practical guide to talking about money, relationships, family and your future — before avoiding a difficult conversation becomes a financial regret.</div>
+A practical guide to talking about money, relationships, family and your future, before avoiding a difficult conversation becomes a financial regret.</div>
         <span style="display:inline-block;background:#001E60;color:#FFFFFF;padding:13px 26px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.06em;">DISCOVER THE BOOK</span>
       </a>
     </div>
@@ -435,7 +435,7 @@ A practical guide to talking about money, relationships, family and your future 
             <a href="Books.dc.html#five-conversations" style="font-size:13px;color:#5a6a8f;padding-left:12px;">The Five Conversations About Money</a>
             <a href="FindAnAdvisor.dc.html" style="font-size:14px;color:#33456f;">Find an Advisor</a>
             <a href="Podcasts.dc.html" style="font-size:14px;color:#33456f;">Flourishing After 50</a>
-            <a href="VanessaStoykovPodcast.dc.html" style="font-size:14px;color:#33456f;">The Vanessa Stoykov Podcast</a>
+            <a href="VanessaStoykovPodcast.dc.html" style="font-size:14px;color:#33456f;">The Breakfast Club Podcast</a>
           </div>
         </div>
         <div>
@@ -463,8 +463,8 @@ A practical guide to talking about money, relationships, family and your future 
       <a href="https://www.facebook.com/vanessastoykovbrand/" target="_blank" rel="noopener" aria-label="Facebook" style="width:38px;height:38px;border-radius:50%;border:1px solid #001E60;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" style="width:16px;height:16px;" fill="#001E60"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.66 15.4 3.5 14.2 3.5c-2.6 0-4.4 1.6-4.4 4.5v2.4H7.1V13h2.7v8h3.7z"/></svg></a>
       <a href="https://www.tiktok.com/@vanessastoykov" target="_blank" rel="noopener" aria-label="TikTok" style="width:38px;height:38px;border-radius:50%;border:1px solid #001E60;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" style="width:16px;height:16px;" fill="#001E60"><path d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.8v2.7c-1.4.1-2.7-.3-3.9-1.1v5.9c0 3.2-2.3 5.7-5.6 5.7-3.1 0-5.4-2.5-5.4-5.4 0-3.3 2.8-5.8 6.3-5.3v2.8c-1.6-.4-3.4.6-3.4 2.4 0 1.5 1.1 2.6 2.6 2.6 1.6 0 2.7-1.2 2.7-3V3h2.8z"/></svg></a>
     </div>
-    <div style="border-top:1px solid #D7D2CB;padding-top:24px;">
-      <p style="font-size:12px;line-height:1.6;color:#8a93a8;margin:0 0 20px;max-width:960px;">The information on this website is provided for general educational and informational purposes. Vanessa Stoykov is a money educator, not a financial adviser. This content is not personal financial advice and does not take into account your objectives, financial situation or needs. Before making financial decisions, consider whether the information is appropriate for your circumstances. You may wish to seek advice from a qualified professional, such as a licensed financial adviser. You should also check any relevant information independently, as laws, products and circumstances can change. Any examples, opinions or stories shared are for discussion and education. They should not be relied on as a recommendation to buy, sell or hold a financial product, or to take a particular course of action.</p>
+    <div data-footer-legal="1" style="border-top:1px solid #D7D2CB;padding-top:24px;">
+      <p style="font-size:12px;line-height:1.6;color:#8a93a8;margin:0 0 14px;max-width:960px;">The information on this website is provided for general educational and informational purposes. Vanessa Stoykov is a money educator, not a financial adviser. This content is not personal financial advice and does not take into account your objectives, financial situation or needs. Before making financial decisions, consider whether the information is appropriate for your circumstances. You may wish to seek advice from a qualified professional, such as a licensed financial adviser. You should also check any relevant information independently, as laws, products and circumstances can change. Any examples, opinions or stories shared are for discussion and education. They should not be relied on as a recommendation to buy, sell or hold a financial product, or to take a particular course of action.</p>
       <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:13px;color:#5a6a8f;">
         <span>Copyright 2026 © Vanessa Stoykov</span>
         <a href="Privacy.dc.html" style="font-size:13px;color:#5a6a8f;text-decoration:underline;">Privacy Policy</a>
@@ -567,8 +567,8 @@ class Component extends DCLogic {
     ];
 
     const books = [
-      { title: 'The Breakfast Club for 40 Somethings', blurb: 'Five old friends. One school reunion. And lives that aren\'t quite what they seem.\n\nOn social media, they look successful. Scratch the surface and each is hiding a very different reality — and money is at the heart of it.', cover: 'uploads/book-img.png', href: 'Books.dc.html#breakfast-club', bg: '#F09491', textColor: '#3a2a2a' },
-      { title: 'The Five Conversations About Money That Will Radically Change Your Life', blurb: 'The money conversations we avoid are often the ones that matter most.\n\nA practical guide to talking about money, relationships, family and your future — before avoiding a difficult conversation becomes a financial regret.', cover: 'uploads/five-conv-book-img.png', href: 'Books.dc.html#five-conversations', bg: '#FFB81C', textColor: '#4a3a12' }
+      { title: 'The Breakfast Club for 40 Somethings', blurb: 'Five old friends. One school reunion. And lives that aren\'t quite what they seem.\n\nOn social media, they look successful. Scratch the surface and each is hiding a very different reality, and money is at the heart of it.', cover: 'uploads/book-img.png', href: 'Books.dc.html#breakfast-club', bg: '#F09491', textColor: '#3a2a2a' },
+      { title: 'The Five Conversations About Money That Will Radically Change Your Life', blurb: 'The money conversations we avoid are often the ones that matter most.\n\nA practical guide to talking about money, relationships, family and your future, before avoiding a difficult conversation becomes a financial regret.', cover: 'assets/five-conversations-cover.png', href: 'Books.dc.html#five-conversations', bg: '#FFB81C', textColor: '#4a3a12' }
     ];
 
     const svg = (paths) => React.createElement('svg', { width: 20, height: 20, viewBox: '0 0 24 24', fill: 'none', stroke: '#001E60', strokeWidth: 1.7, strokeLinecap: 'round', strokeLinejoin: 'round' },
@@ -640,7 +640,7 @@ class Component extends DCLogic {
       { label: 'The Five Conversations About Money', href: 'Books.dc.html#five-conversations', fontSize: '14px', weight: '400', indent: '14px' },
       { label: 'Podcasts', href: 'Podcasts.dc.html', fontSize: '15px', weight: '500', indent: '0' },
       { label: 'Flourishing After 50', href: 'Podcasts.dc.html', fontSize: '14px', weight: '400', indent: '14px' },
-      { label: 'The Vanessa Stoykov Podcast', href: 'VanessaStoykovPodcast.dc.html', fontSize: '14px', weight: '400', indent: '14px' },
+      { label: 'The Breakfast Club Podcast', href: 'VanessaStoykovPodcast.dc.html', fontSize: '14px', weight: '400', indent: '14px' },
       { label: 'Authors', href: 'Authors.dc.html', fontSize: '15px', weight: '500', indent: '0' },
       { label: 'evolution media group', href: 'EvolutionMediaGroup.dc.html', fontSize: '15px', weight: '500', indent: '0' },
       { label: 'Contact', href: 'Contact.dc.html', fontSize: '15px', weight: '500', indent: '0' }
