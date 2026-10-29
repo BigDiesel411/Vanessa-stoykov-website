@@ -1,3 +1,6 @@
 .env
 .env.local
 node_modules/
+
+.image-slots.state.json
+.thumbnail

@@ -82,7 +82,7 @@
         '</form>' +
         '<div id="vs-lead-done">' +
           '<div id="vs-lead-kicker2" style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#F09491;margin-bottom:10px;">ON ITS WAY</div>' +
-          '<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:28px;line-height:1.1;color:#001E60;margin:0 0 12px;">Thanks — check your inbox</h2>' +
+          '<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:28px;line-height:1.1;color:#001E60;margin:0 0 12px;">Thanks, check your inbox</h2>' +
           '<p>We\u2019ve got your details. Your guide is on its way to your email.</p>' +
         '</div>' +
       '</div>';

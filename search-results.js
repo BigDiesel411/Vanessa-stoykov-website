@@ -21,7 +21,7 @@
     if (head) head.textContent = hits.length + ' result' + (hits.length === 1 ? '' : 's') + ' for “' + query + '”';
 
     if (!hits.length) {
-      out.innerHTML = '<p style="font-size:16px;line-height:1.7;color:' + SLATE + ';margin:0;">Nothing matched that. Try a broader word — for example <strong>divorce</strong>, <strong>super</strong>, <strong>inheritance</strong> or <strong>retirement</strong>.</p>';
+      out.innerHTML = '<p style="font-size:16px;line-height:1.7;color:' + SLATE + ';margin:0;">Nothing matched that. Try a broader word, for example <strong>divorce</strong>, <strong>super</strong>, <strong>inheritance</strong> or <strong>retirement</strong>.</p>';
       return true;
     }
 

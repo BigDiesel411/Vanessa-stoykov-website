@@ -3,7 +3,19 @@ branch: main
 path: assets/generated
 
 ## Last sync
-date: 2026-10-29T04:08:42Z
+date: 2026-10-29T22:52:20Z
+commit: e38c6429835a
+
+### Updated in this project
+- Re-checked upstream: no new commits since e38c6429835a. Nothing to pull.
+
+### 2026-10-29T22:50:00Z
+
+### Updated in this project
+- Nothing pulled. Upstream at e38c6429835a is a mirror of this project from earlier today and is behind it: it lacks the newer author pages, and its root-level pages carry the new legal footer with `../Privacy.dc.html` / `../LegalDisclaimer.dc.html` links, which would 404 from the root. The local footers use the correct relative paths.
+- Upstream still contains the nested duplicate tree under `ageingparents/`, a `needs-review/` image folder and "* 2" duplicate files. None were pulled.
+
+### 2026-10-29T04:22:03Z
 
 ### Updated in this project
 - Re-checked upstream: no new commits since the previous sync. The Privacy Policy and Legal Disclaimer bodies upstream are identical to what is already in the project.
