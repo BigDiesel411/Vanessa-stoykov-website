@@ -3,9 +3,13 @@ branch: main
 path: assets/generated
 
 ## Last sync
-date: 2026-09-28T01:20:00Z
+date: 2026-10-29T04:08:42Z
 
 ### Updated in this project
+- Re-checked upstream: no new commits since the previous sync. The Privacy Policy and Legal Disclaimer bodies upstream are identical to what is already in the project.
+- Pulled the upstream Privacy Policy and Legal Disclaimer pages and rebuilt both inside the current site header and footer (upstream copies had an out-of-date nav with no Money Dilemmas or Speaking links, and placeholder social links). Body text kept as supplied.
+- Ignored the rest of the 139-file upstream change: it is a nested duplicate tree under `ageingparents/` plus loose root-level article copies, all with the older nav. Pulling them would have regressed current pages.
+- Pulled the new `assets/generated/fa50/` folder (Megan, Mark, Cathy and John) and placed Megan and Cathy and John in their case-study cards. Mark's image was pulled but left unplaced, because the user earlier asked for his card to have no photo. Alt text written after viewing each image.
 - Pulled the 6 new character portraits from `assets/generated/vsp/` (Karen, Russ, Jasper, Jane, Josie, Brad) and replaced the monogram tiles on the five Vanessa Stoykov Podcast episode pages. Each image was viewed before its alt text was written; alt text marks them as illustrative portraits of fictional characters, and the FICTIONAL CHARACTER label stays on every card.
 - Ignored upstream's "* 2.jpg" files across assets/generated — duplicate copies from a sync, not new content.
 - No other upstream changes relevant to this project.

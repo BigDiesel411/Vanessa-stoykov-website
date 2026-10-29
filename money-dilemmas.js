@@ -10,8 +10,14 @@
   // While empty, "Take the quiz" offers a notify-me signup instead.
   var QUIZ = [];
 
+  // Paid companion guides, one per episode. Links match the episode pages.
+  var GUIDES = {
+    '1': { title: 'Divorce & Money', pages: 18, link: 'https://buy.stripe.com/4gMbJ3gPx6k91H3ckK8Ra00' },
+    '2': { title: 'The Bank of Mum and Dad', pages: 16, link: 'https://buy.stripe.com/00w00ldDlcIx99vdoO8Ra02' },
+    '3': { title: 'Property & Your Financial Future', pages: 16, link: 'https://buy.stripe.com/14A3cxdDl37X5XjfwW8Ra01' }
+  };
+
   var MSG = {
-    toolkit: "You're on the list. We'll email your checklist as soon as it's ready.",
     alerts: "You're in. The next dilemma will land in your inbox the day it drops.",
     quiznotify: "You're on the list. We'll email you the moment the quiz is live.",
     quizresult: 'Thanks. Your results and the episodes made for your situation are on their way.'
@@ -163,9 +169,12 @@
     var card = document.createElement('div');
     card.style.cssText = 'position:absolute;inset:0;background:rgba(0,30,96,0.97);display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto;';
     card.innerHTML = '<div style="width:100%;max-width:420px;color:#FFF;">' +
-      '<div style="font-size:12px;font-weight:800;letter-spacing:0.12em;color:' + GOLD + ';margin-bottom:10px;">FREE TOOLKIT</div>' +
-      '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:34px;line-height:1;margin-bottom:18px;">Want the free toolkit for this episode?</div>' +
-      '<div style="background:#FFF;border-radius:16px;padding:20px;color:' + NAVY + ';">' + capture('toolkit', topic) + '</div>' +
+      (GUIDES[ep] ?
+        '<div style="font-size:12px;font-weight:800;letter-spacing:0.12em;color:' + GOLD + ';margin-bottom:10px;">COMPANION GUIDE</div>' +
+        '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:34px;line-height:1;margin-bottom:10px;">Take this episode further</div>' +
+        '<div style="font-size:15px;line-height:1.6;color:#C7D0E4;margin-bottom:20px;">' + esc(GUIDES[ep].title) + ' · ' + GUIDES[ep].pages + ' pages · $19.99 AUD</div>' +
+        '<a href="' + GUIDES[ep].link + '" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;background:#FFFFFF;color:' + NAVY + ';padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.06em;text-decoration:none;">GET THE GUIDE, $19.99</a>'
+        : '') +
       (next ? '<button type="button" ' + attrs(next) + ' style="margin-top:14px;width:100%;background:' + GOLD + ';color:' + NAVY + ';border:none;padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.08em;cursor:pointer;">WATCH NEXT EPISODE →</button>' : '') +
       '</div>';
     box.appendChild(card);
@@ -193,14 +202,6 @@
         events: { onStateChange: function (ev) { if (ev.data === 0 && ep) endCard(box, ep, topic); } }
       });
     });
-  }
-
-  // ---------- toolkit ----------
-  function toolkit(topic) {
-    modal('<div style="font-size:12px;font-weight:800;letter-spacing:0.12em;color:' + PINK + ';margin-bottom:10px;">FREE TOOLKIT</div>' +
-      '<h3 style="font-family:\'Bebas Neue\',sans-serif;font-size:36px;line-height:1;margin:0 0 12px;font-weight:400;">Get the free ' + esc(topic) + ' checklist</h3>' +
-      '<p style="font-size:15px;line-height:1.6;color:#33456f;margin:0 0 22px;">Every episode is free to watch. The checklist is a bonus to help you act on it.</p>' +
-      capture('toolkit', topic));
   }
 
   // ---------- quiz ----------
@@ -249,8 +250,6 @@
     if (!t) return;
     var p = t.closest('[data-md-play]');
     if (p) { e.preventDefault(); play(p); return; }
-    var k = t.closest('[data-md-toolkit]');
-    if (k) { e.preventDefault(); toolkit(k.getAttribute('data-md-toolkit')); return; }
     var q = t.closest('[data-md-quiz]');
     if (q) { e.preventDefault(); quiz(); return; }
     var s = t.closest('[data-md-soon]');
