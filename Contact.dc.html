@@ -340,18 +340,18 @@ class Component extends DCLogic {
             this.setState({ sending: false, formSubmitted: true });
             return;
           }
-          let msg = "Your message didn't send. Please try again, or email vanessa@evolutionmediagroup.com.au directly.";
+          let msg = "Your message didn't send. Please try again, or email vstoykov@evolutionmedia.com.au directly.";
           try {
             const json = await res.json();
             if (json && json.errors && json.errors.length) {
-              msg = "Your message didn't send (" + json.errors.map(x => x.message).join(' ') + "). Please try again, or email vanessa@evolutionmediagroup.com.au directly.";
+              msg = "Your message didn't send (" + json.errors.map(x => x.message).join(' ') + "). Please try again, or email vstoykov@evolutionmedia.com.au directly.";
             }
           } catch (parseErr) {}
           this.setState({ sending: false, formError: msg });
         } catch (err) {
           this.setState({
             sending: false,
-            formError: "Your message didn't send — we couldn't reach the server. Please check your connection and try again, or email vanessa@evolutionmediagroup.com.au directly."
+            formError: "Your message didn't send — we couldn't reach the server. Please check your connection and try again, or email vstoykov@evolutionmedia.com.au directly."
           });
         }
       }
