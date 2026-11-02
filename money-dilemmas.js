@@ -134,7 +134,7 @@
         })
         .catch(function () {
           btn.disabled = false; btn.textContent = label;
-          say(f, "Your dilemma didn't send. Please try again, or email vanessa@evolutionmediagroup.com.au directly.", true);
+          say(f, "Your dilemma didn't send. Please try again, or email vstoykov@evolutionmedia.com.au directly.", true);
         });
       return;
     }
