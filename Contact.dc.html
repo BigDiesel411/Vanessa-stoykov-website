@@ -278,6 +278,24 @@ class Component extends DCLogic {
     formError: ''
   };
 
+  componentDidMount() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const reasonOptions = ['speaking', 'partnership', 'media', 'general', 'other'];
+      const reasonParam = (params.get('reason') || '').trim().toLowerCase();
+      const matchedReason = reasonOptions.indexOf(reasonParam) !== -1 ? reasonParam : null;
+      const subjectParam = params.get('subject');
+      if (!matchedReason && !subjectParam) return;
+      this.setState(s => ({
+        formData: {
+          ...s.formData,
+          ...(matchedReason ? { reason: matchedReason } : {}),
+          ...(subjectParam ? { subject: subjectParam } : {})
+        }
+      }));
+    } catch (e) {}
+  }
+
   renderVals() {
     return {
       formData: this.state.formData,
@@ -322,18 +340,18 @@ class Component extends DCLogic {
             this.setState({ sending: false, formSubmitted: true });
             return;
           }
-          let msg = "Something went wrong sending your message. Please try again, or email vstoykov@evolutionmedia.com.au directly.";
+          let msg = "Your message didn't send. Please try again, or email vanessa@evolutionmediagroup.com.au directly.";
           try {
             const json = await res.json();
             if (json && json.errors && json.errors.length) {
-              msg = json.errors.map(x => x.message).join(' ');
+              msg = "Your message didn't send (" + json.errors.map(x => x.message).join(' ') + "). Please try again, or email vanessa@evolutionmediagroup.com.au directly.";
             }
           } catch (parseErr) {}
           this.setState({ sending: false, formError: msg });
         } catch (err) {
           this.setState({
             sending: false,
-            formError: "We couldn't reach the server. Please check your connection and try again, or email vstoykov@evolutionmedia.com.au directly."
+            formError: "Your message didn't send — we couldn't reach the server. Please check your connection and try again, or email vanessa@evolutionmediagroup.com.au directly."
           });
         }
       }
