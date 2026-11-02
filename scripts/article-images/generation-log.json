@@ -1213,5 +1213,211 @@
     "patchedFiles": [],
     "model": "gemini-3-pro-image",
     "generatedAt": "2026-09-28T01:56:47.219Z"
+  },
+  "retirement/navigating-your-50s-a-womans-guide-to-financial-freedom-in-retirement.html": {
+    "title": "Navigating Your 50’s: A Woman’s Guide to Financial Freedom in Retirement",
+    "topic": "retirement",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/retirement/navigating-your-50s-a-womans-guide-to-financial-freedom-in-retirement-hero.jpg",
+    "thumbPath": "assets/generated/retirement/navigating-your-50s-a-womans-guide-to-financial-freedom-in-retirement-thumb.jpg",
+    "patchedFiles": [
+      "retirement/navigating-your-50s-a-womans-guide-to-financial-freedom-in-retirement.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:07:23.436Z"
+  },
+  "inheritance/a-dark-approach-to-leaving-a-legacy.html": {
+    "title": "A Dark Approach to Leaving a Legacy",
+    "topic": "inheritance",
+    "flagged": true,
+    "flagReason": "topic \"inheritance\" is always reviewed",
+    "heroPath": "needs-review/inheritance/a-dark-approach-to-leaving-a-legacy-hero.jpg",
+    "thumbPath": "needs-review/inheritance/a-dark-approach-to-leaving-a-legacy-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:08:02.937Z"
+  },
+  "inheritance/how-much-will-you-get-the-great-australian-wealth-transfer.html": {
+    "title": "How much will you get? The $3.5 Trillion Great Australian Wealth",
+    "topic": "inheritance",
+    "flagged": true,
+    "flagReason": "topic \"inheritance\" is always reviewed",
+    "heroPath": "needs-review/inheritance/how-much-will-you-get-the-great-australian-wealth-transfer-hero.jpg",
+    "thumbPath": "needs-review/inheritance/how-much-will-you-get-the-great-australian-wealth-transfer-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:08:41.963Z"
+  },
+  "inheritance/lattes-and-legacies.html": {
+    "title": "Lattes and Legacies",
+    "topic": "inheritance",
+    "flagged": true,
+    "flagReason": "topic \"inheritance\" is always reviewed",
+    "heroPath": "needs-review/inheritance/lattes-and-legacies-hero.jpg",
+    "thumbPath": "needs-review/inheritance/lattes-and-legacies-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:09:18.494Z"
+  },
+  "moneymindset/10-ways-to-reduce-food-waste-and-save-real-money.html": {
+    "title": "10 Ways to Reduce Food Waste and Save Real Money",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/10-ways-to-reduce-food-waste-and-save-real-money-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/10-ways-to-reduce-food-waste-and-save-real-money-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:09:58.611Z"
+  },
+  "moneymindset/books-that-might-just-change-your-life-these-holidays.html": {
+    "title": "Books That Might Just Change Your Life These Holidays",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/books-that-might-just-change-your-life-these-holidays-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/books-that-might-just-change-your-life-these-holidays-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:10:35.861Z"
+  },
+  "moneymindset/i-was-very-scared-inside-an-ato-scam.html": {
+    "title": "“I Was Very Scared”: Inside an “ATO” Scam",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/i-was-very-scared-inside-an-ato-scam-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/i-was-very-scared-inside-an-ato-scam-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:11:12.364Z"
+  },
+  "moneymindset/millennials-vs-gen-x.html": {
+    "title": "Millennials vs Gen X",
+    "topic": "moneymindset",
+    "flagged": true,
+    "flagReason": "content mentions \"divorce\"",
+    "heroPath": "needs-review/moneymindset/millennials-vs-gen-x-hero.jpg",
+    "thumbPath": "needs-review/moneymindset/millennials-vs-gen-x-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:11:48.601Z"
+  },
+  "moneymindset/money-stress-relief-how-pets-help-you-reset.html": {
+    "title": "Money Stress Relief: How Pets Help You Reset and Find Calm",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/money-stress-relief-how-pets-help-you-reset-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/money-stress-relief-how-pets-help-you-reset-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/money-stress-relief-how-pets-help-you-reset.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:12:26.148Z"
+  },
+  "moneymindset/permission-to-pursue-happiness.html": {
+    "title": "Permission to Pursue Happiness",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/permission-to-pursue-happiness-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/permission-to-pursue-happiness-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/permission-to-pursue-happiness.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:13:04.143Z"
+  },
+  "moneymindset/resilience-is-the-new-black.html": {
+    "title": "Resilience Is the New Black",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/resilience-is-the-new-black-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/resilience-is-the-new-black-thumb.jpg",
+    "patchedFiles": [
+      "moneymindset/resilience-is-the-new-black.html"
+    ],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:13:41.296Z"
+  },
+  "moneymindset/the-agreement-to-guilt-free.html": {
+    "title": "The Agreement to Guilt-Free",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/the-agreement-to-guilt-free-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/the-agreement-to-guilt-free-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:14:19.415Z"
+  },
+  "moneymindset/the-socialite-and-the-sous-chef.html": {
+    "title": "The Socialite and the Sous Chef",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/the-socialite-and-the-sous-chef-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/the-socialite-and-the-sous-chef-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:14:55.720Z"
+  },
+  "moneymindset/vale-carla-zampatti.html": {
+    "title": "Vale Carla Zampatti",
+    "topic": "moneymindset",
+    "flagged": true,
+    "flagReason": "content mentions \"died\"",
+    "heroPath": "needs-review/moneymindset/vale-carla-zampatti-hero.jpg",
+    "thumbPath": "needs-review/moneymindset/vale-carla-zampatti-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:15:33.103Z"
+  },
+  "moneymindset/when-conversations-lead-to-more-than-words.html": {
+    "title": "When Conversations Lead to More than Words",
+    "topic": "moneymindset",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/moneymindset/when-conversations-lead-to-more-than-words-hero.jpg",
+    "thumbPath": "assets/generated/moneymindset/when-conversations-lead-to-more-than-words-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:16:11.978Z"
+  },
+  "relationships/can-a-saver-truly-love-an-entertainer.html": {
+    "title": "Can a ‘Saver’ Truly Love an ‘Entertainer’?",
+    "topic": "relationships",
+    "flagged": true,
+    "flagReason": "content mentions \"divorce\"",
+    "heroPath": "needs-review/relationships/can-a-saver-truly-love-an-entertainer-hero.jpg",
+    "thumbPath": "needs-review/relationships/can-a-saver-truly-love-an-entertainer-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:16:51.104Z"
+  },
+  "relationships/romance-risk-profile-safe-or-sparkling.html": {
+    "title": "Romance Risk Profile: Safe or Sparkling?",
+    "topic": "relationships",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/romance-risk-profile-safe-or-sparkling-hero.jpg",
+    "thumbPath": "assets/generated/relationships/romance-risk-profile-safe-or-sparkling-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:17:29.556Z"
+  },
+  "relationships/what-is-contribution-splitting.html": {
+    "title": "What Is Contribution Splitting?",
+    "topic": "relationships",
+    "flagged": false,
+    "flagReason": null,
+    "heroPath": "assets/generated/relationships/what-is-contribution-splitting-hero.jpg",
+    "thumbPath": "assets/generated/relationships/what-is-contribution-splitting-thumb.jpg",
+    "patchedFiles": [],
+    "model": "gemini-3-pro-image",
+    "generatedAt": "2026-10-29T23:18:10.358Z"
   }
 }
