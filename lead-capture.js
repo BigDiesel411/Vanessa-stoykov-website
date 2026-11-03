@@ -32,6 +32,13 @@
 
   function mcFor(href) { return (href && MC[href]) || null; }
 
+  // Relative depth-aware link to the Privacy Policy: this modal is shared
+  // across root pages and one-level-deep article pages (e.g. divorce/*.html).
+  function privacyHref() {
+    var depth = (location.pathname.match(/\//g) || []).length - 1;
+    return (depth > 0 ? new Array(depth + 1).join('../') : '') + 'Privacy.dc.html';
+  }
+
   var defaultThanks = null;
 
   function css() {
@@ -49,8 +56,10 @@
       '#vs-lead-sub{font-size:15px;line-height:1.6;color:#33456f;margin:0 0 26px;}',
       '.vs-lead-input{width:100%;padding:14px 16px;border:1px solid #D7D2CB;border-radius:10px;font-size:15px;font-family:Inter,sans-serif;color:#001E60;margin-bottom:14px;background:#FDFCFB;}',
       '.vs-lead-input:focus{outline:2px solid #F09491;outline-offset:1px;border-color:#F09491;}',
-      '#vs-lead-consent{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;color:#33456f;margin:6px 0 24px;text-align:left;}',
+      '#vs-lead-consent{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;color:#33456f;margin:6px 0 14px;text-align:left;}',
       '#vs-lead-consent input{margin-top:3px;flex-shrink:0;}',
+      '#vs-lead-consent-nl{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;color:#33456f;margin:0 0 24px;text-align:left;}',
+      '#vs-lead-consent-nl input{margin-top:3px;flex-shrink:0;}',
       '#vs-lead-submit{width:100%;background:#001E60;color:#FFFFFF;border:none;padding:16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.06em;cursor:pointer;}',
       '#vs-lead-submit:hover{background:#0a2c7a;}',
       '#vs-lead-err{font-size:13px;color:#c0392b;margin:0 0 14px;display:none;}',
@@ -76,7 +85,10 @@
           '<input class="vs-lead-input" id="vs-lead-name" type="text" placeholder="First Name*" autocomplete="given-name">' +
           '<input class="vs-lead-input" id="vs-lead-email" type="email" placeholder="Email Address*" autocomplete="email">' +
           '<label id="vs-lead-consent"><input type="checkbox" id="vs-lead-check" checked>' +
-            '<span>Yes, email me the guide and sign me up for <strong>Vanessa\u2019s Newsletter</strong>. I agree to the Privacy Policy and Terms of Use.*</span>' +
+            '<span>Yes, email me the guide. I agree to the <a href="' + privacyHref() + '" target="_blank" rel="noopener noreferrer" style="color:#001E60;text-decoration:underline;">Privacy Policy</a> and Terms of Use.*</span>' +
+          '</label>' +
+          '<label id="vs-lead-consent-nl"><input type="checkbox" id="vs-lead-nl-check">' +
+            '<span>Also send me <strong>Vanessa\u2019s newsletter</strong>.</span>' +
           '</label>' +
           '<button id="vs-lead-submit" type="submit">SEND ME THE GUIDE</button>' +
         '</form>' +
@@ -134,6 +146,7 @@
     document.getElementById('vs-lead-name').value = '';
     document.getElementById('vs-lead-email').value = '';
     document.getElementById('vs-lead-check').checked = true;
+    document.getElementById('vs-lead-nl-check').checked = false;
     var btn = document.getElementById('vs-lead-submit');
     btn.disabled = false;
     btn.style.opacity = '';
@@ -163,6 +176,7 @@
     var name = document.getElementById('vs-lead-name').value.trim();
     var email = document.getElementById('vs-lead-email').value.trim();
     var consent = document.getElementById('vs-lead-check').checked;
+    var newsletter = document.getElementById('vs-lead-nl-check').checked;
     if (!name) return fail('Please enter your first name.');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('Please enter a valid email address.');
     if (!consent) return fail('Please tick the box so we can email your guide.');
@@ -172,6 +186,7 @@
       email: email,
       guide: pending ? pending.label : '',
       file: pending ? pending.filename : '',
+      newsletter: newsletter,
       page: location.pathname.split('/').pop(),
       at: new Date().toISOString()
     };
@@ -195,6 +210,10 @@
       body.append('EMAIL', email);
       body.append('FNAME', name);
       body.append('tags', mc.tags);
+      // Distinct value per request type: Mailchimp-side still needs a
+      // segment/automation keyed off this field (or a separate audience)
+      // to actually stop guide-only requesters receiving newsletter sends.
+      body.append('NEWSLETTER_OPTIN', newsletter ? 'Yes' : 'No');
       body.append(mc.honeypot, '');
       try { fetch(mc.action, { method: 'POST', mode: 'no-cors', body: body }); } catch (e) {}
     }

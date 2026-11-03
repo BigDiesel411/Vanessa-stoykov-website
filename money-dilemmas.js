@@ -172,8 +172,8 @@
       (GUIDES[ep] ?
         '<div style="font-size:12px;font-weight:800;letter-spacing:0.12em;color:' + GOLD + ';margin-bottom:10px;">COMPANION GUIDE</div>' +
         '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:34px;line-height:1;margin-bottom:10px;">Take this episode further</div>' +
-        '<div style="font-size:15px;line-height:1.6;color:#C7D0E4;margin-bottom:20px;">' + esc(GUIDES[ep].title) + ' · ' + GUIDES[ep].pages + ' pages · $19.99 AUD</div>' +
-        '<a href="' + GUIDES[ep].link + '" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;background:#FFFFFF;color:' + NAVY + ';padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.06em;text-decoration:none;">GET THE GUIDE, $19.99</a>'
+        '<div style="font-size:15px;line-height:1.6;color:#C7D0E4;margin-bottom:20px;">' + esc(GUIDES[ep].title) + ' · ' + GUIDES[ep].pages + ' pages · $19.95 AUD</div>' +
+        '<a href="' + GUIDES[ep].link + '" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;background:#FFFFFF;color:' + NAVY + ';padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.06em;text-decoration:none;">GET THE GUIDE, $19.95</a>'
         : '') +
       (next ? '<button type="button" ' + attrs(next) + ' style="margin-top:14px;width:100%;background:' + GOLD + ';color:' + NAVY + ';border:none;padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.08em;cursor:pointer;">WATCH NEXT EPISODE →</button>' : '') +
       '</div>';
