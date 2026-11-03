@@ -10,12 +10,15 @@
   // While empty, "Take the quiz" offers a notify-me signup instead.
   var QUIZ = [];
 
-  // Paid companion guides, one per episode. Links match the episode pages.
-  var GUIDES = {
-    '1': { title: 'Divorce & Money', pages: 18, link: 'https://buy.stripe.com/4gMbJ3gPx6k91H3ckK8Ra00' },
-    '2': { title: 'The Bank of Mum and Dad', pages: 16, link: 'https://buy.stripe.com/00w00ldDlcIx99vdoO8Ra02' },
-    '3': { title: 'Property & Your Financial Future', pages: 16, link: 'https://buy.stripe.com/14A3cxdDl37X5XjfwW8Ra01' }
-  };
+  // Paid companion guides, one per episode: title, pages, release date/time
+  // and Stripe link all come from guide-release.js (loaded before this
+  // file), so a release date only ever needs changing in one place.
+  function guideOf(ep) {
+    return (window.GUIDE_RELEASE && window.GUIDE_RELEASE.guides[ep]) || null;
+  }
+  function guideIsLive(ep) {
+    return !!(window.GUIDE_RELEASE && window.GUIDE_RELEASE.isLive(ep));
+  }
 
   var MSG = {
     alerts: "You're in. The next dilemma will land in your inbox the day it drops.",
@@ -166,14 +169,17 @@
     var list = cards();
     var idx = list.findIndex(function (c) { return c.getAttribute('data-ep') === ep; });
     var next = idx > -1 ? list[idx + 1] : null;
+    var g = guideOf(ep);
     var card = document.createElement('div');
     card.style.cssText = 'position:absolute;inset:0;background:rgba(0,30,96,0.97);display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto;';
     card.innerHTML = '<div style="width:100%;max-width:420px;color:#FFF;">' +
-      (GUIDES[ep] ?
+      (g ?
         '<div style="font-size:12px;font-weight:800;letter-spacing:0.12em;color:' + GOLD + ';margin-bottom:10px;">COMPANION GUIDE</div>' +
         '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:34px;line-height:1;margin-bottom:10px;">Take this episode further</div>' +
-        '<div style="font-size:15px;line-height:1.6;color:#C7D0E4;margin-bottom:20px;">' + esc(GUIDES[ep].title) + ' · ' + GUIDES[ep].pages + ' pages · $19.95 AUD</div>' +
-        '<a href="' + GUIDES[ep].link + '" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;background:#FFFFFF;color:' + NAVY + ';padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.06em;text-decoration:none;">GET THE GUIDE, $19.95</a>'
+        '<div style="font-size:15px;line-height:1.6;color:#C7D0E4;margin-bottom:20px;">' + esc(g.title) + ' · ' + g.pages + ' pages · $19.95 AUD</div>' +
+        (guideIsLive(ep)
+          ? '<a href="' + g.link + '" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;background:#FFFFFF;color:' + NAVY + ';padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.06em;text-decoration:none;">GET THE GUIDE, $19.95</a>'
+          : '<span style="display:block;text-align:center;background:transparent;color:#FFFFFF;border:2px solid ' + GOLD + ';padding:14px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.06em;">AVAILABLE ' + esc((g.releaseLabel || '').toUpperCase()) + '</span>')
         : '') +
       (next ? '<button type="button" ' + attrs(next) + ' style="margin-top:14px;width:100%;background:' + GOLD + ';color:' + NAVY + ';border:none;padding:16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:0.08em;cursor:pointer;">WATCH NEXT EPISODE →</button>' : '') +
       '</div>';
