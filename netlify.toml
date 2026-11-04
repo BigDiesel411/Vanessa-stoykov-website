@@ -117,6 +117,10 @@
   to = "/Guides.dc.html"
   status = 200
 [[redirects]]
+  from = "/money-dilemmas-media-release"
+  to = "/MoneyDilemmas-MediaRelease.dc.html"
+  status = 200
+[[redirects]]
   from = "/courses"
   to = "/Courses.dc.html"
   status = 200
