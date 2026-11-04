@@ -414,10 +414,19 @@ for (const d of allDirs) {
 }
 
 // 4. mailto: links
+// This guards against the regression this rule is named for: a contact
+// FORM silently reverting to a plain mailto:. It's not a blanket ban on
+// mailto everywhere — a named press contact on a media release is the
+// standard, expected convention (journalists click it, there's no "form"
+// to replace), so that one file/address is an intentional exception.
+const MAILTO_EXCEPTIONS = new Set([
+  'MoneyDilemmas-MediaRelease.dc.html:mailto:Aflanagan@evolutionmedia.com.au',
+]);
 for (const f of scannableFiles) {
   const lines = readText(f).split('\n');
   lines.forEach((line, i) => {
-    if (/mailto:/i.test(line)) {
+    const match = line.match(/mailto:[^\s"'<>)]+/i);
+    if (match && !MAILTO_EXCEPTIONS.has(`${rel(f)}:${match[0]}`)) {
       fails.push(`${rel(f)}:${i + 1} — mailto: link found; enquiries must go through a real form, not the user's mail app`);
     }
   });
