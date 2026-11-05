@@ -3,6 +3,30 @@
 # build step, and Netlify's own dashboard build settings for this site
 # are left untouched by this file.
 
+# Explicit pass-throughs for the favicon/manifest files added in the
+# "add a favicon" task, so neither this file's own catch-alls below nor
+# any future rule added to this file or to _redirects can ever swallow
+# them — these four paths must always hit the real static file in the
+# repo root, never a rewrite. (Checked: nothing currently in netlify.toml
+# or _redirects matches these paths, so this is a safety net, not a fix
+# for an active conflict.)
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.ico"
+  status = 200
+[[redirects]]
+  from = "/favicon.svg"
+  to = "/favicon.svg"
+  status = 200
+[[redirects]]
+  from = "/apple-touch-icon.png"
+  to = "/apple-touch-icon.png"
+  status = 200
+[[redirects]]
+  from = "/site.webmanifest"
+  to = "/site.webmanifest"
+  status = 200
+
 # The homepage is authored as Homepage.dc.html (this site's "Claude
 # Design" canvas pages are all named PageName.dc.html rather than
 # index.html), so Netlify's default "serve index.html at /" has nothing
@@ -168,3 +192,39 @@
 # copy is canonical. That's a real decision, not a mechanical mapping,
 # so it's left for a follow-up once that's settled rather than guessed
 # here.
+
+# Cache the favicon/manifest files for a day. Short enough that a future
+# redesign of the icon rolls out same-day, long enough to avoid refetching
+# them on every page view.
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+[[headers]]
+  for = "/favicon-16x16.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+[[headers]]
+  for = "/favicon-32x32.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+[[headers]]
+  for = "/apple-touch-icon.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+[[headers]]
+  for = "/icon-192.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+[[headers]]
+  for = "/icon-512.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
