@@ -251,3 +251,54 @@ http://www.vanessastoykov.com.au/*  https://vanessastoykov.com.au/:splat    301!
 /retirement-asset-rich-cash-poor    /retirement/retirement-asset-rich-cash-poor.html    301
 /retirement-designing-a-purposeful-next-chapter    /retirement/retirement-designing-a-purposeful-next-chapter.html    301
 /retirement-turning-savings-into-a-life    /retirement/retirement-turning-savings-into-a-life.html    301
+
+# Stray repo-root duplicate articles (an earlier migration left a bare copy
+# of 42 articles sitting at the repo root, WITH the .html extension, next
+# to the real copy already living in its topic folder -- see PR for the
+# Search Console "Duplicate without user-selected canonical" cleanup).
+# Nothing on the site ever linked to these bare-root copies, but since they
+# were their own real files Netlify served them as their own real, separate,
+# publicly reachable URLs, so each one gets a 301 to the real article now
+# that the stray copy is deleted.
+/bank-of-mum-and-dad-help-or-headache.html    /property/bank-of-mum-and-dad-help-or-headache.html    301
+/blended-family-finances-rebuilding-trust.html    /relationships/blended-family-finances-rebuilding-trust.html    301
+/buying-a-home-or-an-identity.html    /property/buying-a-home-or-an-identity.html    301
+/career-you-built-isnt-what-you-want.html    /careerincome/career-you-built-isnt-what-you-want.html    301
+/could-you-afford-to-leave-your-relationship.html    /relationships/could-you-afford-to-leave-your-relationship.html    301
+/financial-cost-of-staying-in-a-job-you-hate.html    /careerincome/financial-cost-of-staying-in-a-job-you-hate.html    301
+/financial-decisions-made-from-fear.html    /moneymindset/financial-decisions-made-from-fear.html    301
+/financial-infidelity-hidden-money.html    /relationships/financial-infidelity-hidden-money.html    301
+/five-conversations-before-buying-property-together.html    /property/five-conversations-before-buying-property-together.html    301
+/how-much-investment-risk-can-you-handle.html    /investing/how-much-investment-risk-can-you-handle.html    301
+/how-to-start-investing.html    /investing/how-to-start-investing.html    301
+/income-is-your-biggest-financial-asset.html    /careerincome/income-is-your-biggest-financial-asset.html    301
+/inheritance-is-not-a-financial-plan.html    /ageingparents/inheritance-is-not-a-financial-plan.html    301
+/investing-isnt-just-for-wealthy-people.html    /investing/investing-isnt-just-for-wealthy-people.html    301
+/investing-mistakes-when-markets-fall.html    /investing/investing-mistakes-when-markets-fall.html    301
+/investing-or-following-the-crowd.html    /investing/investing-or-following-the-crowd.html    301
+/investment-conversation-every-couple-needs.html    /investing/investment-conversation-every-couple-needs.html    301
+/money-conversation-couples-should-have.html    /relationships/money-conversation-couples-should-have.html    301
+/not-too-old-to-earn-more.html    /careerincome/not-too-old-to-earn-more.html    301
+/pay-off-debt-or-start-investing.html    /investing/pay-off-debt-or-start-investing.html    301
+/pay-rise-conversation-women-delay.html    /careerincome/pay-rise-conversation-women-delay.html    301
+/property-or-shares-which-is-right.html    /investing/property-or-shares-which-is-right.html    301
+/retirement-turning-savings-into-a-life.html    /retirement/retirement-turning-savings-into-a-life.html    301
+/should-you-combine-finances-after-50.html    /relationships/should-you-combine-finances-after-50.html    301
+/stay-or-sell-property-in-your-50s.html    /property/stay-or-sell-property-in-your-50s.html    301
+/stop-saying-im-bad-with-money.html    /moneymindset/stop-saying-im-bad-with-money.html    301
+/supporting-adult-children-fairness-and-boundaries.html    /adultchildren/supporting-adult-children-fairness-and-boundaries.html    301
+/talk-to-parents-before-a-crisis.html    /ageingparents/talk-to-parents-before-a-crisis.html    301
+/three-ways-to-improve-your-money-mindset.html    /moneymindset/three-ways-to-improve-your-money-mindset.html    301
+/time-matters-more-than-perfect-investment.html    /investing/time-matters-more-than-perfect-investment.html    301
+/timely-advice-massive-tax-savings.html    /property/timely-advice-massive-tax-savings.html    301
+/what-do-your-parents-own-and-owe.html    /ageingparents/what-do-your-parents-own-and-owe.html    301
+/what-does-enough-look-like.html    /moneymindset/what-does-enough-look-like.html    301
+/what-is-an-etf.html    /investing/what-is-an-etf.html    301
+/when-one-person-earns-more.html    /relationships/when-one-person-earns-more.html    301
+/when-you-become-parent-to-your-parents.html    /ageingparents/when-you-become-parent-to-your-parents.html    301
+/where-your-money-habits-came-from.html    /moneymindset/where-your-money-habits-came-from.html    301
+/who-pays-for-ageing-parents.html    /ageingparents/who-pays-for-ageing-parents.html    301
+/why-more-income-doesnt-feel-secure.html    /moneymindset/why-more-income-doesnt-feel-secure.html    301
+/why-property-fomo-is-expensive.html    /property/why-property-fomo-is-expensive.html    301
+/why-smart-couples-still-fight-about-money.html    /relationships/why-smart-couples-still-fight-about-money.html    301
+/women-investing-in-midlife.html    /investing/women-investing-in-midlife.html    301
