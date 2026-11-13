@@ -1,8 +1,9 @@
 (function () {
   var pending = null;
 
-  // Only this guide is wired to Mailchimp. The other four opt-ins keep their
-  // existing local-only behaviour until their tags are confirmed.
+  // All four free guides are wired to Mailchimp (each keyed by its PDF URL
+  // below). Any OTHER opt-in on the site that isn't one of these four URLs
+  // keeps the local-only (localStorage + window.vsSubmitLead) fallback.
   var MC = {
     'https://vanessastoykov.com.au/uploads/Vanessa_AdultChildrenMoneyGuide-1.pdf': {
       action: 'https://vanessastoykov.us18.list-manage.com/subscribe/post?u=5bafccece958e5ca2514b2ee2&id=0681d8d525&f_id=00cfa4e6f0',
