@@ -119,6 +119,30 @@
         }
       }
     } catch (e) {}
+    wirePremieres();
+  }
+
+  // ---- generic wiring for an episode's "premieres" video panel ----
+  // A gated spot marks its wrapper with data-premiere-id="<id>" (the same
+  // id as the matching guide, since an episode and its companion guide
+  // share one release date) and holds two children: data-premiere-pending
+  // (visible by default, "Premieres <date>") and data-premiere-live
+  // (hidden by default, a "video coming" state for once the episode has
+  // aired but no YouTube id has been added to the page yet - this script
+  // has no way to supply one on its own).
+  function wirePremieres() {
+    try {
+      var wraps = global.document.querySelectorAll('[data-premiere-id]');
+      for (var i = 0; i < wraps.length; i++) {
+        var wrap = wraps[i];
+        var id = wrap.getAttribute('data-premiere-id');
+        var live = guideIsLive(id);
+        var pending = wrap.querySelector('[data-premiere-pending]');
+        var comingSoon = wrap.querySelector('[data-premiere-live]');
+        if (pending) pending.style.display = live ? 'none' : 'flex';
+        if (comingSoon) comingSoon.style.display = live ? 'flex' : 'none';
+      }
+    } catch (e) {}
   }
 
   global.GUIDE_RELEASE = { guides: GUIDES, isLive: guideIsLive, wireAll: wireAll };
