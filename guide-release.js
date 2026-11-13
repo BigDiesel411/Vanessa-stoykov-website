@@ -8,12 +8,22 @@
 //
 // TO CHANGE A RELEASE DATE: edit the `release` ISO string below and the
 // matching `releaseLabel` ("Available <releaseLabel>" is what visitors see
-// before release). Keep the Sydney UTC offset explicit: +11:00 while
-// daylight saving applies (true for all three dates here), +10:00 only for
-// a date outside daylight saving (roughly early April to early October).
+// before release -- include the year, e.g. "Sunday 22 November 2026", so it
+// never reads as this year once the date's actually passed). Keep the
+// Sydney UTC offset explicit: +11:00 while daylight saving applies (true
+// for all three dates here), +10:00 only for a date outside daylight
+// saving (roughly early April to early October).
+//
+// ONCE A GUIDE IS LIVE: its `releaseLabel` is set to 'now' ("Available
+// now"). The pending label itself is hidden the moment isLive() flips true
+// (replaced by the real buy button everywhere it's used), so this only
+// ever shows in the split-second before this script runs, or as a fallback
+// if it doesn't load -- but 'now' is what's correct for that fallback once
+// the release date has actually passed, so it's still worth setting.
 //
 // TO RELEASE A GUIDE MANUALLY/EARLY: set its `release` to any ISO datetime
-// already in the past, e.g. "2020-01-01T00:00:00+10:00".
+// already in the past, e.g. "2020-01-01T00:00:00+10:00", and its
+// `releaseLabel` to 'now'.
 //
 // TESTING: append ?guide-preview=1 to a page's URL to treat every guide as
 // live, or ?guide-preview=0 to treat every guide as not yet live. This
@@ -27,21 +37,21 @@
       title: 'Divorce & Money',
       pages: 18,
       release: '2026-11-08T06:00:00+11:00',
-      releaseLabel: 'Sunday 8 November',
+      releaseLabel: 'now',
       link: 'https://buy.stripe.com/4gMbJ3gPx6k91H3ckK8Ra00'
     },
     '2': {
       title: 'The Bank of Mum and Dad',
       pages: 16,
       release: '2026-11-22T06:00:00+11:00',
-      releaseLabel: 'Sunday 22 November',
+      releaseLabel: 'Sunday 22 November 2026',
       link: 'https://buy.stripe.com/00w00ldDlcIx99vdoO8Ra02'
     },
     '3': {
       title: 'Property & Your Financial Future',
       pages: 16,
       release: '2026-12-06T06:00:00+11:00',
-      releaseLabel: 'Sunday 6 December',
+      releaseLabel: 'Sunday 6 December 2026',
       link: 'https://buy.stripe.com/14A3cxdDl37X5XjfwW8Ra01'
     }
   };
