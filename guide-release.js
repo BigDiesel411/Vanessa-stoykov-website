@@ -43,8 +43,8 @@
     '2': {
       title: 'The Bank of Mum and Dad',
       pages: 16,
-      release: '2026-11-22T06:00:00+11:00',
-      releaseLabel: 'Sunday 22 November 2026',
+      release: '2026-11-18T06:00:00+11:00',
+      releaseLabel: 'now',
       link: 'https://buy.stripe.com/00w00ldDlcIx99vdoO8Ra02'
     },
     '3': {
